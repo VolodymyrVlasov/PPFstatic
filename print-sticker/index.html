@@ -39,77 +39,85 @@
                 </div>
             </div>
         </section>
-        <section class="section">
-            <div class="container col col-gap">
-                <h2 class="text-32">Розрахунок вартості друку</h2>
-                <p>Оберіть параметри потрібної продукції для орієнтовного розрахунку вартості та термінів</p>
-                <div id="calculator" class="calculator row">
-                    <div class="inputs col col-b-gap border-right">
-                        <div class="range row row-b-gap">
-                            <div class="custom_input" id="input-height">
-                                <span for="input_range-height" class="label">40</span>
-                                <label for="input_range-height" class="custom_input-label"
-                                    aria-label="Обери ширину у самтиметрах">Довжина (см)</label>
-                                <input type="range" id="input_range-height" class="custom_input-input--range" min="10"
-                                    max="300" value="60" />
-                            </div>
 
-                            <div class="custom_input" id="input-width">
-                                <span for="input_range-width" id="input_label-width" class="text-16--bold">60</span>
-                                <label aria-label="Обери ширину у самтиметрах" class="custom_input-label"
-                                    for="input_range-width">Ширина (см)</label>
-                                <input type="range" id="input_range-width" class="custom_input-input--range" min="10"
-                                    max="100" value="40" />
-                            </div>
+        <section class="section section bg-gray">
+            <div class="container col-b-gap">
+                <h2 class="text-32">Види матеріалів наліпок для друку</h2>
+                <div class="row-wrap row-b-gap">
+                    <div class="material_card col-gap">
+                        <picture class="product_image_wrapper">
+                            <source srcset="../static/round-stickers.webp" type="image/webp">
+                            <img loading="lazy" decoding="async"
+                                data-pagespeed-lazy-src="../static/ritrama-matte-paperfox.jpeg" width="4" height="3"
+                                alt="Друк та порізка круглих наліпок та стікерів в Києві">
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Круглі</h4>
+                            <p><a href="https://www.paperfox.com.ua/print-sticker/print-round-stickers/">Друк наліпок
+                                    круглої форми</a> самих різних розмірів – від 1 см до 30 см в діаметрі. </p>
+                            <a title="Замовити круглі наліпки в Києві" href="https://www.paperfox.com.ua/large-print/"
+                                class="product_sub_link" aria-current="page">
+                                <span>замовити</span>
+                            </a>
 
-                            <div class="custom_number" id="input-amount">
-                                <label for="amount" class="custom_input-label">Кількість (шт)</label>
-                                <div class="custom_number-wrapper">
-                                    <button type="button" id="amount-minus" class="custom_number-btn minus"
-                                        aria-label="зменшити кількість на 1"></button>
-                                    <input type="number" value="1" min="1" max="100" id="amount"
-                                        class="custom_input-input--number">
-                                    <button type="button" id="amount-plus" class="custom_number-btn plus"
-                                        aria-label="збільшити кількість на 1"></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="material-quality row row-b-gap">
-                            <div class="select col">
-                                <label for="material">Матеріал</label>
-                                <select name="material" id="material" aria-label="Обери матеріал наліпки">
-                                    <option value="RitramaMatte" selected>Наліпка матова (Ritrama)</option>
-                                    <option value="RitramaGlossy">Наліпка глянцева (Ritrama)</option>
-                                    <option value="RitramaBlackout">Наліпка глянцева (Blackout)</option>
-                                    <option value="RitramaTransparent">Наліпка прозора</option>
-                                </select>
-                            </div>
-                            <div class="select col">
-                                <label for="quality">Якість</label>
-                                <select name="quality" id="quality" aria-label="Обери якість друку наліпки">
-                                    <option value="720p">Стандартна 720р</option>
-                                    <option value="1440p" selected>Найвища 1440р</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
-                    <div class="summary col col-gap">
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="product_image_wrapper">
+                            <source srcset="../static/print-stickers.webp" type="image/webp">
+                            <img loading="lazy" decoding="async"
+                                data-pagespeed-lazy-src="../static/ritrama-glos-paperfox.jpeg" width="4" height="3"
+                                alt="Друк наліпок, наклейок і стікерів прямокутної стандартної форми в Києві під замовлення">
+                        </picture>
                         <div class="col col-gap">
-                            <label for="prod-time">Готовність:</label>
-                            <strong id="prod-time">1 жовтня 18:30</strong>
-                        </div>
-                        <div class="col col-gap">
-                            <label for="price">Варстіть:</label>
-                            <strong id="price" class="price">130 грн</strong>
+                            <h4 class="text-24">Прямокутні </h4>
+                            <p>Стандартні прямокутні наклейки на самоклейці, вінілі, або ПЕТ. </p>
+                            <a title="Друк наліпок в Києві" href="https://www.paperfox.com.ua/large-print/"
+                                class="product_sub_link" aria-current="page">
+                                <span>замовити</span>
+                            </a>
+
                         </div>
                     </div>
-                </div>
-                <div>
-                    <p>*Мінімальна вартість замовлення дорівнює вартості 0.5м² від обраного матеріалу та роздільної
-                        здатності друку</p>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="product_image_wrapper">
+                            <source srcset="../static/stikers_figure_custom.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" data-pagespeed-lazy-src="../static/round-stickers.webp"
+                                width="4" height="3"
+                                alt="Виготовлення наліпок з плоттерною різкою кастомної форми в Києві ">
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Фігурні</h4>
+                            <p>Оригінальні фігурні стікери з плоттерною порізкою довільної форми.</p>
+                            <a title="Друк наліпок з плоттерною різкою довільної форми в Києві" href="https://www.paperfox.com.ua/large-print/"
+                                class="product_sub_link" aria-current="page">
+                                <span>замовити</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="product_image_wrapper">
+                            <source srcset="../static/round-stickers.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" data-pagespeed-lazy-src="../static/round-stickers.webp"
+                                width="4" height="3"
+                                alt="Друк і виготовлення стікер паків, наборів стікерів під замовлення в Києві">
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Стікер паки</h4>
+                            <p>Різноманітні наліпки довільної форми на аркушах самоклейки або вінілу</p>
+                            <a title="Замовити стікерпаки в Києві" href="https://www.paperfox.com.ua/large-print/"
+                                class="product_sub_link" aria-current="page">
+                                <span>замовити</span>
+                            </a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </section>
+
         <section class="section bg-gray">
             <div class="container col col-b-gap">
                 <h3 class="text-32">Потрібна консультація?</h3>
@@ -245,7 +253,7 @@
                 </dl>
             </div>
         </section>
-        <section class="section bg-gray">
+        <section class="section section bg-gray">
             <div class="container col-b-gap">
                 <h2 class="text-32">Види матеріалів наліпок для друку</h2>
                 <div class="row-wrap row-b-gap">
@@ -286,8 +294,8 @@
                         <picture class="img_wrapper">
                             <source srcset="../static/ritrama-transparent-paperfox.webp" type="image/webp">
                             <img loading="lazy" decoding="async"
-                                data-pagespeed-lazy-src="../static/ritrama-transparent-paperfox.jpeg" width="3" height="4"
-                                alt="фото як відбискує матова наліпка Ritrama з друком"
+                                data-pagespeed-lazy-src="../static/ritrama-transparent-paperfox.jpeg" width="3"
+                                height="4" alt="фото як відбискує матова наліпка Ritrama з друком"
                                 data-pagespeed-url-hash="568580878" src="/pagespeed_static/1.JiBnMqyl6S.gif"
                                 onload="pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);"
                                 onerror="this.onerror=null;pagespeed.lazyLoadImages.loadIfVisibleAndMaybeBeacon(this);">
@@ -485,7 +493,8 @@
                 <p>
                     Потрібні невеликі рекламні наліпки, інформаційні стікери, вивіски для магазину або зовнішня реклама?
                     Незалежно від розміру, форми, масштабу і тиражу потрібної продукції ви можете замовити <strong>друк
-                        на самоклейці та вініловій плівці</strong> у PaperFox! Сучасне обладнання, значний досвід успішної роботи (з
+                        на самоклейці та вініловій плівці</strong> у PaperFox! Сучасне обладнання, значний досвід
+                    успішної роботи (з
                     2015 року) і високоякісні видаткові матеріали дозволяють нам виконувати <strong>друк на
                         оракалі та самоклейці</strong>
                     максимально якісно і швидко, а зручне розташування (Київ, Поділ) допомагає економити час доставки.
@@ -501,11 +510,15 @@
                     ефекту.
                 </p>
                 <p>
-                    Паперова самоклейка – вдалий вибір для брендвуння друкованоъ продукції, нанесення лого на упаковку чи паперові стаканчики.
-                    Помірна вартість у порівнянні із вінілом, швидший час на друк та сильна адгезія дозволяє наліпці добре триматись на паперовій основі, 
+                    Паперова самоклейка – вдалий вибір для брендвуння друкованоъ продукції, нанесення лого на упаковку
+                    чи паперові стаканчики.
+                    Помірна вартість у порівнянні із вінілом, швидший час на друк та сильна адгезія дозволяє наліпці
+                    добре триматись на паперовій основі,
                     зручна у використанні та, звичайно ж,
-                    ефектно виглядає (якщо робити плоттерну фігурну порізку)! Ось чому ми пропонуємо <strong>друк на наклейок на самоклейці</strong> Для
-                     промо акцій, брендування упаковки та іншої продукціїі потреб. Крім того, ви можете вибрати різний вид самоклейки та обробки для влучного досягнення необхідного
+                    ефектно виглядає (якщо робити плоттерну фігурну порізку)! Ось чому ми пропонуємо <strong>друк на
+                        наклейок на самоклейці</strong> Для
+                    промо акцій, брендування упаковки та іншої продукціїі потреб. Крім того, ви можете вибрати різний
+                    вид самоклейки та обробки для влучного досягнення необхідного
                     ефекту.
                 </p>
                 <p>
