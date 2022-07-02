@@ -1,0 +1,360 @@
+:root {
+    --size-container: 1240px;
+}
+
+.header {
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.header--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.logo--img {
+    width: 200px;
+    height: 28px;
+    object-fit: cover;
+    object-position: top;
+    transition: var(--time-tr-time);
+}
+
+.logo--img:hover,
+.logo--img:focus {
+    transform: scale(1.05);
+
+}
+
+.main_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main_menu > li:not(:last-child) {
+    border-right: 1px solid var(--color-light-gray);
+    margin-right: 16px;
+}
+
+.main_menu > .menu_item:not(:last-child) > a {
+    padding-right: 32px;
+}
+
+
+.mob-menu-btn {
+    display: none;
+}
+
+.mob-menu-btn:focus {
+    pointer-events: none;
+}
+
+.mob-menu-wrapper:hover >,
+.mob-menu-wrapper:focus-within > .mob-menu-btn {
+    background-position: right;
+}
+
+.menu_item {
+    transition: var(--time-tr-time);
+}
+
+.menu_item:hover > .drop_down_wrapper,
+.menu_item:focus-within > .drop_down_wrapper {
+    visibility: visible;
+    transform: rotateX(0deg);
+    opacity: 1;
+    transition:var(--time-tr-time);
+}
+
+.menu_item--link {
+    padding: 24px 0 24px 16px;
+
+}
+
+.menu_item--link:hover {
+    color: var(--color-theme);
+}
+
+.drop_down_wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: white;
+    padding: 32px 0;
+    width: 100%;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    /*transxition: var(--time-tr-time);*/
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.15);
+
+}
+
+.drop_down_container {
+    width: 100%;
+    max-width: var(--size-container);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub_link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 24px 12px 0;
+}
+
+.sub_link :first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.sub_link :first-child:after {
+    content: "";
+    background: url("../img/ico-arrow-menu.svg") no-repeat 100% top;
+    background-size: 100% 200%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 16px -4px 22px;
+    transition: 250ms;
+}
+
+.sub_link:hover :first-child:after {
+    background-position: bottom;
+}
+
+.sub_link:hover :first-child {
+    color: var(--color-theme)
+}
+
+.sub_link :last-child {
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+
+.menu-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 60px;
+    border-left: 1px solid var(--color-theme);
+}
+
+.menu-contacts > li:not(:last-child) {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.menu-contacts > li > a {
+    padding: 4px 24px;
+}
+
+.menu-contacts > li > a:hover {
+    color: var(--color-theme);
+}
+
+.before-tel:before {
+    content: "";
+    background: url("../img/icon-tel.svg") center / 100% no-repeat;
+    margin: 2px 20px 0 0;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
+.before-mail:before {
+    content: "";
+    background: url("../img/icon-email.svg") center / 100% no-repeat;
+    margin: 2px 20px 0 0;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
+.before-telegram:before {
+    content: "";
+    background: url("../img/icon-telegram.svg") center / 100% no-repeat;
+    margin: 2px 20px 0 0;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
+.before-viber:before {
+    content: "";
+    background: url("../img/icon-viber.svg") center / 100% no-repeat;
+    margin: 2px 20px 0 0;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
+/* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+    .drop_down_container,
+    .header--container {
+        max-width: 1140px;
+    }
+}
+
+/*`xl` applies to x-large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+    .drop_down_container,
+    .header--container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* `lg` applies to large devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .drop_down_container,
+    .header--container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 839.98px) {
+    .menu_item--link {
+        padding: 24px 12px 24px;
+    }
+
+    /*.main_menu > li > a:not(:last-child) {*/
+    /*    padding-right: 6px;*/
+    /*    margin-right: 6px;*/
+    /*}*/
+
+    .drop_down_container > ul {
+        width: 50%;
+    }
+
+    .menu-contacts {
+        display: none;
+    }
+}
+
+/*-------------------------------------------*/
+/* `md` applies to medium devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .main_menu {
+        display: none;
+    }
+
+    .main_menu > li:not(:last-child) {
+        border: 0;
+        margin: 0;
+    }
+
+    .mob-menu-btn {
+        margin: 16px 0;
+        background: url("../img/ico-mob-menu.svg") no-repeat left 100%;
+        background-size: 200% 100%;
+        display: flex;
+        width: 32px;
+        height: 32px;
+        border: 0;
+    }
+
+    .menu_item:focus-within > .drop_down_wrapper,
+    .menu_item:hover > .drop_down_wrapper {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.15);
+    }
+
+    .drop_down_container,
+    .header--container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .main_menu {
+        box-shadow: 0 16px 18px -10px rgba(0, 0, 0, 0.8);
+    }
+
+    .mob-menu-wrapper:focus-within > .mob-menu-btn {
+        background-position: right;
+    }
+
+    .mob-menu-wrapper:focus-within > .main_menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    .menu_item {
+        width: 100%;
+    }
+
+    .menu-contacts {
+        display: none;
+    }
+
+    .drop_down_container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu_item--link {
+        width: 100%;
+    }
+
+    .menu_item--link:focus,
+    .menu_item--link:hover {
+        color: var(--color-theme);
+        font-weight: 700;
+        background-color: var(--color-light-light-theme);
+        outline: 0;
+    }
+
+    .sub_link:focus {
+        color: var(--color-theme);
+        outline: 1px solid var(--color-theme);
+    }
+
+    .drop_down_container > ul {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* `sm` applies to small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .drop_down_container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
+@media (max-width: 320px) {
+
+}
+
+
