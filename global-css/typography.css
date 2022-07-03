@@ -259,6 +259,12 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: var(--font-text-16);
+    line-height: 1.5;
+}
+
+.list {
+    list-style: disc outside;
+    padding-left: 15px;
 }
 
 .text {

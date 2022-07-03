@@ -16,7 +16,9 @@
 
 /*top section with back image*/
 .head-section {
-    background-color: var(--color-light-gray);
+    /* background-color: var(--color-light-gray); */
+    background: rgb(212,216,223);
+    background: linear-gradient(90deg, rgba(212,216,223,1) 0%, rgba(234,238,246,1) 25%, rgba(234,238,246,1) 73%, rgba(213,216,221,1) 100%);
     box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.05);
 }
 
