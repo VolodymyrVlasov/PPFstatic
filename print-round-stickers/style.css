@@ -30,7 +30,7 @@
     display: flex;
     align-items: center;
     margin-right: 10px;
-    font-size: 12px;
+    font-size: 14px;
     color: var(--color-gray);
     transition: 0.3s;
     gap: 8px
@@ -382,9 +382,6 @@ select {
 
 /*material cards */
 
-.material_card {
-    width: 25%;
-}
 
 
 /* accordion */
@@ -558,7 +555,7 @@ select {
 }
 
 .material_card {
-    width: calc(25% - var(--size-big-gap));
+    width: calc(33% - var(--size-big-gap));
 }
 
 .img_wrapper {

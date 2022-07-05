@@ -253,6 +253,7 @@
     --font-text-32: 32px;
     --font-text-24: 24px;
     --font-text-16: 16px;
+    --font-text-14: 14px;
     --font-text-12: 12px;
 }
 
@@ -290,6 +291,15 @@ body {
     font-size: var(--font-text-16);
     font-weight: 600;
 }
+
+.text-14 {
+    font-size: var(--font-text-14);
+}
+.text-14--gray {
+    font-size: var(--font-text-14);
+    color: var(--color-gray);
+}
+
 
 .text-12--gray {
     font-size: var(--font-text-12);
