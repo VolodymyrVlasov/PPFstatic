@@ -1,15 +1,941 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Круглі наклейки в Києві.  Друк круглих наліпок на самоклейці, вінілі, ПЕТ | PaperFox</title>
-    <meta name="description" content="Круглі наклейки - недорогий і ефективний спосіб залучення уваги. Друк наклейок Київ. Друк наклейок на самоклейках і вінілі. Замовити друк наклейок"/>
-    <meta name="keywords" content="круглые наклейки,печать наклеек,наклейки Киев,наклейки винил"/>
-    <link rel="canonical" href="https://www.paperfox.com.ua/print-sticker/print-round-stickers/"/>
+    <title>Круглі наклейки в Києві. Друк круглих наліпок на самоклейці, вінілі, ПЕТ | PaperFox</title>
+    <meta name="description"
+        content="Круглі наклейки - недорогий і ефективний спосіб залучення уваги. Друк наклейок Київ. Друк наклейок на самоклейках і вінілі. Замовити друк наклейок" />
+    <meta name="keywords" content="круглые наклейки, печать наклеек, наклейки Киев, наклейки винил" />
+    <link rel="canonical" href="https://www.paperfox.com.ua/print-sticker/print-round-stickers/" />
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    <main>
+        <section class="head-section">
+            <div class="head-container">
+                <div class="container row-center ">
+                    <div class="col col-b-gap">
+                        <h1 class="text-60" aria-label="Друк наклейок і наліпок. Печать наклеек"
+                            title="Друк наклейок і наліпок. Печать наклеек">Круглі наліпки</h1>
+                        <ul class="list col-gap">
+                            <li>Виготовлення круглих наліпок з порізкою на аркушах або кожна окремо.</li>
+                            <li>Діаметром від 5 до 300 мм</li>
+                            <li>Вибір матеріалів під різне використання</li>
+                            <li>Можливо термінове виготовлення (від 15 хвилин)</li>
+                        </ul>
+                        <div class="row row-b-gap">
+                            <a class="reviews" rel="noopener noreferrer nofollow" target="_blank"
+                                aria-label="5 зірок на Google Maps"
+                                href="https://www.google.com/maps/place/PaperFox+-+Полиграфия/@50.4675666,30.5094684,17z/data=!4m5!3m4!1s0x40d4ce14f2b5405f:0x94449792843e5c2a!8m2!3d50.4675994!4d30.5116056">
+                                <ol class="row">
+                                    <li aria-label="review: 5 star"></li>
+                                    <li aria-label="review: 5 star"></li>
+                                    <li aria-label="review: 5 star"></li>
+                                    <li aria-label="review: 5 star"></li>
+                                    <li aria-label="review: 5 star"></li>
+                                </ol>
+                                <span>on Google Maps</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container col col-gap">
+                <h2 class="text-32">Розрахунок вартості друку</h2>
+                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
+                <div id="calculator" class="calculator row">
+                    <div class="inputs col col-b-gap border-right">
+                        <div class="range row row-b-gap">
+                            <div class="custom_input" id="input-height">
+                                <span for="input_range-height" class="label">40</span>
+                                <label for="input_range-height" class="custom_input-label"
+                                    aria-label="Обери розмір у міліметрах"> Діаметр (мм)</label>
+                                <input type="range" id="input_range-height" class="custom_input-input--range" min="5"
+                                    max="300" value="60" />
+                            </div>
+
+                            <div class="custom_input" id="input-width">
+                                <span for="input_range-width" id="input_label-width" class="text-16--bold">60</span>
+                                <label aria-label="Обери кількість" class="custom_input-label"
+                                    for="input_range-width">Кількість (шт)</label>
+                                <input type="range" id="input_range-width" class="custom_input-input--range" min="10"
+                                    max="100" value="40" />
+                            </div>
+
+
+                        </div>
+                        <div class="material-quality row row-b-gap">
+                            <div class="select col">
+                                <label for="material">Матеріал</label>
+                                <select name="material" id="material" aria-label="Обери матеріал наліпки">
+                                    <option value="RitramaMatte" selected>Паперова наліпка</option>
+                                    <option value="RitramaMatte" selected>Паперова з глянцевою ламінацією</option>
+                                    <option value="RitramaMatte" selected>Паперова з матовою ламінацією</option>
+                                    <option value="RitramaGlossy">Вінілова глянцева</option>
+                                    <option value="RitramaBlackout">Вінілова матова</option>
+                                    <option value="RitramaBlackout">Вініл з ламінацією</option>
+                                    <option value="RitramaTransparent">Прозора глянцева</option>
+                                    <option value="RitramaTransparent">Напівпрозова матова</option>
+                                    <option value="RitramaTransparent">Винна етикета</option>
+                                    <option value="RitramaTransparent">З фольгою (паперова)</option>
+                                    <option value="RitramaTransparent">З фольгою (прозова)</option>
+                                    <option value="RitramaTransparent">З друком білим кольором (прозора)</option>
+                                    <option value="RitramaTransparent">PET наліпка</option>
+                                </select>
+                            </div>
+                            <div class="select col">
+                                <label for="cut">Порізка</label>
+                                <select name="cut" id="cut" aria-label="Обери якість друку наліпки">
+                                    <option value="contour" selected>Контурна на А3</option>
+                                    <option value="contour" selected>Контурна на А4</option>
+                                    <option value="throught">Наскрізна</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="summary col col-gap">
+                        <div class="col col-gap">
+                            <label for="prod-time">Готовність:</label>
+                            <strong id="prod-time">1 жовтня 18:30</strong>
+                        </div>
+                        <div class="col col-gap">
+                            <label for="price">Варстіть:</label>
+                            <strong id="price" class="price">130 грн</strong>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p>*Мінімальне замовлення - один макет на одному друкованому аркуші (SRA3) обраного матеріалу</p>
+                </div>
+            </div>
+        </section>
+        <section class="section bg-gray">
+            <div class="container col col-b-gap">
+                <h3 class="text-32">Потрібна консультація?</h3>
+                <div class="contact-widget--wrapper">
+                    <div class="contact-widget--wrapper-half">
+                        <a class="contact-widget--card" href="tel:0800332042">
+                            <span class="phone">Phone</span>
+                            <p>Зателефонуй нам</p>
+                            <u>0800 332 042</u>
+                        </a>
+                        <a class="contact-widget--card" rel="noopener noreferrer nofollow" target="_blank"
+                            href="https://t.me/Paper_Fox">
+                            <span class="telegram">Telegram</span>
+                            <p>Напишіть у чат</p>
+                            <u>@Paper_Fox</u>
+                        </a>
+                    </div>
+                    <div class="contact-widget--wrapper-half">
+                        <a class="contact-widget--card" href="mailto:print@paperfox.com.ua">
+                            <span class="email">Email</span>
+                            <p>Напишіть на пошту</p>
+                            <u>print@paperfox.com.ua</u>
+                        </a>
+                        <a class="contact-widget--card" href="viber://add?number=380730472212">
+                            <span class="viber">Viber</span>
+                            <p>Напишіть у чат</p>
+                            <u>+38 073 047 2212</u>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container col col-b-gap">
+                <h3 class="text-32">Питання та відповіді</h3>
+                <dl class="accordion">
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Як замовити наклейки?<span class="a-btn-ico"></span>
+                        </dt>
+                        <dd class="a-panel">
+                            Замовити круглі наклейки можна відправивши нам листа на електронну пошту
+                            print@paperfox.com.ua або у месенджер Viber чи Telegram.
+                            Якщо макету немає, Ви можете замовити його попередньо надавши матеріал та опис.
+                        </dd>
+                    </div>
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Яку мінімальну кількість круглих наліпок можна замовити?<span
+                                class="a-btn-ico"></span>
+                        </dt>
+                        <dd class="a-panel">
+                            Мінімальне замовлення - 1 макет на 1 друкований аркуш. Наприклад, у вас є 2 макета круглих
+                            наклейок діаметром 50 мм і
+                            ви хочете замовити по 10 шт кожного. На одному друкованому аркуші вміщається 40 шт наклейок
+                            діаметром 50 мм, відповідно 40 шт
+                            наклейок для кожного макета ми можемо прийняти в роботу і врешті сумарно отримаєте 80
+                            наліпок.
+                        </dd>
+                    </div>
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Які вимоги до макетів?<span class="a-btn-ico"></span></dt>
+                        <dt class="a-panel">
+                            <ul class="col-gap">
+                                <li>Макети подаются у настуних форматах: PDF чи JPG</li>
+                                <li>• Кольорова модель: CMYK</li>
+                                <li>• Роздільна здатність: не менше 300 dpi, для маленьких розмірів (менше 50 мм) 600
+                                    dpi</li>
+                                <li>• Товщина ліній не менше 0.1 мм на білому фоні, та не менше 0.2 мм на кольоровому
+                                    фоні.</li>
+                                <li>• Важливі елементи дизайну чи текст розташовуйте не ближче ніж 2 мм для порізки на
+                                    аркушах, та не менше 4 мм для наскрізної порізки</li>
+                            </ul>
+                        </dt>
+                    </div>
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Скільки часу потрібно на виготовлення замовлення?<span
+                                class="a-btn-ico"></span></dt>
+                        <dd class="a-panel">
+                            В залежності від замовлення та завантаженості виробництва на момент замовлення, термін
+                            виконання може складати від 30 хв до 1 дня. Проте актуальну інформацію краще запитайте у
+                            менеджера
+                        </dd>
+                    </div>
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Який розмір я можу надрукувати якісно?<span
+                                class="a-btn-ico"></span>
+                        </dt>
+                        <dd class="a-panel">
+                            Все залежить від наданого файлу. Векторе зображення не має обмежень в розмірі, растрове
+                            (фото) має певні обмеження. Розмір у пікселях не завжди є показником якості, потрібно також
+                            візуально оцінити зображення.
+                            Знову ж таки - скидайте на пошту або у месенджери :)
+                        </dd>
+                    </div>
+
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Як я отримую наклейки, на аркуші або поштучно?<span
+                                class="a-btn-ico"></span>
+                        </dt>
+                        <dd class="a-panel">
+                            Замовити можна як прорізані в листах А4 чи А3 мм так і вирізані кожну окремо, але для
+                            наскрізної порізки є обмеження у розмірі - від 50 до 250 мм з кроком в 1 мм.
+                        </dd>
+                    </div>
+
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Наклейки будуть вологотривкі чи ні?<span
+                                class="a-btn-ico"></span>
+                        </dt>
+                        <dd class="a-panel">
+                            Паперові - умовно вологотривкі, друк не змивається, а паперова основа в залежності від часу
+                            який пройшов після наклеювання, чим довше була наклеєна наліпка, тим важче вона буде
+                            зніматися чи змиватися.
+                            Вінілвові (білі, прозорі та напівпрозорі наліпки) - файтично не бояться вологи, оскільки
+                            лазерний друк та вініл ніяк не взаємодіють з водою.
+                            ПЕТ (PVC)  наліпка - вологотривка та стійка до мастил та хімікатів.
+                        </dd>
+                    </div>
+                    <div class="a-container">
+                        <dt class="a-btn" tabindex="0">Де забрати замовлення? Чи є доставка?<span
+                                class="a-btn-ico"></span></dt>
+                        <dd class="a-panel">
+                            Забрати можна у нас в офісі або у відділенні Нової Пошти. Термінову доставку круглих
+                            наклейок по Києву практикуємо на таксі сервісом Uklon.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+        <section class="section bg-gray">
+            <div class="container col-b-gap">
+                <h2 class="text-32">Види матеріалів наліпок для друку</h2>
+                <div class="row-wrap">
+                    <div class="material_card col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/raflatac-paperfox.jpeg" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/raflatac-paperfox.jpeg"
+                                alt="фото паперової наліпки" />
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Паперова</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Білий середньоглянцевий крейдований папір щільністю 85 г/м². Універсальний самоклеючий
+                                папір для маркування в логістиці, харчових продуктів, стікерпаків, попереджувальних
+                                етикеток, POS матеріалів тощо</p>
+                        </div>
+                    </div>
+                    <div class="material_card col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/raflatac-paperfox.jpeg" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/raflatac-paperfox.jpeg"
+                                alt="фото паперової наліпки" />
+                        </picture>
+                        <h4 class="text-24">Паперова з ламінацією</h4>
+                        <div class="col width-100">
+                            <div class="row-sp-btw width-100">
+                                <span class="text-14--gray width-50">Виробник:</span>
+                                <span class="text-14 width-50">Raflatac або Ritrama</span>
+                            </div>
+
+                            <div class="row-sp-btw width-100">
+                                <span class="text-14--gray width-50">Клеюча основа:</span>
+                                <span class="text-14 width-50">акрилова постійної дії</span>
+                            </div>
+                            <div class="row-sp-btw width-100">
+                                <span class="text-14--gray width-50">Покриття:</span>
+                                <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                            </div>
+                            <div class="row-sp-btw width-100">
+                                <span class="text-14--gray width-50">Щільність:</span>
+                                <span class="text-14 width-50">85 г/м²</span>
+                            </div>
+                        </div>
+                        <div class="col width-100">
+                            <div class="col width-100">
+                                <span class="text-14--gray">Вологотривкість:</span>
+                                <div class="row-center row-gap width-100">
+                                    <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                        title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                    <span class="text-14--gray">6/10</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <span class="text-14--gray">Стійкість до мастил:</span>
+                                <div class="row-center row-gap width-100">
+                                    <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                        title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                    <span class="text-14--gray">3/10</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                <div class="row-center row-gap width-100">
+                                    <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                        title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                    <span class="text-14--gray">7/10</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                <div class="row-center row-gap width-100">
+                                    <i class="raiting-7" aria-label="raiting 7/10"
+                                        title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+
+                                    <span class="text-14--gray">7/10</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Білий середньоглянцевий крейдований папір щільністю 85 г/м². Універсальний самоклеючий
+                            папір для маркування в логістиці, харчових продуктів, стікерпаків, попереджувальних
+                            етикеток, POS матеріалів тощо</p>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-glos-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" width="3" height="4"
+                                src="../static/ritrama-glos-matte-paperfox.jpeg"
+                                alt="фото як відбискує матова та глянцева наліпка Ritrama з друком" />
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Вініл (ПВХ)</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
     
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Вінілова наліпка з глянцевою чи матовою поверхнею. У глянцевої відблиски поверхні чіткі,
+                                висока ступінь відбиття світла за рахунок чого кольори насиченіші та більш контрасні.
+                                Матова - має
+                                мікроструктурну поверхню, відблиск не чіткий, плавно розсіюючий світло по фактурі.
+                                Використовується як маркувальна або іміджевий інформаційний чи рекламний друкований
+                                матеріал (на ноубуки, технічне устаткування)</p>
+                        </div>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-blackout-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-blackout-paperfox.jpeg"
+                                width="3" height="4" alt="фото як відбискує матова наліпка Ritrama з друком" />
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Вініл з ламінацією</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Вінілова глянцева наліпка з клеєвим шаром чорного кольору, використовується для
+                                обклеювання
+                                поверхні з неоднородним кольоровим покриттям проверхні.</p>
+                        </div>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-transparent-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-transparent-paperfox.jpeg"
+                                width="3" height="4" alt="фото як відбискує матова наліпка Ritrama з друком" />
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Прозора</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Прозора наліпка з постійнийним клеойвим шаром JAC та Raflatac. Використовується на
+                                світлих
+                                поверхнях та поверхнях кольором світлішим за друк оскільки друк без білого чорнила і
+                                кольори напівпрозорі.
+                                Також можливе фольгування мідною, золотою чи срібною фольгою або друк у один білий колір
+                            </p>
+                        </div>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-transparent-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-transparent-paperfox.jpeg"
+                                width="3" height="4" alt="фото як відбискує матова наліпка Ritrama з друком" />
+                        </picture>
+                        <div class="col col-gap">
+                            <h4 class="text-24">Напівпрозора</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Біла напівпрозора синтетична наліпка має ефект запіскоструєного скла. Має достатню
+                                щільність білого основногу коліру для того щоб відобразити
+                                сереньої насиченості та світлості кольори при наклеюванні на темну основу, при цьому
+                                пропускаючи "розмитий" колір основи через себе</p>
+                        </div>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-glos-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-glos-paperfox.jpeg" width="3"
+                                height="4" alt="фото як відбискує паперова самоклейка з друком" />
+                        </picture>
+
+                        <div class="col col-gap">
+                            <h4 class="text-24">З білим кольором</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Паперова наліпка з матовою поверхнею. Відблиск не чіткий або відсутній. Друк із
+                                найдрібнішими деталями.
+                                Має високу глибину чорного кольору</p>
+                        </div>
+                    </div>
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-glos-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-glos-paperfox.jpeg" width="3"
+                                height="4" alt="фото як відбискує паперова самоклейка з друком" />
+                        </picture>
+
+                        <div class="col col-gap">
+                            <h4 class="text-24">З фольгою</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Паперова наліпка з матовою поверхнею. Відблиск не чіткий або відсутній. Друк із
+                                найдрібнішими деталями.
+                                Має високу глибину чорного кольору</p>
+                        </div>
+                    </div>
+
+                    <div class="material_card col col-2-md col-gap">
+                        <picture class="img_wrapper">
+                            <source srcset="../static/ritrama-glos-paperfox.webp" type="image/webp">
+                            <img loading="lazy" decoding="async" src="../static/ritrama-glos-paperfox.jpeg" width="3"
+                                height="4" alt="фото як відбискує паперова самоклейка з друком" />
+                        </picture>
+
+                        <div class="col col-gap">
+                            <h4 class="text-24">Винна етикетка</h4>
+                            <div class="col width-100">
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Виробник:</span>
+                                    <span class="text-14 width-50">Raflatac або Ritrama</span>
+                                </div>
+    
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Клеюча основа:</span>
+                                    <span class="text-14 width-50">акрилова постійної дії</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Покриття:</span>
+                                    <span class="text-14 width-50">PVC плівка 32 мкм</span>
+                                </div>
+                                <div class="row-sp-btw width-100">
+                                    <span class="text-14--gray width-50">Щільність:</span>
+                                    <span class="text-14 width-50">85 г/м²</span>
+                                </div>
+                            </div>
+                            <div class="col width-100">
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Вологотривкість:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-6" aria-label="Вологотривкість 6 із 10"
+                                            title="При сильному зволожені паперова основа зморщується але не структура не руйнується та повертається майже до вихідного вигляду після просушення"></i>
+                                        <span class="text-14--gray">6/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до мастил:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-3" aria-label="Стійкість до мастил 3 із 10"
+                                            title="Паперова основа не має олеофобної пропитки, тому добре насичуються мастилами та іншими жирними реовинами"></i>
+                                        <span class="text-14--gray">3/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до низьких температур:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="Стійкість до низьких температур 7 із 10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                                <div class="col width-100">
+                                    <span class="text-14--gray">Стійкість до механічного впливу:</span>
+                                    <div class="row-center row-gap width-100">
+                                        <i class="raiting-7" aria-label="raiting 7/10"
+                                            title="При значній зміні температури, в умовах утворення конденсату можливе розмокання паперової основи"></i>
+    
+                                        <span class="text-14--gray">7/10</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Паперова наліпка з матовою поверхнею. Відблиск не чіткий або відсутній. Друк із
+                                найдрібнішими деталями.
+                                Має високу глибину чорного кольору</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact_section">
+            <div class="container contacts">
+                <address class="contacts_card col-gap">
+                    <div class="col">
+                        <a class="text-24" href="https://bit.ly/3jHXTRE">вул. Ярославська, 14</a>
+                        <span class="text-14">окремий вхід з фасаду<br>метро Контрактова площа</span>
+                    </div>
+                    <div class="col">
+                        <a class="text-24" href="tel:0800332042">0800 332 042</a>
+                        <span class="text-14">дзвінки безкоштовні</span>
+                    </div>
+
+                    <a class="text-24" href="mailto:print@paperfox.com.ua">print@paperfox.com.ua</a>
+                    <div class="row-gap">
+                        <a class="tlgrm btn" href="https://t.me/Paper_Fox">Telegram</a>
+                        <a class="vbr btn" href="viber://add?number=380730472212">Viber</a>
+                    </div>
+
+                    <div class="col">
+                        <strong class="text-16--bold">Графік роботи:</strong>
+                        <time>Пн - Пт: 10:00 - 19:00</time>
+                        <time>Сб - Нд: 10:00 - 16:00</time>
+                    </div>
+                </address>
+            </div>
+            <iframe class="map" id="mapIframe" loading="lazy"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448.93903633070124!2d30.511283627447845!3d50.467495100430575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce6b488d6537%3A0x6c0f58a981bc9200!2z0YPQuy4g0K_RgNC-0YHQu9Cw0LLRgdC60LDRjywgMTQsINCa0LjQtdCyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1577879411956!5m2!1sru!2sua"
+                width="100%" height="500px" style="border:0;" aria-label="Ми на картах гугл" allowfullscreen>
+            </iframe>
+
+        </section>
+        <section class="section ">
+            <div class="container col-gap">
+                <h2 class="text-32">Круглі наклейки Київ: дизайн, друк, порізка</h2>
+                <p> Наклейки - недорогий, але ефективний спосіб привернути увагу до певної події, товару, бренду або
+                    рекламної кампанії. Яскраві і забавні, інформаційні та декоративні, стильні та креативні — наклейки
+                    завжди потрапляють в поле зору, звертаючи на себе увагу потенційних споживачів. А круглі наклейки,
+                    до того ж, миттєво привертають увагу ока в силу своєї ідеальної симетрії
+                    (як помітили психологи, саме коло підсвідомо виділяється зором на самих ранніх стадіях
+                    розпізнавання).
+                </p>
+                <p>Якщо ви вирішили замовити круглі наклейки для проведення рекламної або іміджевої кампанії,
+                    оформлення товарів або просування бренду, то поліграфія PaperFox запропонує Вам найширший діапазон
+                    рішень, різноманітні формати створення продукції:
+                <ul class="list">
+                    <li>Друк наклейок на самоклеючому крейдованому папері щільністю 85 г/м² за допомогою лазерного
+                        цифрового друку</li>
+                    <li>Друк круглих наклейок на вініловій плівці з високою стійкістю покриття і чудовою адгезією,
+                        такі наклейки не бояться вологи, дії ультрафіолету, перепадів температур, легко відокремлюються
+                        від основи, не залишаючи слідів</li>
+                    <li>Друк круглих наклейок на поліестровому матеріалі (PVC), стійкому до води, мастил та неагресивних
+                        хімікатів</li>
+                    <li>Додаткові послуги: плотерна порізка, холодне та гаряче ламінування, фольгування (срібло, золото,
+                        мідь)</li>
+                    <li>Необмежені можливості у виробництві рекламної та акційної продукції, оформленні розпродажів,
+                        виставкових стендів, івентів, наклейки з корпоративною символікою;</li>
+                    <li>Сувенірні та декоративні наклейки для подарунків, поздоровлень, надання знаків уваги;</li>
+                    <li>Друк круглих наклейок будь-яких розмірів від 1 см в діаметрі.</li>
+                </ul>
+                </p>
+                <p>А ще наклейки можна колекціонувати, що із задоволенням роблять діти, та й (чого гріха таїти) багато
+                    дорослих.
+                    Включайте наклейки в свої буклети, каталоги, брошури, і ви багаторазово збільшите впізнаваність
+                    товару
+                    або компанії без значних рекламних витрат.
+                    А поліграфія PaperFox допоможе вам оформити і надрукувати наклейки в найкоротші терміни і за
+                    найприємнішою ціною.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="./app.js"></script>
 </body>
+
 </html>

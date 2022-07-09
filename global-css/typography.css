@@ -253,12 +253,19 @@
     --font-text-32: 32px;
     --font-text-24: 24px;
     --font-text-16: 16px;
+    --font-text-14: 14px;
     --font-text-12: 12px;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: var(--font-text-16);
+    line-height: 1.5;
+}
+
+.list {
+    list-style: disc outside;
+    padding-left: 15px;
 }
 
 .text {
@@ -284,6 +291,15 @@ body {
     font-size: var(--font-text-16);
     font-weight: 600;
 }
+
+.text-14 {
+    font-size: var(--font-text-14);
+}
+.text-14--gray {
+    font-size: var(--font-text-14);
+    color: var(--color-gray);
+}
+
 
 .text-12--gray {
     font-size: var(--font-text-12);

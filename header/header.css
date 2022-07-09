@@ -126,7 +126,7 @@
 
 .sub_link :first-child:after {
     content: "";
-    background: url("../img/ico-arrow-menu.svg") no-repeat 100% top;
+    background: url("../static/ico-arrow-menu.svg") no-repeat 100% top;
     background-size: 100% 200%;
     display: inline-block;
     width: 20px;

@@ -1,29 +1,6 @@
 @import url(./theme.css);
 @import url(./typography.css);
 
-:root {
-    --size-gap: 16px;
-    --size-big-gap: 48px;
-    --size-small-gap: 24px;
-    --size-icon: 20px;
-    --size-border-radius: 12px;
-    --size-container-width: 1240px;
-    --size-section-padding: 48px;
-
-    --size-small-font-size: 12px;
-    --size-medium-font-size: 14px;
-
-    --color-theme: #D83E1B;
-    --color-light-theme: #ffe8e3;
-    --color-light-light-theme: #FFF6F4;
-    --color-gray: #6E6E6E;
-    --color-light-gray: #eeeeee;
-    --color-light-light-gray: #fbfbfb;
-    --color-background-overlayout: linear-gradient(transparent, transparent);
-
-    --time-tr-time: 280ms;
-}
-
 * {
     margin: 0;
     padding: 0;
