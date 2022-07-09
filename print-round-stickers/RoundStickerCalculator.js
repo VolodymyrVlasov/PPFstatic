@@ -1,106 +1,125 @@
-const RAFLATAC = 'RAFLATAC'
-const RAFLATAC_MATTE = 'RAFLATAC_MATTE'
-const RAFLATAC_GLOSS = 'RAFLATAC_GLOSS'
-const RAFLATAC_FOIL = 'RAFLATAC_FOIL'
-const RITRAMA_MATTE = 'RITRAMA_MATTE'
-const RITRAMA_GLOSS = 'RITRAMA_GLOSS'
-const RITRAMA_COATED = 'RITRAMA_COATED'
-const TRANSPARED = 'TRANSPARED'
-const TRANSPARED_MATTE = 'TRANSPARED_MATTE'
-const TRANSPARED_WHITE = 'TRANSPARED_WHITE'
-const TRANSPARED_FOIL = 'TRANSPARED_FOIL'
-const VINE = 'VINE'
-const PET = 'PET'
+const RAFLATAC = "RAFLATAC";
+const RAFLATAC_MATTE = "RAFLATAC_MATTE";
+const RAFLATAC_GLOSS = "RAFLATAC_GLOSS";
+const RAFLATAC_FOIL = "RAFLATAC_FOIL";
+const RITRAMA_MATTE = "RITRAMA_MATTE";
+const RITRAMA_GLOSS = "RITRAMA_GLOSS";
+const RITRAMA_COATED = "RITRAMA_COATED";
+const TRANSPARED = "TRANSPARED";
+const TRANSPARED_MATTE = "TRANSPARED_MATTE";
+const TRANSPARED_WHITE = "TRANSPARED_WHITE";
+const TRANSPARED_FOIL = "TRANSPARED_FOIL";
+const VINE = "VINE";
+const PET = "PET";
 
+const KISS_CUT_A4 = "KISS_CUT_A4";
+const KISS_CUT_A3 = "KISS_CUT_A3";
+const DIE_CUT = "DIE_CUT";
+
+const MAX_PRINT_X_SKYCUT = 300;
+const MAX_PRINT_Y_SKYCUT = 430;
+
+const MAX_PRINT_X_SUMMA= 280;
+const MAX_PRINT_Y_SUMMA = 380;
+
+const BLEED_KISS_CUT = 3;
+const BLEED_DIE_CUT = 6;
 
 const price = {
-    RitramaMatte: [210, 160, 130],
-    RitramaGlossy: [210, 160, 130],
-    RitramaBlackout: [340, 300, 250],
-    RitramaTransparent: [210, 160, 130]
-}
+    RAFLATAC: [210, 160, 130],
+    RAFLATAC_MATTE: [210, 160, 130],
+    RAFLATAC_GLOSS: [340, 300, 250],
+    RAFLATAC_FOIL: [210, 160, 130],
+    RITRAMA_MATTE: [210, 160, 130],
+    RITRAMA_GLOSS: [210, 160, 130],
+    RITRAMA_COATED: [210, 160, 130],
+    TRANSPARED: [210, 160, 130],
+    TRANSPARED_MATTE: [210, 160, 130],
+    TRANSPARED_WHITE: [210, 160, 130],
+    TRANSPARED_FOIL: [210, 160, 130],
+    VINE: [210, 160, 130],
+    PET: [210, 160, 130]
+};
 
 const product = {
-    diameter: 50,
-    material: "",
-    cutType: "",
-    amountAtSheet: 40,
-    cutAtSheet: 1,
-    sheetsAtPrintingRun: 1,
-    cutAtPrintingRun: 100,
-    printingPrice: 1,
-    cutingPrice: 1,
-    totalPrice: 1
-}
+  diameter: 50,
+  targetAmount: 2,
+  material: "RAFLATAC",
+  cutType: "KISS_CUT_A3",
+  amountAtSheet: 40,
+  cutAtSheet: 1,
+  sheetsAtPrintingRun: 1,
+  cutAtPrintingRun: 2,
+  printingPrice: 1,
+  cutingPrice: 1,
+  totalPrice: 1,
+};
 
 document.getElementById("calculator").addEventListener("change", (e) => {
-    const target = e.target
-    switch (target.id) {
-        case "input_range-height":
-            product.height = Number(target.value)
-            break
-        case "input_range-width":
-            product.width = Number(target.value)
-            break
-        case "material":
-            product.material = target.value
-            break
-        case "cut":
-            product.cutType = target.value
-            break
-        case "amount":
-            if (Number(target.value) > 100) {
-                target.value = product.amount = 100
-            } else if (Number(target.value) <= 0) {
-                target.value = product.amount = 1
-            } else {
-                product.amount = Number(target.value)
-            }
-            break
-    }
-    calculatePrice()
-    calculateTime()
-})
+  const target = e.target;
+
+  switch (target.id) {
+    case "input_range_diameter":
+      product.diameter = Number(target.value);
+      break;
+    case "input_range_amount":
+      product.amount = Number(target.value);
+      break;
+    case "material":
+      product.material = target.value;
+      break;
+    case "cut":
+      product.cutType = target.value;
+      break;
+    case "amount":
+      product.amount = target.value;
+      break;
+  };
+
+  calculatePrice();
+  calculateTime();
+});
 
 const calculatePrice = () => {
-    const getPriceIndex = () => {
-        if (product.printingSquare < 3) {
-            return 0
-        } else if (product.printingSquare >= 3 && product.printingSquare < 10) {
-            return 1
-        } else {
-            return 2
-        }
+  const getAmountAtSheet = () => {
+    let xAxisCount;
+    let yAxisCount;
+
+    switch (product.cutType) {
+        case KISS_CUT_A3:
+             xAxisCount = Math.floor(MAX_PRINT_X_SKYCUT / (product.diameter + BLEED_KISS_CUT));
+             yAxisCount = Math.floor(MAX_PRINT_Y_SKYCUT / (product.diameter + BLEED_KISS_CUT));
+            return xAxisCount * yAxisCount;
+        case KISS_CUT_A4:
+             xAxisCount = Math.floor((MAX_PRINT_X_SKYCUT - 8) / (product.diameter + BLEED_KISS_CUT));
+             yAxisCount = Math.floor(((MAX_PRINT_Y_SKYCUT * 0.5 - 8) / (product.diameter + BLEED_KISS_CUT)) * 2);
+            return xAxisCount * yAxisCount;
+        case DIE_CUT:
+            xAxisCount = Math.floor(MAX_PRINT_X_SUMMA / (product.diameter + BLEED_DIE_CUT));
+            yAxisCount = Math.floor(((MAX_PRINT_Y_SUMMA / 2 - 8) / (product.diameter + BLEED_DIE_CUT)) * 2);
+            return xAxisCount * yAxisCount;
     }
+  };
 
-    const getPrintingSquare = () => {
-        console.clear()
-        const ROLL = product.printingWidth = 100
-        product.printingHeight = product.height
-        const MIN_SQUARE = 0.5
-        if (product.height > ROLL && product.amount > 1) {
-            let pcsPerRoll = Math.floor(ROLL / product.width)
-            if (pcsPerRoll <= product.amount) {
-                product.printingHeight = product.height * Math.ceil(product.amount / pcsPerRoll)
-            } else {
-                product.printingHeight = product.height
-            }
-            product.printingSquare = Number(((product.printingHeight * product.printingWidth) / 10000).toFixed(2))
-        } else if (product.height <= ROLL && product.width < product.height) {
-            product.printingHeight = product.width
-            product.printingSquare = ((product.printingWidth * product.printingHeight) / 10000 * product.amount).toFixed(2)
-        } else {
-            product.printingSquare = ((product.printingWidth * product.height) / 10000 * product.amount).toFixed(2)
-        }
-        product.printingSquare = product.printingSquare < MIN_SQUARE ? MIN_SQUARE : product.printingSquare
-        return product.printingSquare
-    }
+  const getCutAtSheet = () => {
+    
 
-    product.price = getPrintingSquare() * price[product.material][product.quality][getPriceIndex()]
-    document.getElementById("price").innerText = `${product.price.toFixed(0)} грн`
+  };
 
-    console.table(product)
-}
+  const getSheetsAtPrintingRun = () => {};
+  const getCutAtPrintingRun = () => {};
+  const getPrintingPrice = () => {};
+  const getCutingPrice = () => {};
+  const getTotalPrice = () => {};
+};
 
-const calculateTime = () => {
-}
+ 
+
+  document.getElementById("price").innerText = `${product.price.toFixed(
+    0
+  )} грн`;
+
+  console.table(product);
+};
+
+const calculateTime = () => {};
