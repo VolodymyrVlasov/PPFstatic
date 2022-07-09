@@ -53,18 +53,18 @@
                     <div class="inputs col col-b-gap border-right">
                         <div class="range row row-b-gap">
                             <div class="custom_input" id="input-height">
-                                <span for="input_range-height" class="label">40</span>
-                                <label for="input_range-height" class="custom_input-label"
+                                <span for="input_label_diameter" class="label">40</span>
+                                <label for="input_range_diameter" class="custom_input-label"
                                     aria-label="Обери розмір у міліметрах"> Діаметр (мм)</label>
-                                <input type="range" id="input_range-height" class="custom_input-input--range" min="5"
+                                <input type="range" id="input_range_diameter" class="custom_input-input--range" min="5"
                                     max="300" value="60" />
                             </div>
 
                             <div class="custom_input" id="input-width">
-                                <span for="input_range-width" id="input_label-width" class="text-16--bold">60</span>
+                                <span for="input_range_amount" id="input_label_amount" class="text-16--bold">60</span>
                                 <label aria-label="Обери кількість" class="custom_input-label"
-                                    for="input_range-width">Кількість (шт)</label>
-                                <input type="range" id="input_range-width" class="custom_input-input--range" min="10"
+                                    for="input_range-_amount">Кількість (шт)</label>
+                                <input type="range" id="input_range_amount" class="custom_input-input--range" min="10"
                                     max="100" value="40" />
                             </div>
 
@@ -74,19 +74,19 @@
                             <div class="select col">
                                 <label for="material">Матеріал</label>
                                 <select name="material" id="material" aria-label="Обери матеріал наліпки">
-                                    <option value="RitramaMatte" selected>Паперова наліпка</option>
-                                    <option value="RitramaMatte" selected>Паперова з глянцевою ламінацією</option>
-                                    <option value="RitramaMatte" selected>Паперова з матовою ламінацією</option>
-                                    <option value="RitramaGlossy">Вінілова глянцева</option>
-                                    <option value="RitramaBlackout">Вінілова матова</option>
-                                    <option value="RitramaBlackout">Вініл з ламінацією</option>
-                                    <option value="RitramaTransparent">Прозора глянцева</option>
-                                    <option value="RitramaTransparent">Напівпрозова матова</option>
-                                    <option value="RitramaTransparent">Винна етикета</option>
-                                    <option value="RitramaTransparent">З фольгою (паперова)</option>
-                                    <option value="RitramaTransparent">З фольгою (прозова)</option>
-                                    <option value="RitramaTransparent">З друком білим кольором (прозора)</option>
-                                    <option value="RitramaTransparent">PET наліпка</option>
+                                    <option value="RAFLATAC" selected>Паперова наліпка</option>
+                                    <option value="RAFLATAC_GLOSS" selected>Паперова з глянцевою ламінацією</option>
+                                    <option value="RAFLATAC_MATTE" selected>Паперова з матовою ламінацією</option>
+                                    <option value="RITRAMA_GLOSS">Вінілова глянцева</option>
+                                    <option value="RITRAMA_MATTE">Вінілова матова</option>
+                                    <option value="RITRAMA_COATED">Вініл з ламінацією</option>
+                                    <option value="TRANSPARED">Прозора глянцева</option>
+                                    <option value="TRANSPARED_MATTE">Напівпрозова матова</option>
+                                    <option value="VINE">Винна етикета</option>
+                                    <option value="RAFLATAC_FOIL">З фольгою (паперова)</option>
+                                    <option value="TRANSPARED_FOIL">З фольгою (прозова)</option>
+                                    <option value="TRANSPARED_WHITE">З друком білим кольором (прозора)</option>
+                                    <option value="PET">PET наліпка</option>
                                 </select>
                             </div>
                             <div class="select col">
@@ -243,8 +243,6 @@
                 </dl>
             </div>
         </section>
-        
-
         <section class="section contact_section">
             <div class="container contacts">
                 <address class="contacts_card col-gap">
