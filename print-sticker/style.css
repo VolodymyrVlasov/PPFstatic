@@ -379,7 +379,11 @@ select {
 
 /*material cards */
 
-.material_card {
+/* .material_card {
+    width: 25%;
+} */
+
+.product_card {
     width: 25%;
 }
 
