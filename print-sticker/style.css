@@ -384,7 +384,7 @@ select {
 } */
 
 .product_card {
-    width: 25%;
+    width: calc(25% - var(--size-big-gap));
 }
 
 
@@ -560,10 +560,6 @@ select {
 
 .material_card {
     width: calc(33% - var(--size-big-gap));
-}
-
-.product_card {
-    width: calc(25% - var(--size-big-gap));
 }
 
 .product_image_wrapper {
