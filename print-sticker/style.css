@@ -663,10 +663,12 @@ select {
         max-width: 960px;
     }
 
-    .material_card {
+    .material_card, .product_card  {
         width: calc(50% - var(--size-big-gap));
         margin-bottom: var(--size-big-gap);
     }
+
+     
 }
 
 /* `lg` applies to large devices (tablets, less than 992px) */
@@ -805,7 +807,7 @@ select {
         padding: 16px;
     }
 
-    .material_card {
+    .material_card, .product_card {
         width: 100%;
     }
 
@@ -880,7 +882,7 @@ select {
         --color-light-light-gray: #fbfbfb;
     }
 
-    .material_card {
+    .material_card, .product_card {
         width: 100%;
         margin-bottom: var(--size-big-gap);
     }
