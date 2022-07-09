@@ -114,11 +114,6 @@ a {
     margin-right: var(--size-big-gap);
 }
 
-.border-right {
-    padding-right: var(--size-gap);
-    border-right: 1px solid var(--color-theme);
-}
-
 .raiting-0 {
     display: flex;
     height: var(--size-raiting);
@@ -352,6 +347,13 @@ a {
     border-radius: 999px;
     background-color: var(--color-light-theme);
 }
+
+
+.border-right {
+    padding-right: var(--size-gap);
+    border-right: 1px solid var(--color-theme);
+}
+
 
 .border-bottom {
     border-bottom: 1px solid var(--color-light-gray);
