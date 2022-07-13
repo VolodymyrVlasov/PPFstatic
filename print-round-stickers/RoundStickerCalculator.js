@@ -1,16 +1,28 @@
-import {customRange, addTitle} from "./app.js";
-import {KISS_CUT_A4, KISS_CUT_A3, DIE_CUT} from "../src/CuttingTypes.js"
-import {MAX_PRINT_X_SKYCUT,MAX_PRINT_Y_SKYCUT,MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT} from "../src/Sizes.js";
-import {PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE} from "../src/Prices.js";
-
+import { customRange, addTitle } from "./app.js";
+import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../src/CuttingTypes.js";
+import {
+  MAX_PRINT_X_SKYCUT,
+  MAX_PRINT_Y_SKYCUT,
+  MAX_PRINT_X_SUMMA,
+  MAX_PRINT_Y_SUMMA,
+  BLEED_KISS_CUT,
+  BLEED_DIE_CUT,
+} from "../src/Sizes.js";
+import {
+  PRINTRUN_INDEXES,
+  SELFADHESIVE_CUT_PRICE,
+  SELFADHESIVE_PRINT_PRICE,
+} from "../src/Prices.js";
 
 const renderDiameterRange = customRange("input_diameter", 32, 40);
-const renderAmountRange = customRange("input_amount", 32, 60);
+const renderAmountRange = customRange("input_amount", 32, 40);
 
 const amountInput = document.getElementById("input_range_amount");
 const priceLabel = document.getElementById("price");
 
 let isSizeChanged = false;
+let prevAmountValue = 0;
+let amountSteps = 0;
 
 const product = {
   diameter: 50,
@@ -28,13 +40,18 @@ const product = {
 };
 
 const calculatePrice = () => {
-//   console.clear();
+  //   console.clear();
 
   const getPriceIndex = (printRunAmount) => {
     for (let index = 0; index < PRINTRUN_INDEXES.length; index++) {
-      if (index + 1 >= PRINTRUN_INDEXES.length) return PRINTRUN_INDEXES.length - 1;
+      if (index + 1 >= PRINTRUN_INDEXES.length)
+        return PRINTRUN_INDEXES.length - 1;
       if (printRunAmount < PRINTRUN_INDEXES[0]) return 0;
-      if (printRunAmount >= PRINTRUN_INDEXES[index] && printRunAmount < PRINTRUN_INDEXES[index + 1]) return index;
+      if (
+        printRunAmount >= PRINTRUN_INDEXES[index] &&
+        printRunAmount < PRINTRUN_INDEXES[index + 1]
+      )
+        return index;
     }
   };
 
@@ -71,7 +88,7 @@ const calculatePrice = () => {
         break;
     }
 
-    return  xAxisCount * yAxisCount;
+    return xAxisCount * yAxisCount;
   };
 
   const getCutAtSheet = () => {
@@ -87,13 +104,20 @@ const calculatePrice = () => {
   };
 
   const getPrintingPrice = () => {
-    return (product.sheetsAtPrintingRun * SELFADHESIVE_PRINT_PRICE[product.material][getPriceIndex(product.sheetsAtPrintingRun)]);
+    return (
+      product.sheetsAtPrintingRun *
+      SELFADHESIVE_PRINT_PRICE[product.material][
+        getPriceIndex(product.sheetsAtPrintingRun)
+      ]
+    );
   };
 
   const getCutingPrice = () => {
     return (
       product.cutAtPrintingRun *
-      SELFADHESIVE_CUT_PRICE[product.cutType][getPriceIndex(product.cutAtPrintingRun)]
+      SELFADHESIVE_CUT_PRICE[product.cutType][
+        getPriceIndex(product.cutAtPrintingRun)
+      ]
     );
   };
 
@@ -121,38 +145,64 @@ const calculatePrice = () => {
   priceLabel.innerText = `${product.totalPrice} грн`;
 
   if (isSizeChanged) {
-    amountInput.step = amountAtSheet;
-    amountInput.min = amountAtSheet;
-    amountInput.value = amountAtSheet;
-    renderAmountRange();
-    isSizeChanged = !isSizeChanged;
-}
-  
+    amountInput.value = 0;
+    renderAmountRange(product.amountAtSheet);
+    amountSteps = 0;
+    isSizeChanged = false;
+  }
+
   priceLabel.title = `
   Наліпок на аркуші: ${product.amountAtSheet} шт.
   Аркушів на друк: ${product.sheetsAtPrintingRun}  шт.
   Метрів порізки: ${product.cutAtPrintingRun} м.п.
   Вартість друку: ${product.printingPrice} грн.
   Вартість порізки: ${product.cutingPrice} грн.
-  Вартість 1 арк.: ${SELFADHESIVE_PRINT_PRICE[product.material][getPriceIndex(product.sheetsAtPrintingRun)]} грн.
-  Вартість 1 м. порізки: ${SELFADHESIVE_CUT_PRICE[product.cutType][getPriceIndex(product.cutAtPrintingRun)]} грн.
+  Вартість 1 арк.: ${
+    SELFADHESIVE_PRINT_PRICE[product.material][
+      getPriceIndex(product.sheetsAtPrintingRun)
+    ]
+  } грн.
+  Вартість 1 м. порізки: ${
+    SELFADHESIVE_CUT_PRICE[product.cutType][
+      getPriceIndex(product.cutAtPrintingRun)
+    ]
+  } грн.
   Загальна вартість: ${product.totalPrice} грн.
-  `
+  `;
 };
 
-const calculateTime = () => console.log("time calculate");
+const calculateTime = () => {};
 
 document.getElementById("calculator").addEventListener("input", (e) => {
   const target = e.target;
-
   switch (target.id) {
     case "input_range_diameter":
       product.diameter = Number(target.value);
-      isSizeChanged = !isSizeChanged;
-      renderAmountRange();
+      renderDiameterRange(product.diameter)
+      isSizeChanged = true;
       break;
     case "input_range_amount":
-      product.targetStickerAmount = Number(target.value);
+      let currentValue = Number(target.value);
+
+      if (currentValue <= 100) {
+        product.targetStickerAmount = Math.ceil(currentValue / (100 / 25)) * product.amountAtSheet;
+      } else  if (currentValue > 100 && currentValue <= 150) {
+        product.targetStickerAmount = Math.ceil(currentValue / (150 / 50)) * product.amountAtSheet;
+      } else {
+        product.targetStickerAmount = currentValue * product.amountAtSheet;
+      }
+
+      let steppedAmountSteps;
+      if (currentValue > prevAmountValue) {
+        steppedAmountSteps = (currentValue - prevAmountValue) / Number(target.step);
+        amountSteps += steppedAmountSteps;
+      } else {
+        steppedAmountSteps = (prevAmountValue - currentValue) / Number(target.step);
+        amountSteps -= steppedAmountSteps;
+      }
+      prevAmountValue = currentValue;
+      renderAmountRange(product.targetStickerAmount);
+    //   console.log("steps count", amountSteps, "targetStickerAmount", Number(product.targetStickerAmount));
       break;
     case "material":
       product.material = target.value;
@@ -161,8 +211,6 @@ document.getElementById("calculator").addEventListener("input", (e) => {
       product.cutType = target.value;
       break;
   }
-
-  console.table(product);
 
   calculatePrice();
   calculateTime();

@@ -1,4 +1,4 @@
-export const MAX_PRINT_X_SKYCUT = 300;
+export const MAX_PRINT_X_SKYCUT = 304;
 export const MAX_PRINT_Y_SKYCUT = 430;
 
 export const MAX_PRINT_X_SUMMA = 280;
