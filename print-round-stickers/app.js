@@ -1,5 +1,5 @@
 
-const accordion = (elem) => {
+export const accordion = (elem) => {
     document.addEventListener('click', (e) => {
         const target = e.target
         if (!target.matches(elem + ' .a-btn')) return
@@ -19,19 +19,20 @@ const accordion = (elem) => {
 
 accordion('.accordion')
 
-const map = (x, in_min, in_max, out_min, out_max) => {
+export const map = (x, in_min, in_max, out_min, out_max) => {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
 }
 
-const customRange = (id, thumbSize, initValue) => {
+export const customRange = (id, thumbSize, initValue) => {
     const inputCnt = document.getElementById(id)
-    let inputNode = inputCnt.lastElementChild
+    const inputNode = inputCnt.lastElementChild
     const labelNode = inputCnt.firstElementChild
-    const thumbHalfSize = thumbSize * 0.5
-    const from = Number(inputNode.min)
-    const to = Number(inputNode.max)
 
     const changeRangeUI = () => {
+
+        const from = Number(inputNode.min)
+        const to = Number(inputNode.max)
+        const thumbHalfSize = thumbSize * 0.5
         const inputWidth = Math.floor(inputNode.offsetWidth)
         const value = Number(inputCnt.lastElementChild.value) || initValue
         labelNode.innerHTML = String(value)
@@ -41,16 +42,28 @@ const customRange = (id, thumbSize, initValue) => {
         labelPosition = (value > to * 0.5) ?
             labelPosition - map(value, to * 0.5, to, labelCenterX, thumbSize + 1)
             :
-            labelPosition - map(value, from, to * 0.5, labelCenterX - thumbHalfSize, labelCenterX)
+            labelPosition - map(value, from, to * 0.5, labelCenterX - thumbHalfSize, labelCenterX);
+
+        console.log("min", inputNode.min, "step", inputNode.step, "max", inputNode.max, "value", inputNode.value)
+
         inputNode.style.background = `linear-gradient(90deg, var(--color-theme) ${gradientPosition}%, var(--color-light-gray) ${gradientPosition}%)`
         labelNode.style.transform = `translateX(${labelPosition}px)`
     }
 
     changeRangeUI()
     inputCnt.addEventListener("input", () => changeRangeUI())
+    inputCnt.addEventListener("change", () => changeRangeUI())
+    return changeRangeUI
 }
 
-customRange("input-height", 32, 40)
-customRange("input-width", 32, 60)
+export const addTitle = (htmlElement, text) => {
+    if (htmlElement) {
+       htmlElement.title = text;
+    } else {
+        console.error(`Can't add title to ${htmlElement} because it is null`)
+    }
+}
+
+
 
 
