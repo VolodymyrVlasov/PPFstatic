@@ -370,3 +370,44 @@ a {
 .border-right {
     border-right: 1px solid var(--color-light-gray);
 }
+
+.data_title {
+    display: inline;
+	position: relative;
+    transition: 300ms ease;
+}
+
+.data_title:hover:after {
+    transition: 300ms ease;
+	content: attr(data-title);
+    white-space: pre-wrap;
+    /* line-height: 0.75rem; */
+	z-index: 999;
+	position: absolute;
+	bottom: calc(100% + 6px);
+	left: -60%;
+	width: 220%;
+	padding: 0 0 16px 0;
+	font-size: 13px;
+	font-weight: 300;
+	color: #fff;
+	background-color: #444;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-o-border-radius: 3px;
+	-ms-border-radius: 3px;
+	border-radius: 3px;
+    
+}
+
+.data_title:hover:before {
+    transition: 300ms ease;
+	content: "";
+	z-index: 1000;
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	border-style: solid;
+	border-width: 6px 6px 0 6px;
+	border-color: #444 transparent;
+}

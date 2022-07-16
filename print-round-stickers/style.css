@@ -103,7 +103,6 @@
     background-position: right top;
 }
 
-
 .custom_input-input--number {
     width: 50px;
     font-size: 24px;
@@ -123,8 +122,6 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: textfield;
 }
-
-
 
 .custom_input {
     display: flex;
@@ -289,7 +286,8 @@ select {
     background-color: var(--color-light-theme);
     border-radius: 8px;
     font-size: 24px;
-    color: var(--color-theme)
+    color: var(--color-theme);
+    cursor: pointer;
 }
 
 /* Contact widget*/
