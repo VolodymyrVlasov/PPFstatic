@@ -26,6 +26,9 @@ const timeLabel = document.getElementById("prod-time");
 const cuttingTypeSelect = document.getElementById("cut");
 
 let isSizeChanged = false;
+let isMaterialChanged = false;
+let isCuttingTypeChanged = false;
+
 
 const product = {
   diameter: 50,
@@ -44,32 +47,58 @@ const product = {
 };
 
 const renderCalculation = () => {
-  if (isSizeChanged) {
+  if (isSizeChanged || isCuttingTypeChanged) {
     amountInput.min = product.amountAtSheet;
     amountInput.step = product.amountAtSheet;
     amountInput.max = product.amountAtSheet * 50;
     amountInput.value = product.amountAtSheet;
     renderAmountUI();
     isSizeChanged = false;
+    isCuttingTypeChanged = false;
   }
 
   if (product.diameter < 50 && cuttingTypeSelect.children.length == 3) {
-    const cuttingList = Array.from(cuttingTypeSelect.children).filter((option) => {
-      if (option.value !== "DIE_CUT") return option;
-    });
-    cuttingTypeSelect.innerHTML = "";
-    cuttingList.forEach((option) => (cuttingTypeSelect.innerHTML += `<option value="${option.value}">${option.label}</option>`));
-  } else if (product.diameter >= 50 && cuttingTypeSelect.children.length < 3) {
-    cuttingTypeSelect.innerHTML += `<option value="DIE_CUT">Наскрізна</option>`
+    cuttingTypeSelect.children[2].disabled = true
+  } else if (product.diameter >= 50) {
+    cuttingTypeSelect.children[2].disabled = false;
   }
 
+  if (product.cutType === "KISS_CUT_A4") {
+    diameterInput.min = 5;
+    diameterInput.max = 200;
+    renderDiameterRange();
+    renderAmountUI();
+  } 
+  if (product.cutType === "DIE_CUT") {
+    diameterInput.max = 250;
+    diameterInput.min = 50;
+    renderDiameterRange();
+    renderAmountUI();
+  } 
+  if (product.cutType === "KISS_CUT_A3" && diameterInput.max !== 300) {
+    diameterInput.max = 300;
+    diameterInput.min = 5;
+    renderDiameterRange();
+    renderAmountUI();
+  }
+
+  if (product.material === "TRANSPARENT_WHITE") {
+    cuttingTypeSelect.children[0].disabled = true;
+    cuttingTypeSelect.children[1].selected = true;
+    diameterInput.max = 200;
+    diameterInput.min = 5;
+    renderDiameterRange();
+    renderAmountUI();
+  } else {
+    cuttingTypeSelect.children[0].disabled = false;
+  }
 
   priceLabel.innerText = `${product.totalPrice} грн`;
   timeLabel.innerText = product.finishTime;
 
   priceLabel.dataset.title = `
-        Наліпок на аркуші:\t\t${product.amountAtSheet}\t\tшт.
-        Аркушів на друк:\t\t${product.sheetsAtPrintingRun}\t\tшт.
+        Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}`:  ` А3:\t${product.amountAtSheet}`}\t\tшт.
+        Аркушів у накладі:\t\t${product.sheetsAtPrintingRun}\t\tшт.
         Метрів порізки:\t\t\t${product.cutAtPrintingRun}\t\tм.п.
         Вартість друку:\t\t\t${product.printingPrice}\t\tгрн.
         Вартість порізки:\t\t${product.cutingPrice}\t\tгрн.
@@ -97,7 +126,7 @@ const calculateProduct = () => {
         break;
       case KISS_CUT_A4:
         xAxisCount = Math.floor((MAX_PRINT_X_SKYCUT - 8) / (product.diameter + BLEED_KISS_CUT));
-        yAxisCount = Math.floor(((MAX_PRINT_Y_SKYCUT * 0.5 - 8) / (product.diameter + BLEED_KISS_CUT)) * 2);
+        yAxisCount = Math.floor(((MAX_PRINT_Y_SKYCUT * 0.5 - 8) / (product.diameter + BLEED_KISS_CUT))) * 2;
         break;
       case DIE_CUT:
         xAxisCount = Math.floor(MAX_PRINT_X_SUMMA / (product.diameter + BLEED_DIE_CUT));
@@ -177,7 +206,6 @@ const calculateProduct = () => {
 
 document.getElementById("calculator").addEventListener("input", (e) => {
   const target = e.target;
-
   switch (target.id) {
     case "input_range_diameter":
       product.diameter = Number(target.value);
@@ -188,12 +216,13 @@ document.getElementById("calculator").addEventListener("input", (e) => {
       break;
     case "material":
       product.material = target.value;
+      isMaterialChanged = true;
       break;
     case "cut":
       product.cutType = target.value;
+      isCuttingTypeChanged = true;
       break;
   }
-
   calculateProduct();
 });
 
