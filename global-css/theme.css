@@ -381,12 +381,11 @@ a {
     transition: 300ms ease;
 	content: attr(data-title);
     white-space: pre-wrap;
-    /* line-height: 0.75rem; */
 	z-index: 999;
 	position: absolute;
 	bottom: calc(100% + 6px);
 	left: -60%;
-	width: 220%;
+	width: 250%;
 	padding: 0 0 16px 0;
 	font-size: 13px;
 	font-weight: 300;

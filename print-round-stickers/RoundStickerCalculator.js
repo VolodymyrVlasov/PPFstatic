@@ -2,14 +2,28 @@ import { customRange } from "./app.js";
 import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../src/CuttingTypes.js";
 import { MAX_PRINT_X_SKYCUT, MAX_PRINT_Y_SKYCUT, MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT } from "../src/Sizes.js";
 import { PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE } from "../src/Prices.js";
-import { RAFLATAC, RAFLATAC_MATTE, RAFLATAC_GLOSS, RAFLATAC_FOIL, RITRAMA_MATTE, RITRAMA_GLOSS, RITRAMA_COATED, TRANSPARENT, TRANSPARENT_MATTE,
-  TRANSPARENT_WHITE, TRANSPARENT_FOIL, VINE, PET } from "../src/MaterialTypes.js";
+import {
+  RAFLATAC,
+  RAFLATAC_MATTE,
+  RAFLATAC_GLOSS,
+  RAFLATAC_FOIL,
+  RITRAMA_MATTE,
+  RITRAMA_GLOSS,
+  RITRAMA_COATED,
+  TRANSPARENT,
+  TRANSPARENT_MATTE,
+  TRANSPARENT_WHITE,
+  TRANSPARENT_FOIL,
+  VINE,
+  PET,
+} from "../src/MaterialTypes.js";
 
 const { changeRangeUI: renderDiameterRange, inputNode: diameterInput } = customRange("input_diameter", 32, 40);
 const { changeRangeUI: renderAmountUI, inputNode: amountInput } = customRange("input_amount", 32, 60);
 
 const priceLabel = document.getElementById("price");
 const timeLabel = document.getElementById("prod-time");
+const cuttingTypeSelect = document.getElementById("cut");
 
 let isSizeChanged = false;
 
@@ -38,6 +52,17 @@ const renderCalculation = () => {
     renderAmountUI();
     isSizeChanged = false;
   }
+
+  if (product.diameter < 50 && cuttingTypeSelect.children.length == 3) {
+    const cuttingList = Array.from(cuttingTypeSelect.children).filter((option) => {
+      if (option.value !== "DIE_CUT") return option;
+    });
+    cuttingTypeSelect.innerHTML = "";
+    cuttingList.forEach((option) => (cuttingTypeSelect.innerHTML += `<option value="${option.value}">${option.label}</option>`));
+  } else if (product.diameter >= 50 && cuttingTypeSelect.children.length < 3) {
+    cuttingTypeSelect.innerHTML += `<option value="DIE_CUT">Наскрізна</option>`
+  }
+
 
   priceLabel.innerText = `${product.totalPrice} грн`;
   timeLabel.innerText = product.finishTime;
@@ -82,17 +107,11 @@ const calculateProduct = () => {
     return xAxisCount * yAxisCount;
   };
 
-  const getCutAtSheet = () => {
-    return Math.ceil(0.00314 * product.diameter * product.amountAtSheet);
-  };
+  const getCutAtSheet = () => Math.ceil(0.00314 * product.diameter * product.amountAtSheet);
 
-  const getSheetsAtPrintingRun = () => {
-    return Math.ceil(product.targetStickerAmount / product.amountAtSheet);
-  };
+  const getSheetsAtPrintingRun = () => Math.ceil(product.targetStickerAmount / product.amountAtSheet);
 
-  const getCutAtPrintingRun = () => {
-    return Math.ceil(product.cutAtSheet * product.sheetsAtPrintingRun);
-  };
+  const getCutAtPrintingRun = () => Math.ceil(product.cutAtSheet * product.sheetsAtPrintingRun);
 
   const getPrintingPrice = () => {
     return product.sheetsAtPrintingRun * SELFADHESIVE_PRINT_PRICE[product.material][getPriceIndex(product.sheetsAtPrintingRun)];
@@ -106,12 +125,10 @@ const calculateProduct = () => {
     return Math.ceil(product.cutingPrice + product.printingPrice);
   };
 
-  const getSummaryStickerAmount = () => {
-    return product.amountAtSheet * product.sheetsAtPrintingRun;
-  };
+  const getSummaryStickerAmount = () => product.amountAtSheet * product.sheetsAtPrintingRun;
 
   const calculateTime = () => {
-    const d = new Date();
+    const date = new Date();
 
     const material = product.material;
     const printRun = product.sheetsAtPrintingRun;
@@ -119,25 +136,25 @@ const calculateProduct = () => {
     let days = 1;
 
     if (
-        ((material == RITRAMA_MATTE || material == RITRAMA_GLOSS) &&  printRun > 99) 
-        || (material == RITRAMA_COATED && printRun > 20) 
-        || ((material == RAFLATAC_MATTE || material == RAFLATAC_GLOSS) && printRun > 99) 
-        ) {
-            days = 3;
+      ((material == RITRAMA_MATTE || material == RITRAMA_GLOSS) && printRun > 99) ||
+      (material == RITRAMA_COATED && printRun > 20) ||
+      ((material == RAFLATAC_MATTE || material == RAFLATAC_GLOSS) && printRun > 99)
+    ) {
+      days = 3;
     } else if (
-        ((material == RITRAMA_MATTE || material == RITRAMA_GLOSS) &&  printRun > 50) 
-        || (material == RITRAMA_COATED && printRun > 5) 
-        || ((material == RAFLATAC_MATTE || material == RAFLATAC_GLOSS) && printRun > 50) 
-        ) {
-            days = 2; 
-    }  else if ((cutType == DIE_CUT && printRun > 40)) {
-        days = 3; 
-    } else if ((cutType == DIE_CUT && printRun > 10)) {
-        days = 2; 
-    } 
+      ((material == RITRAMA_MATTE || material == RITRAMA_GLOSS) && printRun > 50) ||
+      (material == RITRAMA_COATED && printRun > 5) ||
+      ((material == RAFLATAC_MATTE || material == RAFLATAC_GLOSS) && printRun > 50)
+    ) {
+      days = 2;
+    } else if (cutType == DIE_CUT && printRun > 40) {
+      days = 3;
+    } else if (cutType == DIE_CUT && printRun > 10) {
+      days = 2;
+    }
 
-    d.setDate(d.getDate() + days);
-    const finishDate = d.toLocaleString("uk-UA", { day: "numeric", month: "long" });
+    date.setDate(date.getDate() + days);
+    const finishDate = date.toLocaleString("uk-UA", { day: "numeric", month: "long" });
     return `${finishDate} 18:00`;
   };
 
