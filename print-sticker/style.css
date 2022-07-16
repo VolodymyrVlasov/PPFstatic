@@ -884,7 +884,8 @@ select {
         --color-light-light-gray: #fbfbfb;
     }
 
-    .material_card, .product_card {
+    .material_card,
+    .product_card {
         width: 100%;
     }
 
@@ -969,4 +970,30 @@ select {
 .product_sub_link :last-child {
     color: var(--color-gray);
     font-size: 14px;
+}
+
+.product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+
+}
+
+.product-gallery-image_wrapper {
+    width: 25%;
+}
+
+.product-gallery-image {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.product-gallery-image_description {
+    position: relative;
+    margin-top: -19%;
+    z-index: -1;
+    margin-left: 6%;
 }
