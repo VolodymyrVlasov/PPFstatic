@@ -2,33 +2,22 @@ import { customRange } from "./app.js";
 import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../src/CuttingTypes.js";
 import { MAX_PRINT_X_SKYCUT, MAX_PRINT_Y_SKYCUT, MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT } from "../src/Sizes.js";
 import { PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE } from "../src/Prices.js";
-import {
-  RAFLATAC,
-  RAFLATAC_MATTE,
-  RAFLATAC_GLOSS,
-  RAFLATAC_FOIL,
-  RITRAMA_MATTE,
-  RITRAMA_GLOSS,
-  RITRAMA_COATED,
-  TRANSPARENT,
-  TRANSPARENT_MATTE,
-  TRANSPARENT_WHITE,
-  TRANSPARENT_FOIL,
-  VINE,
-  PET,
-} from "../src/MaterialTypes.js";
+import { RAFLATAC_MATTE, RAFLATAC_GLOSS, RITRAMA_MATTE, RITRAMA_GLOSS, RITRAMA_COATED } from "../src/MaterialTypes.js";
 
 const { changeRangeUI: renderDiameterRange, inputNode: diameterInput } = customRange("input_diameter", 32, 40);
 const { changeRangeUI: renderAmountUI, inputNode: amountInput } = customRange("input_amount", 32, 60);
 
-const priceLabel = document.getElementById("price");
-const timeLabel = document.getElementById("prod-time");
-const cuttingTypeSelect = document.getElementById("cut");
+const log = (...messages) => console.log(...messages);
 
 let isSizeChanged = false;
-let isMaterialChanged = false;
 let isCuttingTypeChanged = false;
+let isShowDetails = false;
 
+const cuttingTypeSelect = document.getElementById("cut");
+const summaryCard = document.getElementById("summary");
+const priceLabel = document.getElementById("price");
+const timeLabel = document.getElementById("prod-time");
+const detailedPriceBtn = document.getElementById("detailed_price_btn")
 
 const product = {
   diameter: 50,
@@ -46,64 +35,147 @@ const product = {
   finishTime: `${(new Date().getDate() + 1).toLocaleString("uk-UA", { day: "numeric", month: "long" })} 18:00`,
 };
 
-const renderCalculation = () => {
-  if (isSizeChanged || isCuttingTypeChanged) {
-    amountInput.min = product.amountAtSheet;
-    amountInput.step = product.amountAtSheet;
-    amountInput.max = product.amountAtSheet * 50;
-    amountInput.value = product.amountAtSheet;
-    renderAmountUI();
-    isSizeChanged = false;
-    isCuttingTypeChanged = false;
-  }
+const getDetailedSummaryCard = () => {
+  return `
+        <div class="col col-b-gap width-100">     
+            <div class="row row-b-gap width-100">
+                <div class="col col-gap flex-1">
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Наліпок на аркуші ${product.cutType == "KISS_CUT_A4" ? "А4:" : "А3:"}</span>
+                        <strong class="text-12--gray">${product.cutType == "KISS_CUT_A4" ? product.amountAtSheet / 2 : product.amountAtSheet} шт</strong>
+                    </div>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Аркушів у накладі:</span>
+                        <strong class="text-12--gray">${product.sheetsAtPrintingRun} шт</strong>
+                    </div>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Метрів порізки у накладі:</span>
+                        <strong class="text-12--gray">${product.cutAtPrintingRun} мп</strong>
+                    </div>
+                </div>
+        
+                <div class="col col-gap flex-1">
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Вартість друку:</span>
+                        <strong class="text-12--gray">${product.printingPrice} грн</strong>
+                    </div>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Вартість порізки:</span>
+                        <strong class="text-12--gray">${product.cutingPrice} грн</strong>
+                    </div>
+                    <div class="row-sp-btw  width-100 border-bottom">
+                        <span class="text-12--gray">Вартість 1 наліпки:</span>
+                        <strong class="text-12--gray">${(product.totalPrice / (product.sheetsAtPrintingRun * product.amountAtSheet)).toFixed(2)} грн</strong>
+                    </div>
+                </div>
+            </div> 
+            <div class="summary_main_labels__row">
+                <div class="col col-gap flex-1">
+                    <label for="prod-time">Готовність:</label>
+                    <strong id="prod-time" class="link" title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">${product.finishTime}</strong>
+                </div>
 
-  if (product.diameter < 50 && cuttingTypeSelect.children.length == 3) {
-    cuttingTypeSelect.children[2].disabled = true
-  } else if (product.diameter >= 50) {
-    cuttingTypeSelect.children[2].disabled = false;
-  }
+                <div class="col col-gap flex-1">
+                    <label for="price">Варстіть:</label>
+                    <strong id="price" class="price">${product.totalPrice} грн</strong>
+                </div>
+            </div>
+        </div>`;
+};
 
-  if (product.cutType === "KISS_CUT_A4") {
-    diameterInput.min = 5;
-    diameterInput.max = 200;
-    renderDiameterRange();
-    renderAmountUI();
-  } 
-  if (product.cutType === "DIE_CUT") {
-    diameterInput.max = 250;
-    diameterInput.min = 50;
-    renderDiameterRange();
-    renderAmountUI();
-  } 
-  if (product.cutType === "KISS_CUT_A3" && diameterInput.max !== 300) {
-    diameterInput.max = 300;
-    diameterInput.min = 5;
-    renderDiameterRange();
-    renderAmountUI();
-  }
-
-  if (product.material === "TRANSPARENT_WHITE") {
-    cuttingTypeSelect.children[0].disabled = true;
-    cuttingTypeSelect.children[1].selected = true;
-    diameterInput.max = 200;
-    diameterInput.min = 5;
-    renderDiameterRange();
-    renderAmountUI();
-  } else {
-    cuttingTypeSelect.children[0].disabled = false;
-  }
-
-  priceLabel.innerText = `${product.totalPrice} грн`;
-  timeLabel.innerText = product.finishTime;
-
-  priceLabel.dataset.title = `
-        Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}`:  ` А3:\t${product.amountAtSheet}`}\t\tшт.
+const getSummaryCard = () => {
+  const getTitle = () => {
+    return `
+        Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}` : ` А3:\t${product.amountAtSheet}`}\t\tшт.
         Аркушів у накладі:\t\t${product.sheetsAtPrintingRun}\t\tшт.
         Метрів порізки:\t\t\t${product.cutAtPrintingRun}\t\tм.п.
         Вартість друку:\t\t\t${product.printingPrice}\t\tгрн.
         Вартість порізки:\t\t${product.cutingPrice}\t\tгрн.
         Вартість 1 наліпки.:\t\t${(product.totalPrice / (product.sheetsAtPrintingRun * product.amountAtSheet)).toFixed(2)}\t\tгрн.
         Загальна вартість:\t\t${product.totalPrice}\t\tгрн.`;
+  };
+  
+  return `
+        <div class="summary_main_labels__col">
+            <div class="col col-gap flex-1">
+                <label for="prod-time">Готовність:</label>
+                <strong id="prod-time"  class="link"
+                title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">${product.finishTime}</strong>
+            </div>
+            <div class="col col-gap flex-1">
+                <label for="price">Варстіть:</label>
+                <strong id="price" class="price" title="${getTitle()}">${product.totalPrice} грн</strong>
+            </div>
+        </div>
+        `;
+};
+
+const renderCalculation = () => {
+  if (isSizeChanged || isCuttingTypeChanged) {
+    amountInput.min = product.amountAtSheet;
+    amountInput.step = product.amountAtSheet;
+    amountInput.max = product.amountAtSheet * 50;
+    amountInput.value = product.amountAtSheet;
+    product.targetStickerAmount = product.amountAtSheet;
+    isSizeChanged = false;
+    isCuttingTypeChanged = false;
+  }
+  if (product.diameter < 50 && cuttingTypeSelect.children.length == 3) {
+    cuttingTypeSelect.children[2].disabled = true;
+  } else if (product.diameter >= 50) {
+    cuttingTypeSelect.children[2].disabled = false;
+  }
+  if (product.cutType === "KISS_CUT_A4") {
+    diameterInput.min = 5;
+    diameterInput.max = 200;
+  }
+  if (product.cutType === "DIE_CUT") {
+    diameterInput.max = 250;
+    diameterInput.min = 50;
+  }
+  if (product.cutType === "KISS_CUT_A3" && diameterInput.max !== 300) {
+    diameterInput.max = 300;
+    diameterInput.min = 5;
+  }
+  if (product.material === "TRANSPARENT_WHITE") {
+    cuttingTypeSelect.children[0].disabled = true;
+    cuttingTypeSelect.children[1].selected = true;
+    diameterInput.max = 200;
+    diameterInput.min = 5;
+  } else {
+    cuttingTypeSelect.children[0].disabled = false;
+  }
+
+  if (isShowDetails) {
+    detailedPriceBtn.innerText = "+"
+    summaryCard.parentElement.classList.remove("flex-1");
+    summaryCard.parentElement.classList.add("flex-3");
+    detailedPriceBtn.classList.add("rotate-45");
+    summaryCard.innerHTML = getDetailedSummaryCard();
+  }
+  if (!isShowDetails) {
+    detailedPriceBtn.innerText = "i"
+    summaryCard.parentElement.classList.remove("flex-3");
+    detailedPriceBtn.classList.remove("rotate-45");
+    summaryCard.parentElement.classList.add("flex-1");
+
+    summaryCard.innerHTML = getSummaryCard();
+    priceLabel.title = `
+        Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}` : ` А3:\t${product.amountAtSheet}`}\t\tшт.
+        Аркушів у накладі:\t\t${product.sheetsAtPrintingRun}\t\tшт.
+        Метрів порізки:\t\t\t${product.cutAtPrintingRun}\t\tм.п.
+        Вартість друку:\t\t\t${product.printingPrice}\t\tгрн.
+        Вартість порізки:\t\t${product.cutingPrice}\t\tгрн.
+        Вартість 1 наліпки.:\t\t${(product.totalPrice / (product.sheetsAtPrintingRun * product.amountAtSheet)).toFixed(2)}\t\tгрн.
+        Загальна вартість:\t\t${product.totalPrice}\t\tгрн.`;
+  }
+
+  renderDiameterRange();
+  renderAmountUI();
+  setTimeout(() => {
+    renderDiameterRange();
+    renderAmountUI();
+  }, 150);
 };
 
 const calculateProduct = () => {
@@ -126,7 +198,7 @@ const calculateProduct = () => {
         break;
       case KISS_CUT_A4:
         xAxisCount = Math.floor((MAX_PRINT_X_SKYCUT - 8) / (product.diameter + BLEED_KISS_CUT));
-        yAxisCount = Math.floor(((MAX_PRINT_Y_SKYCUT * 0.5 - 8) / (product.diameter + BLEED_KISS_CUT))) * 2;
+        yAxisCount = Math.floor((MAX_PRINT_Y_SKYCUT * 0.5 - 8) / (product.diameter + BLEED_KISS_CUT)) * 2;
         break;
       case DIE_CUT:
         xAxisCount = Math.floor(MAX_PRINT_X_SUMMA / (product.diameter + BLEED_DIE_CUT));
@@ -147,7 +219,7 @@ const calculateProduct = () => {
   };
 
   const getCutingPrice = () => {
-    return product.cutAtPrintingRun * SELFADHESIVE_CUT_PRICE[product.cutType][getPriceIndex(product.cutAtPrintingRun)];
+    return Math.ceil(product.cutAtPrintingRun * SELFADHESIVE_CUT_PRICE[product.cutType][getPriceIndex(product.cutAtPrintingRun)]);
   };
 
   const getTotalPrice = () => {
@@ -158,12 +230,10 @@ const calculateProduct = () => {
 
   const calculateTime = () => {
     const date = new Date();
-
     const material = product.material;
     const printRun = product.sheetsAtPrintingRun;
     const cutType = product.cutType;
     let days = 1;
-
     if (
       ((material == RITRAMA_MATTE || material == RITRAMA_GLOSS) && printRun > 99) ||
       (material == RITRAMA_COATED && printRun > 20) ||
@@ -181,7 +251,6 @@ const calculateProduct = () => {
     } else if (cutType == DIE_CUT && printRun > 10) {
       days = 2;
     }
-
     date.setDate(date.getDate() + days);
     const finishDate = date.toLocaleString("uk-UA", { day: "numeric", month: "long" });
     return `${finishDate} 18:00`;
@@ -216,7 +285,6 @@ document.getElementById("calculator").addEventListener("input", (e) => {
       break;
     case "material":
       product.material = target.value;
-      isMaterialChanged = true;
       break;
     case "cut":
       product.cutType = target.value;
@@ -224,6 +292,13 @@ document.getElementById("calculator").addEventListener("input", (e) => {
       break;
   }
   calculateProduct();
+});
+
+detailedPriceBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  isShowDetails = !isShowDetails;
+  log(isShowDetails);
+  renderCalculation();
 });
 
 calculateProduct();

@@ -12,13 +12,13 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: 45%;
-}  
+}
 
 /*top section with back image*/
 .head-section {
     /* background-color: var(--color-light-gray); */
-    background: rgb(212,216,223);
-    background: linear-gradient(90deg, rgba(212,216,223,1) 0%, rgba(234,238,246,1) 25%, rgba(234,238,246,1) 73%, rgba(213,216,221,1) 100%);
+    background: rgb(212, 216, 223);
+    background: linear-gradient(90deg, rgba(212, 216, 223, 1) 0%, rgba(234, 238, 246, 1) 25%, rgba(234, 238, 246, 1) 73%, rgba(213, 216, 221, 1) 100%);
     box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.05);
 }
 
@@ -44,7 +44,7 @@
     color: var(--color-theme);
 }
 
-.reviews > ol > li {
+.reviews>ol>li {
     width: 14px;
     height: 14px;
     background: url("../static/start.svg") no-repeat center;
@@ -138,7 +138,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: var(--color-gray);
 }
 
-.custom_input > span {
+.custom_input>span {
     display: inline-flex;
     justify-content: center;
     line-height: 100%;
@@ -200,9 +200,49 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .summary {
-    flex: 1;
-    padding: 40px 0 40px 40px;
+    padding: 60px 0 30px 40px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.summary_details_btn {
+    cursor: pointer;
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 999px;
+    background-color: var(--color-theme);
+    border: 1px solid transparent;
+    color: white;
+}
+
+.summary_details_btn:hover {
+    transition: 300ms ease;
+    /* transform: scale(1.1)!important; */
+    border: 1px solid var(--color-theme);
+    color: var(--color-theme);
+    background-color: transparent;
+
+}
+
+.summary_main_labels__row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: var(--size-big-gap);
+}
+.summary_main_labels__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: var(--size-gap);
 }
 
 .range {
@@ -210,14 +250,14 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 40px;
 }
 
-.range > label {
+.range>label {
     color: var(--color-gray);
     font-size: 14px;
     padding-left: var(--size-gap);
     margin-bottom: 40px;
 }
 
-.range > input {
+.range>input {
     width: 100%;
 }
 
@@ -253,7 +293,7 @@ select {
     transform: rotate(45deg);
 }
 
-.select > label {
+.select>label {
     color: var(--color-gray);
     font-size: 14px;
     padding-left: var(--size-gap);
@@ -264,12 +304,12 @@ select {
     border: 1px solid var(--color-theme);
 }
 
-.select:focus-within > label,
-.select:hover > label {
+.select:focus-within>label,
+.select:hover>label {
     color: var(--color-theme);
 }
 
-.select > select {
+.select>select {
     border: 0;
     outline: none;
     width: 95%;
@@ -296,7 +336,7 @@ select {
     display: flex;
 }
 
-.contact-widget--wrapper > div:not(:last-child) {
+.contact-widget--wrapper>div:not(:last-child) {
     margin-right: var(--size-big-gap);
 }
 
@@ -308,7 +348,7 @@ select {
     margin-right: var(--size-big-gap);
 }
 
-.contact-widget--container > *:not(:last-child) {
+.contact-widget--container>*:not(:last-child) {
     margin-bottom: var(--size-big-gap);
 }
 
@@ -318,17 +358,17 @@ select {
     align-items: flex-start;
 }
 
-.contact-widget--card > u {
+.contact-widget--card>u {
     color: var(--color-theme);
 }
 
-.contact-widget--card:hover > span:before,
-.contact-widget--card:focus > span:before {
+.contact-widget--card:hover>span:before,
+.contact-widget--card:focus>span:before {
     transform: scale(1.7);
     outline: none;
 }
 
-.contact-widget--card > span {
+.contact-widget--card>span {
     display: flex;
     position: relative;
     padding-top: 34px;
@@ -465,7 +505,7 @@ select {
     transition: 300ms;
 }
 
-.active > .a-btn {
+.active>.a-btn {
     background-color: var(--color-light-light-theme);
     color: var(--color-theme);
 }
@@ -474,15 +514,15 @@ select {
     padding: 50px;
 }
 
-.active > .a-btn > .a-btn-ico::before {
+.active>.a-btn>.a-btn-ico::before {
     transform: rotate(0deg);
 }
 
-.active > .a-btn > .a-btn-ico::after {
+.active>.a-btn>.a-btn-ico::after {
     background-color: var(--color-theme);
 }
 
-.active > .a-panel {
+.active>.a-panel {
     padding: 30px;
     opacity: 1;
     max-height: 500px;
@@ -512,7 +552,7 @@ select {
     border-radius: 0 12px 12px 0;
 }
 
-.table > thead {
+.table>thead {
     font-weight: 600;
     background-color: var(--color-light-light-theme);
 }
@@ -537,16 +577,16 @@ select {
     transition: 300ms;
 }
 
-.table > tbody tr:hover {
+.table>tbody tr:hover {
     background-color: var(--color-light-gray);
 }
 
-.table > tbody td:hover:after {
+.table>tbody td:hover:after {
     opacity: 1;
     right: -6px;
 }
 
-.table > tbody th {
+.table>tbody th {
     min-width: 20%;
     font-weight: 600;
     text-align: left;
@@ -563,7 +603,7 @@ select {
     border-radius: 12px;
 }
 
-.img_wrapper > img {
+.img_wrapper>img {
     min-width: 260px;
     width: 100%;
     height: 275px;
@@ -572,7 +612,7 @@ select {
     transition: 1s;
 }
 
-.img_wrapper > img:hover {
+.img_wrapper>img:hover {
     transform: scale(2) translateX(10%) translateY(-15%);
 }
 
@@ -675,7 +715,7 @@ select {
         padding: 8px 18px;
     }
 
-    .contact-widget--card > u {
+    .contact-widget--card>u {
         font-size: var(--size-small-font-size);
     }
 
@@ -689,16 +729,21 @@ select {
         padding: 0 15px;
     }
 
+    .summary_main_labels__col {
+        flex-direction: row;
+    }
+
     .head-container {
         background-position: 250px;
         background-size: 80%;
         padding: 20px 0;
     }
-    .contact-widget--card > p {
+
+    .contact-widget--card>p {
         display: none;
     }
 
-    .contact-widget--card > span {
+    .contact-widget--card>span {
         padding-top: 28px;
         margin-bottom: 8px;
     }
@@ -706,6 +751,11 @@ select {
 
 /* `sm` applies to small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .summary_details_btn {
+        right: -4px;
+        top: -12px;
+    }
+
     :root {
         --color-background-overlayout: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
     }
@@ -726,11 +776,11 @@ select {
         background-size: cover;
     }
 
-    .head-container > div {
+    .head-container>div {
         width: 100%;
     }
 
-    .reviews > ol {
+    .reviews>ol {
         flex-direction: row;
     }
 
@@ -752,7 +802,7 @@ select {
         flex-direction: row;
     }
 
-    .summary > div {
+    .summary>div {
         flex: 1;
         padding: 10px;
     }
@@ -761,12 +811,12 @@ select {
         flex-direction: column;
     }
 
-    .row-gap > *:not(:last-child) {
+    .row-gap>*:not(:last-child) {
         margin-right: 0;
         margin-bottom: var(--size-gap);
     }
 
-    .row-b-gap > *:not(:last-child) {
+    .row-b-gap>*:not(:last-child) {
         margin-right: 0;
         margin-bottom: var(--size-big-gap);
     }
@@ -778,7 +828,7 @@ select {
         padding: 16px 48px 16px 16px;
     }
 
-    .active > .a-panel {
+    .active>.a-panel {
         padding: 16px;
     }
 
@@ -804,7 +854,7 @@ select {
         position: static;
     }
 
-    .contacts_card > .row-gap a:not(:last-child) {
+    .contacts_card>.row-gap a:not(:last-child) {
         margin-right: var(--size-gap);
     }
 
@@ -823,7 +873,7 @@ select {
         flex-direction: column-reverse;
     }
 
-    .contact-widget--wrapper > div:not(:last-child) {
+    .contact-widget--wrapper>div:not(:last-child) {
         margin-right: 0;
     }
 
@@ -835,7 +885,7 @@ select {
         width: 50% !important;
     }
 
-    .contact-widget--wrapper > div {
+    .contact-widget--wrapper>div {
         margin-bottom: var(--size-small-gap);
     }
 }
@@ -861,6 +911,7 @@ select {
         width: 100%;
         margin-bottom: var(--size-big-gap);
     }
+
     .contact-widget--wrapper {
         width: 100%;
     }
@@ -886,22 +937,21 @@ select {
         margin-bottom: var(--size-small-gap);
     }
 
-    .contact-widget--card > u {
+    .contact-widget--card>u {
         font-size: var(--size-medium-font-size);
         color: black;
     }
 
-    .viber:before, .email:before,
-    .phone:before, .telegram:before {
+    .viber:before,
+    .email:before,
+    .phone:before,
+    .telegram:before {
         display: none;
     }
 
-    .contact-widget--card > span {
+    .contact-widget--card>span {
         padding-top: 0;
         margin-bottom: 4px;
     }
 
 }
-
-
-

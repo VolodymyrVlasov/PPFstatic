@@ -173,7 +173,7 @@
 
 .before-tel:before {
     content: "";
-    background: url("../img/icon-tel.svg") center / 100% no-repeat;
+    background: url("../static/icon-tel.svg") center / 100% no-repeat;
     margin: 2px 20px 0 0;
     display: flex;
     width: 16px;
@@ -182,7 +182,7 @@
 
 .before-mail:before {
     content: "";
-    background: url("../img/icon-email.svg") center / 100% no-repeat;
+    background: url("../static/icon-email.svg") center / 100% no-repeat;
     margin: 2px 20px 0 0;
     display: flex;
     width: 16px;
@@ -191,7 +191,7 @@
 
 .before-telegram:before {
     content: "";
-    background: url("../img/icon-telegram.svg") center / 100% no-repeat;
+    background: url("../static/icon-telegram.svg") center / 100% no-repeat;
     margin: 2px 20px 0 0;
     display: flex;
     width: 16px;
@@ -200,7 +200,7 @@
 
 .before-viber:before {
     content: "";
-    background: url("../img/icon-viber.svg") center / 100% no-repeat;
+    background: url("../static/icon-viber.svg") center / 100% no-repeat;
     margin: 2px 20px 0 0;
     display: flex;
     width: 16px;

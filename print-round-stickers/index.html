@@ -49,7 +49,7 @@
             <div class="container col col-gap">
                 <h2 class="text-32">Розрахунок вартості друку</h2>
                 <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
-                <div id="calculator" class="calculator row">
+                <form id="calculator" class="calculator row">
                     <div class="inputs col col-b-gap border-right">
                         <div class="range row row-b-gap">
                             <div class="custom_input" id="input_diameter">
@@ -65,7 +65,7 @@
                                 <label aria-label="Обери кількість" class="custom_input-label"
                                     for="input_range-_amount">Кількість (шт)</label>
                                 <input type="range" id="input_range_amount" class="custom_input-input--range" min="40"
-                                    max="2000" value="40" step="40"/>
+                                    max="2000" value="40" step="40" />
                             </div>
                         </div>
                         <div class="material-quality row row-b-gap">
@@ -90,24 +90,29 @@
                             <div class="select col">
                                 <label for="cut">Порізка</label>
                                 <select name="cut" id="cut" aria-label="Обери якість друку наліпки">
-                                    <option value="KISS_CUT_A3" selected>Контурна на А3  (5 - 300 мм)</option>
+                                    <option value="KISS_CUT_A3" selected>Контурна на А3 (5 - 300 мм)</option>
                                     <option value="KISS_CUT_A4">Контурна на А4 (5 - 200 мм)</option>
                                     <option value="DIE_CUT">Наскрізна (50 - 250 мм)</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="summary col col-gap">
-                        <div class="col col-gap">
-                            <label for="prod-time">Готовність:</label>
-                            <strong id="prod-time">1 жовтня 18:30</strong>
+                    <div class="summary flex-1">
+                        <div id="summary" class="col col-gap">
+                            <div class="col col-gap">
+                                <label for="prod-time">Готовність:</label>
+                                <strong id="prod-time" class="link">1 жовтня 18:00</strong>
+                            </div>
+                            <div class="col col-gap">
+                                <label for="price">Варстіть:</label>
+                                <strong id="price" class="price" title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70 грн</strong>
+                            </div>
                         </div>
-                        <div class="col col-gap">
-                            <label for="price">Варстіть:</label>
-                            <strong id="price" class="price data_title">130 грн</strong>
-                        </div>
+                        <button type="button" id="detailed_price_btn" class="summary_details_btn"
+                            aria-label="Більше інформації про розрахунок"
+                            title="Більше інформації про розрахунок">i</button>
                     </div>
-                </div>
+                </form>
                 <div>
                     <p>*Мінімальне замовлення - один макет на одному друкованому аркуші (SRA3) обраного матеріалу</p>
                 </div>
