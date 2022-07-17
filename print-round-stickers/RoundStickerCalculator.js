@@ -1,4 +1,4 @@
-import { customRange } from "./app.js";
+import { customRange } from "../src/app.js";
 import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../src/CuttingTypes.js";
 import { MAX_PRINT_X_SKYCUT, MAX_PRINT_Y_SKYCUT, MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT } from "../src/Sizes.js";
 import { PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE } from "../src/Prices.js";
@@ -113,10 +113,11 @@ const getSummaryCard = () => {
 const renderCalculation = () => {
   if (isSizeChanged || isCuttingTypeChanged) {
     amountInput.min = product.amountAtSheet;
+    amountInput.value = product.amountAtSheet;
     amountInput.step = product.amountAtSheet;
     amountInput.max = product.amountAtSheet * 50;
-    amountInput.value = product.amountAtSheet;
     product.targetStickerAmount = product.amountAtSheet;
+    product.sheetsAtPrintingRun = 1;
     isSizeChanged = false;
     isCuttingTypeChanged = false;
   }
