@@ -108,7 +108,7 @@
 .row-wrap {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--size-big-gap);
+    /* gap: var(--size-big-gap); */
 }
 
 .col {
