@@ -12,9 +12,10 @@
 
 .product-gallery-image_wrapper {
     width: calc(25% - var(--size-gap));
-    height: 100%;
     margin-bottom: var(--size-gap);
+    background-color: var(--color-gray);
 }
+
 
 .product-gallery_card {
     width: calc(25% - var(--size-small-gap));
