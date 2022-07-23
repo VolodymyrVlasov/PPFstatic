@@ -98,6 +98,7 @@
 .row-center {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .row-sp-btw {
@@ -133,20 +134,20 @@ a {
 }
 
 
-.col-gap>*:not(:last-child) {
-    margin-bottom: var(--size-gap) !important;
+.col-gap {
+    gap: var(--size-gap) !important;
 }
 
-.col-b-gap>*:not(:last-child) {
-    margin-bottom: var(--size-big-gap);
+.col-b-gap {
+    gap: var(--size-big-gap);
 }
 
-.row-gap>*:not(:last-child) {
-    margin-right: var(--size-gap);
+.row-gap {
+    gap: var(--size-gap);
 }
 
-.row-b-gap>*:not(:last-child) {
-    margin-right: var(--size-big-gap);
+.row-b-gap {
+    gap: var(--size-big-gap);
 }
 
 .raiting-0 {

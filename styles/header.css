@@ -207,6 +207,15 @@
     height: 16px;
 }
 
+.before-location:before {
+    content: "";
+    background: url("../static/icon-location.svg") center / 100% no-repeat;
+    margin: 2px 20px 0 0;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
     .drop_down_container,
