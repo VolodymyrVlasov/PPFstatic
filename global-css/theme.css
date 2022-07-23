@@ -144,6 +144,9 @@ a {
 .row-gap>*:not(:last-child) {
     margin-right: var(--size-gap);
 }
+.row-s-gap>*:not(:last-child) {
+    margin-right: var(--size-small-gap);
+}
 
 .row-b-gap>*:not(:last-child) {
     margin-right: var(--size-big-gap);
