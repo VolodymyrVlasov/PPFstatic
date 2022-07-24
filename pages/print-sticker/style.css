@@ -384,7 +384,7 @@ select {
 } */
 
 .product_card {
-    width: calc(25% - var(--size-big-gap));
+    width: calc(25% - var(--size-big-gap) + var(--size-big-gap) / 4);
 }
 
 
@@ -559,7 +559,7 @@ select {
 }
 
 .material_card {
-    width: calc(33% - var(--size-big-gap));
+    width: calc(33% - var(--size-big-gap) );
     margin-bottom: var(--size-big-gap);
 }
 
@@ -666,7 +666,7 @@ select {
 
     .material_card,
     .product_card {
-        width: calc(50% - var(--size-big-gap));
+        width: calc(50% - var(--size-big-gap) + var(--size-big-gap) / 2);
     }
 
 
