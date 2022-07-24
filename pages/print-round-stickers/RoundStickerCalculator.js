@@ -1,8 +1,8 @@
-import { customRange } from "../src/app.js";
-import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../src/CuttingTypes.js";
-import { MAX_PRINT_X_SKYCUT, MAX_PRINT_Y_SKYCUT, MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT } from "../src/Sizes.js";
-import { PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE } from "../src/Prices.js";
-import { RAFLATAC_MATTE, RAFLATAC_GLOSS, RITRAMA_MATTE, RITRAMA_GLOSS, RITRAMA_COATED } from "../src/MaterialTypes.js";
+import { customRange } from "../../src/app.js";
+import { KISS_CUT_A4, KISS_CUT_A3, DIE_CUT } from "../../src/CuttingTypes.js";
+import { MAX_PRINT_X_SKYCUT, MAX_PRINT_Y_SKYCUT, MAX_PRINT_X_SUMMA, MAX_PRINT_Y_SUMMA, BLEED_KISS_CUT, BLEED_DIE_CUT } from "../../src/Sizes.js";
+import { PRINTRUN_INDEXES, SELFADHESIVE_CUT_PRICE, SELFADHESIVE_PRINT_PRICE } from "../../src/Prices.js";
+import { RAFLATAC_MATTE, RAFLATAC_GLOSS, RITRAMA_MATTE, RITRAMA_GLOSS, RITRAMA_COATED } from "../../src/MaterialTypes.js";
 
 const { changeRangeUI: renderDiameterRange, inputNode: diameterInput } = customRange("input_diameter", 32, 40);
 const { changeRangeUI: renderAmountUI, inputNode: amountInput } = customRange("input_amount", 32, 60);

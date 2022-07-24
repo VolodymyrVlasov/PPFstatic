@@ -1,4 +1,26 @@
-@import url(../global-css/style.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, p {
+    text-decoration: none;
+    display: inline-flex;
+    color: inherit;
+    transition: 300ms;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+button {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    color: inherit;
+}
 
 .head-container {
     max-width: var(--size-container-width);
@@ -408,6 +430,15 @@ select {
 }
 
 .phone:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-tel.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+.location:before {
     content: "";
     width: var(--size-icon);
     height: var(--size-icon);

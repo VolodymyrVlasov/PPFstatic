@@ -1,0 +1,23 @@
+.social_btn {
+
+    width: 25px !important;
+    height: 25px !important;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+.social_btn:hover {
+    transform: scale(1.1);
+}
+
+.facebook_btn {
+    background: url("../static/icon-facebook-btn.svg") no-repeat center;
+}
+
+.instagram_btn {
+    background: url("../static/icon-instagram-btn.svg") no-repeat center;
+}
+
+.youtube_btn {
+    background: url("../static/icon-youtube-btn.svg") no-repeat center;
+}
