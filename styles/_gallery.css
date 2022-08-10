@@ -1,4 +1,4 @@
-.product-gallery {
+.product_gallery {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -8,7 +8,7 @@
 
 }
 
-.product-gallery-image_wrapper {
+.product_gallery_image__wrapper {
     width: calc(100% / 4 - var(--size-gap));
     display: flex;
     align-items: center;
@@ -18,32 +18,19 @@
     overflow: hidden;
 }
 
-.product-gallery-image_wrapper svg {
-    width: 80px;
-    height: 80px;
-}
 
-.product-gallery-image_wrapper picture {
+.product_gallery_image__wrapper picture {
     border-radius: 16px;
     overflow: hidden;
 }
 
-.product-gallery-image {
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-}
-
-.product-gallery-image_description {
+.product_gallery_image__description {
     display: none;
     position: relative;
     margin-top: -19%;
     z-index: -1;
     margin-left: 6%;
 }
-
-
-
 
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
@@ -60,12 +47,8 @@
         max-width: 960px;
     }
 
-    .product-gallery-image_wrapper {
+    .product_gallery_image__wrapper {
         width: calc(100% / 3 - var(--size-gap));
-    }
-
-    .product_card {
-        width: 50%;
     }
 
 
@@ -83,49 +66,18 @@
         max-width: 720px;
     }
 
-    .product-gallery-image_wrapper {
+    .product_gallery_image__wrapper{
         width: calc(100% / 2 - var(--size-gap));
     }
-
-    .row.row_gap {
-        flex-direction: column;
-    }
-
-
-
 }
 
 /*-------------------------------------------*/
 /* `md` applies to medium devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-    .product-gallery-image_wrapper {
-        flex: 0 1 calc(50% - var(--size-gap));
+    .product_gallery_image__wrapper {
+        flex: 0 1 calc(100% - var(--size-gap));
     }
 
-    .container {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-
-    .product-gallery {
-        justify-content: space-around;
-    }
-
-
-    .head-container {
-        background-position: 250px;
-        background-size: 80%;
-        padding: 20px 0;
-    }
-
-    .contact-widget--card>p {
-        display: none;
-    }
-
-    .contact-widget--card>span {
-        padding-top: 28px;
-        margin-bottom: 8px;
-    }
 }
 
 /* `sm` applies to small devices (portrait phones, less than 576px) */
@@ -135,7 +87,7 @@
     }
 
     .product-gallery-image_wrapper {
-        flex: 0 1 calc(50% - var(--size-gap));
+        flex: 0 1 calc(100% - var(--size-gap));
     }
 
 }
