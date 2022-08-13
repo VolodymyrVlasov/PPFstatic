@@ -53,18 +53,16 @@
     transition: 300ms ease;
 }
 
-@media (max-width: 1199.98px) {
-    .head_section> :first-child>.head_image,
-    .head_section> :last-child>.head_image  {
-        margin-top: -30%;
-    }
-
+@media (max-width: 1280.98px) {
     .head_section> :first-child {
-        margin-left: -20%;
+        margin-left: -15%;
     }
 
     .head_section> :last-child {
-       margin-right: -20%;
+        margin-right: -15%;
+    }
+    .head_image {
+        height: 75%;
     }
 }
 
