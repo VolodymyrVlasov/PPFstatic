@@ -12,6 +12,7 @@
 @import "./_headSection.css";
 @import "./_gallery.css";
 @import "./_map.css";
+@import "./_table.css";
 
 * {
     margin: 0;
