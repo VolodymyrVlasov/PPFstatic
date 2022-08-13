@@ -10,6 +10,7 @@
 @import "./_select.css";
 @import "./_calculator.css";
 @import "./_headSection.css";
+@import "./_map.css";
 
 * {
     margin: 0;
