@@ -6,6 +6,8 @@
     --size-container-max-width: 1240px;
     --size-container-padding: 60px 0;
     --size-section-padding: 0;
+    --size-button-padding: 12px 24px;
+    --size-button-min-width: 120px;
 
     /* colors */
     --color-theme: #D83E1B;
@@ -17,7 +19,7 @@
     --color-background-overlayout: linear-gradient(transparent, transparent);
 
     /* images */
-    --size-icon: 20px;
+    --size-icon: 16px;
     --size-border-radius: 12px;
     --size-raiting: 8px;
 
