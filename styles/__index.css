@@ -13,6 +13,7 @@
 @import "./_gallery.css";
 @import "./_map.css";
 @import "./_table.css";
+@import "./_productCardSection.css";
 
 * {
     margin: 0;

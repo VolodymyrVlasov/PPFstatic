@@ -1,0 +1,26 @@
+:root {
+    --image-height: 200px !important;
+}
+
+.product_card {
+    width: calc(25% - var(--size-big-gap));
+    /* width: 20%; */
+    border: 1px solid;
+    
+}
+
+.product_card__image_wrapper {
+    width: 100%;
+    height: var(--image-height);
+    background: var(--color-light-theme);
+    border-radius: var(--size-border-radius);
+
+
+}
+
+.product_card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

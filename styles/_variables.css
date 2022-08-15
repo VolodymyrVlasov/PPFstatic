@@ -4,8 +4,8 @@
     --size-gap: 24px;
     --size-big-gap: 48px;
     --size-container-max-width: 1240px;
-    --size-container-padding: 0;
-    --size-section-padding: 60px 0;
+    --size-container-padding: 60px 0;
+    --size-section-padding: 0;
 
     /* colors */
     --color-theme: #D83E1B;
