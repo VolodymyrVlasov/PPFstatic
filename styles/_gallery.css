@@ -91,19 +91,12 @@
 
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
-    .container {
-        max-width: 1140px;
-        padding: 0;
-    }
+   
 }
 
 
 /*`xl` applies to x-large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
-    .container {
-        max-width: 960px;
-    }
-
     .product_gallery_image__wrapper,
     .product_gallery_video__wrapper {
         width: calc(100% / 4 - var(--size-small-gap));
@@ -113,21 +106,10 @@
     .product_gallery_video__wrapper:hover {
         transform: scale(1.5);
     }
-
 }
 
 /* `lg` applies to large devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {
-    :root {
-        --size-section-padding: 48px;
-        --size-gap: 20px;
-        --size-gap-bottom: 8px;
-    }
-
-    .container {
-        max-width: 720px;
-    }
-
+@media (max-width: 991.98px) { 
     .product_gallery_image__wrapper,
     .product_gallery_video__wrapper {
         width: calc(100% / 3 - var(--size-small-gap));
@@ -149,20 +131,14 @@
 /*-------------------------------------------*/
 /* `md` applies to medium devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
-
     .product_gallery_image__wrapper,
     .product_gallery_video__wrapper {
         flex: 0 1 calc(100% /2 - var(--size-small-gap));
     }
-
 }
 
 /* `sm` applies to small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    :root {
-        --color-background-overlayout: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
-    }
-
     .product_gallery_image__wrapper,
     .product_gallery_video__wrapper {
         flex: 0 1 calc(100% / 2 - var(--size-small-gap));
@@ -172,22 +148,6 @@
 
 /* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
 @media (max-width: 320px) {
-
-    :root {
-        --size-gap: 16px;
-        --size-big-gap: 24px;
-        --size-icon: 20px;
-
-        --size-container-width: 1240px;
-
-        --color-theme: #D83E1B;
-        --color-light-theme: #ffe8e3;
-        --color-light-light-theme: #FFF6F4;
-        --color-gray: #6E6E6E;
-        --color-light-gray: #eeeeee;
-        --color-light-light-gray: #fbfbfb;
-    }
-
     .product_gallery_image__wrapper,
     .product_gallery_video__wrapper {
         flex: 0 1 calc(100% - var(--size-small-gap));

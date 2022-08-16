@@ -33,6 +33,8 @@
     --font-text-16: 16px;
     --font-text-14: 14px;
     --font-text-12: 12px;
+
+    --size-line-heignt: 1.5rem;
 }
 
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
@@ -43,8 +45,7 @@
         --size-gap: 24px;
         --size-big-gap: 48px;
         --size-container-max-width: 1240px;
-        --size-container-padding: 0 15px;
-        --size-section-padding: 48px;
+        --size-container-padding: 48px 0;
     }
 }
 
@@ -53,7 +54,7 @@
     :root {
         /* grid */
         --size-container-max-width: 960px;
-        --size-container-padding: 0 15px;
+        --size-container-padding: 48px 16px;
     }
 }
 
@@ -62,8 +63,8 @@
     :root {
         /* grid */
         --size-container-max-width: 720px;
-        --size-container-padding: 0 15px;
-        --size-section-padding: 48px;
+        --size-container-padding: 0 16px;
+        --size-section-padding: 32px 16px;
     }
 }
 
@@ -73,14 +74,12 @@
     :root {
         /* grid */
         --size-container-max-width: 100%;
-        --size-container-padding: 0 15px;
     }
 }
 
 /* `sm` applies to small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     :root {
-        --size-section-padding: 20px 0;
         --color-background-overlayout: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
    
         --size-small-gap: 8px;
