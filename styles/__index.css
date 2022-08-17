@@ -1,7 +1,6 @@
 @import "./_variables.css";
 @import "./_footer.css";
 @import "./_header.css";
-@import "./_style.css";
 @import "./_theme.css";
 @import "./_typography.css";
 @import "./_accordion.css";
@@ -13,6 +12,8 @@
 @import "./_gallery.css";
 @import "./_map.css";
 @import "./_table.css";
+@import "./_productCardSection.css";
+@import "./_buttons.css";
 
 * {
     margin: 0;
@@ -20,12 +21,11 @@
     box-sizing: border-box;
 }
 
-a,
-p {
+a {
     text-decoration: none;
     display: inline-flex;
     color: inherit;
-    transition: 300ms;
+    transition: var(--time-tr-time);
 }
 
 ol,
@@ -33,11 +33,22 @@ ul {
     list-style: none;
 }
 
+img {
+    background-color: var(--color-light-light-theme);
+    border-radius: var(--size-border-radius);
+    font-size: 12px;
+    color: var(--color-gray);
+    text-align: center;
+}
+
 button {
     border: 0;
     outline: 0;
     background-color: transparent;
     color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
 }
 
 select {
