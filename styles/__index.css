@@ -20,14 +20,16 @@
     box-sizing: border-box;
 }
 
-a, p {
+a,
+p {
     text-decoration: none;
     display: inline-flex;
     color: inherit;
     transition: 300ms;
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
