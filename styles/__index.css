@@ -28,18 +28,14 @@ a {
     transition: var(--time-tr-time);
 }
 
-ol, ul {
+ol,
+ul {
     list-style: none;
 }
 
 img {
     background-color: var(--color-light-light-theme);
     border-radius: var(--size-border-radius);
-    background-image: url("../static/spinner.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 8%;
-    /* padding: 12px; */
     font-size: 12px;
     color: var(--color-gray);
     text-align: center;
