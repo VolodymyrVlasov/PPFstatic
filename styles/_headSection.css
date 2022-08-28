@@ -13,7 +13,7 @@
     position: absolute;
     width: 100%;
     margin-top: 80px;
-    z-index: 9999;
+    z-index: 99;
 }
 
 .head_img_wrapper {
