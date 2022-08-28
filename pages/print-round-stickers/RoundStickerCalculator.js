@@ -37,44 +37,45 @@ const product = {
 
 const getDetailedSummaryCard = () => {
   return `
-        <div class="col big_gap width_100">     
-            <div class="row big_gap width_100">
-                <div class="col gap flex_1">
-                    <div class="row_sp_btw width_100 border_bottom">
-                        <span class="text_12__gray">Наліпок на аркуші ${product.cutType == "KISS_CUT_A4" ? "А4:" : "А3:"}</span>
-                        <strong class="text_12__gray">${product.cutType == "KISS_CUT_A4" ? product.amountAtSheet / 2 : product.amountAtSheet} шт</strong>
+        <div class="col col-b-gap width-100">     
+            <div class="row row-b-gap width-100">
+                <div class="col col-gap flex-1">
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Наліпок на аркуші ${product.cutType == "KISS_CUT_A4" ? "А4:" : "А3:"}</span>
+                        <strong class="text-12--gray">${product.cutType == "KISS_CUT_A4" ? product.amountAtSheet / 2 : product.amountAtSheet} шт</strong>
                     </div>
-                    <div class="row_sp_btw width_100 border_bottom">
-                        <span class="text_12__gray">Аркушів у накладі:</span>
-                        <strong class="text_12__gray">${product.sheetsAtPrintingRun} шт</strong>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Аркушів у накладі:</span>
+                        <strong class="text-12--gray">${product.sheetsAtPrintingRun} шт</strong>
                     </div>
-                    <div class="row_sp_btw width_100 border_bottom">
-                        <span class="text_12__gray">Метрів порізки у накладі:</span>
-                        <strong class="text_12__gray">${product.cutAtPrintingRun} мп</strong>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Метрів порізки у накладі:</span>
+                        <strong class="text-12--gray">${product.cutAtPrintingRun} мп</strong>
                     </div>
                 </div>
-                <div class="col gap flex_1">
-                    <div class="row_sp_btw width_100 border_bottom">
-                        <span class="text_12__gray">Вартість друку:</span>
-                        <strong class="text_12__gray">${product.printingPrice} грн</strong>
+        
+                <div class="col col-gap flex-1">
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Вартість друку:</span>
+                        <strong class="text-12--gray">${product.printingPrice} грн</strong>
                     </div>
-                    <div class="row_sp_btw width_100 border_bottom">
-                        <span class="text_12__gray">Вартість порізки:</span>
-                        <strong class="text_12__gray">${product.cutingPrice} грн</strong>
+                    <div class="row-sp-btw width-100 border-bottom">
+                        <span class="text-12--gray">Вартість порізки:</span>
+                        <strong class="text-12--gray">${product.cutingPrice} грн</strong>
                     </div>
-                    <div class="row_sp_btw  width_100 border_bottom">
-                        <span class="text_12__gray">Вартість 1 наліпки:</span>
-                        <strong class="text_12__gray">${(product.totalPrice / (product.sheetsAtPrintingRun * product.amountAtSheet)).toFixed(2)} грн</strong>
+                    <div class="row-sp-btw  width-100 border-bottom">
+                        <span class="text-12--gray">Вартість 1 наліпки:</span>
+                        <strong class="text-12--gray">${(product.totalPrice / (product.sheetsAtPrintingRun * product.amountAtSheet)).toFixed(2)} грн</strong>
                     </div>
                 </div>
             </div> 
-            <div class="row big_gap width_100">
-                <div class="col gap flex_1">
+            <div class="summary_main_labels__row">
+                <div class="col col-gap flex-1">
                     <label for="prod-time">Готовність:</label>
                     <strong id="prod-time" class="link" title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">${product.finishTime}</strong>
                 </div>
 
-                <div class="col gap flex_1">
+                <div class="col col-gap flex-1">
                     <label for="price">Варстіть:</label>
                     <strong id="price" class="price">${product.totalPrice} грн</strong>
                 </div>
@@ -95,15 +96,17 @@ const getSummaryCard = () => {
   };
   
   return `
-            <div class="col gap flex_1">
+        <div class="summary_main_labels__col">
+            <div class="col col-gap flex-1">
                 <label for="prod-time">Готовність:</label>
                 <strong id="prod-time"  class="link"
                 title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">${product.finishTime}</strong>
             </div>
-            <div class="col gap flex_1">
+            <div class="col col-gap flex-1">
                 <label for="price">Варстіть:</label>
                 <strong id="price" class="price" title="${getTitle()}">${product.totalPrice} грн</strong>
             </div>
+        </div>
         `;
 };
 
@@ -146,16 +149,17 @@ const renderCalculation = () => {
 
   if (isShowDetails) {
     detailedPriceBtn.innerText = "+"
-    summaryCard.parentElement.classList.remove("flex_1");
-    summaryCard.parentElement.classList.add("flex_3");
-    detailedPriceBtn.classList.add("rotate_45");
+    summaryCard.parentElement.classList.remove("flex-1");
+    summaryCard.parentElement.classList.add("flex-3");
+    detailedPriceBtn.classList.add("rotate-45");
     summaryCard.innerHTML = getDetailedSummaryCard();
   }
   if (!isShowDetails) {
-    summaryCard.parentElement.classList.remove("flex_3");
-    detailedPriceBtn.classList.remove("rotate_45");
     detailedPriceBtn.innerText = "i"
-    summaryCard.parentElement.classList.add("flex_1");
+    summaryCard.parentElement.classList.remove("flex-3");
+    detailedPriceBtn.classList.remove("rotate-45");
+    summaryCard.parentElement.classList.add("flex-1");
+
     summaryCard.innerHTML = getSummaryCard();
     priceLabel.title = `
         Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}` : ` А3:\t${product.amountAtSheet}`}\t\tшт.
