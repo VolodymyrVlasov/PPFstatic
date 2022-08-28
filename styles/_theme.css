@@ -118,6 +118,9 @@
 .big_gap {
     gap: var(--size-big-gap);
 }
+.w100 {
+    width: 100%;
+}
 
 .raiting_0 {
     display: flex;
