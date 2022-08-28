@@ -15,6 +15,7 @@
 @import "./_productCardSection.css";
 @import "./_buttons.css";
 @import "./_aminations.css";
+@import "./_materialCard.css";
 
 * {
     margin: 0;
