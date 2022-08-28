@@ -5,12 +5,11 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta name="description"
-        content="Друк наклейок Круглих · прямокутні · Фігурне на замовлення. ☑ Замовити наклейки і стікери на гаджети з порізкою і ламінуванням ➤ на Подолі в Києві ☎ 0 800 332-042">
+        content="Друк наклейок стандартної прямокутної форми ☑ Замовити наклейки і стікери на гаджети з порізкою і ламінуванням ➤ на Подолі в Києві ☎ 0 800 332-042">
     <meta name="keywords"
-        content="печать наклеек,печать стикеров,наклейки,стикеры,круглые наклейки,наклейки Киев,печать наклеек Киев, друк наклейок,друк стікерів,стікери,круглі наклейки,наклейки Київ,друк наклейок Київ,круглі наліпки,етикетки">
+        content="печать наклеек,печать стикеров,наклейки,стикеры,прямоугольные наклейки,наклейки Киев,печать наклеек Киев, друк наклейок,друк стікерів,стікери,круглі наклейки,наклейки Київ,друк наклейок Київ,етикетки">
     <link rel="stylesheet" href="../../styles/__index.css">
-    <link rel="stylesheet" href="print-sticker.css">
-    <title>Друк наклейок та стікер паків з контурною різкою | PaperFox</title>
+    <title>Друк наклейок та стікерів стандартної приямокутної форми | PaperFox</title>
 </head>
 
 <body>
@@ -208,10 +207,10 @@
 
             <div class="col_center gap head_description">
                 <h1 class="text_60 text_center width_100" aria-label="Друк наклейок і наліпок. Печать наклеек"
-                    title="Друк наклейок і наліпок. Печать наклеек">Друк наклейок</h1>
+                    title="Друк прямокутних наклейок і наліпок. Печать наклеек">Друк прямокутних наклейок</h1>
                 <ul class="text_center text_14__gray width_100">
-                    <li>Круглі наліпки з порізкою на аркушах або кожна окремо.</li>
-                    <li>Діаметром від 5 до 300 мм</li>
+                    <li>Друк прямоктних наклейок</li>
+                    <li>Без обмежень у мінімальноу розмірі</li>
                     <li>Вибір матеріалів під різне використання</li>
                     <li>Можливо термінове виготовлення (від 15 хвилин)</li>
                 </ul>
@@ -238,67 +237,74 @@
         </section>
 
         <section class="section">
-            <div class="container row big_gap">
-                <div class="product_card col gap">
-                    <picture class="product_card__image_wrapper">
-                        <source srcset=".././static/round-stickers.webp" type="image/webp">
-                        <img loading="lazy" decoding="async" class="product_card__image bg_img"
-                            src=".././static/ritrama-matte-paperfox.jpeg" width="4" height="3"
-                            alt="Друк та порізка круглих наліпок та стікерів в Києві">
-                    </picture>
-                    <div class="col small_gap">
-                        <h4 class="text_24">Круглі</h4>
-                        <p>Друк наліпок круглої форми самих різних розмірів – від 5 мм до 30 см в діаметрі.</p>
-                        <a title="Друк і плотерна порізка наліпок круглої форми" href="#" class="sub_link">
-                            <span>Замовити</span>
-                        </a>
+            <div class="container col gap">
+                <h2 class="text_32">Розрахунок вартості друку</h2>
+                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
+                <form id="calculator" class="calculator">
+                    <div class="inputs col big_gap">
+                        <div class="row big_gap width_100">
+                            <div class="custom_input" id="input_diameter">
+                                <span for="input_label_diameter" class="label">40</span>
+                                <label for="input_range_diameter" class="custom_input_label"
+                                    aria-label="Обери розмір у міліметрах"> Діаметр (мм)</label>
+                                <input type="range" id="input_range_diameter" class="custom_input_input__range" min="5"
+                                    max="300" value="50" />
+                            </div>
+                            <div class="custom_input" id="input_amount">
+                                <span for="input_range_amount" id="input_label_amount" class="text_16__bold">40</span>
+                                <label aria-label="Обери кількість" class="custom_input_label"
+                                    for="input_range_amount">Кількість (шт)</label>
+                                <input type="range" id="input_range_amount" class="custom_input_input__range" min="40"
+                                    max="2000" value="40" step="40" />
+                            </div>
+                        </div>
+                        <div class="row big_gap width_100">
+                            <div class="select col flex_1">
+                                <label for="material">Матеріал</label>
+                                <select name="material" id="material" aria-label="Обери матеріал наліпки">
+                                    <option value="RAFLATAC" selected>Паперова наліпка</option>
+                                    <option value="RAFLATAC_GLOSS">Паперова з глянцевою ламінацією</option>
+                                    <option value="RAFLATAC_MATTE">Паперова з матовою ламінацією</option>
+                                    <option value="RITRAMA_GLOSS">Вінілова глянцева</option>
+                                    <option value="RITRAMA_MATTE">Вінілова матова</option>
+                                    <option value="RITRAMA_COATED">Вініл з ламінацією</option>
+                                    <option value="TRANSPARENT">Прозора глянцева</option>
+                                    <option value="TRANSPARENT_MATTE">Напівпрозова матова</option>
+                                    <option value="VINE">Винна етикета</option>
+                                    <option value="RAFLATAC_FOIL">З фольгою (паперова)</option>
+                                    <option value="TRANSPARENT_FOIL">З фольгою (прозова)</option>
+                                    <option value="TRANSPARENT_WHITE">З друком білим кольором (прозора)</option>
+                                    <option value="PET">PET наліпка</option>
+                                </select>
+                            </div>
+                            <div class="select col flex_1">
+                                <label for="cut">Порізка</label>
+                                <select name="cut" id="cut" aria-label="Обери якість друку наліпки">
+                                    <option value="KISS_CUT_A3" selected>Контурна на А3 (5 - 300 мм)</option>
+                                    <option value="KISS_CUT_A4">Контурна на А4 (5 - 200 мм)</option>
+                                    <option value="DIE_CUT">Наскрізна (50 - 250 мм)</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="product_card col gap">
-                    <picture class="product_card__image_wrapper">
-                        <source srcset="../../static/print-stickers.webp" type="image/webp">
-                        <img loading="lazy" decoding="async" src="../../static/ritrama-glos-paperfox.jpeg" width="4"
-                            height="3" class="product_card__image bg_img"
-                            alt="Друк наліпок, наклейок і стікерів прямокутної стандартної форми в Києві під замовлення">
-                    </picture>
-                    <div class="col small_gap">
-                        <h4 class="text_24">Прямокутні </h4>
-                        <p>Стандартні прямокутні наклейки на самоклейці, вінілі, або ПЕТ. </p>
-                        <a title="Друк та порізка стандартних наліпок та стікерів прямокутної форми" href="#" class="sub_link">
-                            <span>Замовити</span>
-                        </a>
+                    <div class="summary_wrapper flex_1">
+                        <div id="summary" class="summary">
+                            <div class="col gap">
+                                <label for="prod-time">Готовність:</label>
+                                <strong id="prod-time" class="link">1 жовтня 18:00</strong>
+                            </div>
+                            <div class="col gap">
+                                <label for="price">Варстіть:</label>
+                                <strong id="price" class="price" title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70 грн</strong>
+                            </div>
+                        </div>
+                        <button type="button" id="detailed_price_btn" class="summary_details_btn"
+                            aria-label="Більше інформації про розрахунок"
+                            title="Більше інформації про розрахунок">i</button>
                     </div>
-                </div>
-                <div class="product_card col gap">
-                    <picture class="product_card__image_wrapper">
-                        <source srcset="../../static/ritrama-matte-paperfox.webp" type="image/webp">
-                        <img loading="lazy" decoding="async" src="../../static/ritrama-matte-paperfox.jpeg"
-                            class="product_card__image bg_img" width="4" height="3"
-                            alt="Виготовлення наліпок з плоттерною різкою кастомної форми в Києві ">
-                    </picture>
-                    <div class="col small_gap">
-                        <h4 class="text_24">Фігурні</h4>
-                        <p>Оригінальні фігурні стікери з плоттерною порізкою довільної форми.</p>
-                        <a title="Друк і плотерна порізка наліпок довільної та нестандартної форми" href="#" class="sub_link">
-                            <span>Замовити</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product_card col gap">
-                    <picture class="product_card__image_wrapper">
-                        <source srcset="../../static/round-stickers.webp" type="image/webp">
-                        <img loading="lazy" decoding="async" src="../static/round-stickers.webp" width="4" height="3"
-                            class="product_card__image bg_img"
-                            alt="Друк і виготовлення стікер паків, наборів стікерів під замовлення в Києві">
-                    </picture>
-                    <div class="col small_gap">
-                        <h4 class="text_24">Стікер паки</h4>
-                        <p>Різноманітні наліпки довільної форми на аркушах самоклейки або вінілу</p>
-                        <a title="Друк і плотерна порізка наборів наліпок у розмірах А6, А5 та А4 аркушах" href="#" class="sub_link">
-                            <span>Замовити</span>
-                        </a>
-                    </div>
+                </form>
+                <div>
+                    <p>*Мінімальне замовлення - один макет на одному друкованому аркуші (SRA3) обраного матеріалу</p>
                 </div>
             </div>
         </section>
@@ -333,238 +339,10 @@
         </section>
 
         
-        <section class="section">
-            <div class="container col gap">
-                <h3 class="text_32">Ціна на друк на самоклеючих матеріалах</h3>
-                <div class="col gap w100">
-                    <div class="table_wrapper">
-                    <p>Самоклейка формату А3</p>
-                    <table class="table">
-                            <thead>
-                                <tr>
-                                    <!-- 1 5 10 20 40 50 100 200 400 500 1000 -->
-                                    <th></th>
-                                    <th>1 + шт</th>
-                                    <th>6 + шт</th>
-                                    <th>11 + шт</th>
-                                    <th>21 + шт</th>
-                                    <th>41 + шт</th>
-                                    <th>51 + шт</th>
-                                    <th>101 + шт</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th
-                                        title="Крейдованана самоклейка на паперовій основі для цифрового лазерного друку. Стійка до впливу УФ-випромінювання. Мінімальне замовлення - 1 аркуш для 1 макету">
-                                        Паперова (Raflatac)</th>
-                                    <td>28</td> <!-- 1..5 -->
-                                    <td>28</td> <!-- 6..10 -->
-                                    <td>24</td> <!-- 11...20 -->
-                                    <td>19</td> <!-- 21...40 -->
-                                    <td>19</td> <!-- 41...50 -->
-                                    <td>17</td> <!-- 51...100 -->
-                                    <td>14</td> <!-- 101...200 -->
-                                    
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Крейдованана самоклейка на паперовій основі з покриттям тонкою гляцевою або матовою ламінацією. Стійка до впливу УФ-випромінювання. Мінімальне замовлення - 1 аркуш  А3 формату для 1 макету">
-                                        Паперова (Raflatac) з ламінацією</th>
-                                    <td>68</td>
-                                    <td>52</td>
-                                    <td>43</td>
-                                    <td>36</td>
-                                    <td>36</td>
-                                    <td>28</td>
-                                    <td>28</td>
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Полімерна самоклейка стійка до впливу води і хімікатів, УФ-випромінювання і перепадів температур. Для цифрового лазерного друку. Мінімальне замовлення - 1 аркуш А3 формату для 1 макету">
-                                        PET (Raflatac)</th>
-                                    <td>75</td> <!-- 1..5 -->
-                                    <td>75</td> <!-- 6..10 -->
-                                    <td>70</td> <!-- 11...20 -->
-                                    <td>52</td> <!-- 21...40 -->
-                                    <td>52</td> <!-- 41...50 -->
-                                    <td>45</td> <!-- 51...100 -->
-                                    <td>37</td> <!-- 101...200 -->
-                                   
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Некрейдована самоклейка на паперовій основі з текстурою кремового кольору. Метод друку цифровий лазерний. Стійка до впливу УФ-випромінювання. Мінімальне замовлення - 1 аркуш для 1 макету">
-                                        Винна етикетка (UPM)</th>
-                                        <td>—</td> <!-- 1..5 -->
-                                        <td>—</td> <!-- 6..10 -->
-                                        <td>—</td> <!-- 11...20 -->
-                                        <td>—</td> <!-- 21...40 -->
-                                        <td>—</td> <!-- 41...50 -->
-                                        <td>—</td> <!-- 51...100 -->
-                                        <td>—</td> <!-- 101...200 -->
-                                        
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Крейдована самоклейка на паперовій основі з золотою, мідяною або срібною фольгою. Метод друку цифровий лазерний. Стійка до впливу УФ-випромінювання. Мінімальне замовлення - 1 аркуш для 1 макету">
-                                        Самоклейка (UPM) з фольгою</th>
-                                    </th>
-                                    <td>88</td> <!-- 1..5 -->
-                                    <td>78</td> <!-- 6..10 -->
-                                    <td>69</td> <!-- 11...20 -->
-                                    <td>59</td> <!-- 21...40 -->
-                                    <td>59</td> <!-- 41...50 -->
-                                    <td>52</td> <!-- 51...100 -->
-                                    <td>39</td> <!-- 101...200 -->
-                                    
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Вінілова плівка на полімерній основі з золотою, мідяною або срібною фольгою. Метод друку цифровий лазерний. Стійка до впливу води та УФ-випромінювання. Мінімальне замовлення - 1 аркуш для 1 макету">
-                                        Вініл прозорий з фольгою</th>
-                                    </th>
-                                    <td>125</td> <!-- 1..5 -->
-                                    <td>115</td> <!-- 6..10 -->
-                                    <td>96</td> <!-- 11...20 -->
-                                    <td>85</td> <!-- 21...40 -->
-                                    <td>85</td> <!-- 41...50 -->
-                                    <td>73</td> <!-- 51...100 -->
-                                    <td>57</td> <!-- 101...200 -->
-                                    
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Прозора плівка з друком білим кольором. Метод друку цифровий лазерний. Стійка до впливу води та УФ-випромінювання. Мінімальне замовлення - 1 аркуш для 1 макету">
-                                        Вініл прозорий з друком білим</th>
-                                    </th>
-                                    <td>95</td> <!-- 1..5 -->
-                                    <td>95</td> <!-- 6..10 -->
-                                    <td>80</td> <!-- 11...20 -->
-                                    <td>75</td> <!-- 21...40 -->
-                                    <td>75</td> <!-- 41...50 -->
-                                    <td>68</td> <!-- 51...100 -->
-                                    <td>65</td> <!-- 101...200 -->
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="table_wrapper">
-                    <p>Рулонні самоклеючі матеіали. Якість друку 1440p</p>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>1...3 м²</th>
-                                    <th>3...10 м²</th>
-                                    <th>10+ м</th>
-                                </tr>
-                            </thead>
-                            <tbody>                                
-                                    <th
-                                        title="Вініл білий з глянцевою або матовою поверхнею. Стійкий до впливу води і УФ-випромінювання. Друк екосольвентний з рулону. Мінімальне замовлення - 0,35 м.кв.">
-                                        Вініл Ritrama</th>
-                                    <td>260</td>
-                                    <td>210</td>
-                                    <td>190</td>
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Вініл прозорий. Стійкий до впливу води і УФ-випромінювання. Друк цифровий в аркушах А3. Мінімальне замовлення - 1 аркуш А3 формату для 1 макету">
-                                        Вініл прозорий глянцевий</th>
-                                    <td>250</td>
-                                    <td>200</td>
-                                    <td>180</td>
-                                </tr> 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>                
-            </div>
-        </section>
+        
 
         
-        <section class="section">
-            <div class="container col gap">
-                <h3 class="text_32">Ціна післядрукарських робіт</h3>
-                <div class="col gap w100">
-                    <div class="table_wrapper ">
-                    <p>Послуги по порізці та ламінації самоклеючих матеріалів</p>
-                    <table class="table">
-                            <thead>
-                                <tr>
-                                    <!-- 1 5 10 20 40 50 100 200 400 500 1000 -->
-                                    <th></th>
-                                    <th>1 + </th>
-                                    <th>6 + </th>
-                                    <th>11 + </th>
-                                    <th>21 + </th>
-                                    <th>41 + </th>
-                                    <th>51 + </th>
-                                    <th>101 + </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th
-                                        title="Контурна порізка довільної форми наліпок на аркушах. Наліпки залишаються в аркушах, але можуть зніматись. Вартість послуги тільки за порізку без підготовки макету ">
-                                        Плоттерна порізка</th>
-                                    <td>6</td> <!-- 1..5 -->
-                                    <td>6</td> <!-- 6..10 -->
-                                    <td>4</td> <!-- 11...20 -->
-                                    <td>4</td> <!-- 21...40 -->
-                                    <td>4</td> <!-- 41...50 -->
-                                    <td>3</td> <!-- 51...100 -->
-                                    <td>2,5</td> <!-- 101...200 -->
-                                    
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Понтурна наскрізна порізка довільної форми наліпок поштучно. Даний вид порізки застосовуютсья для невеликих наліпок як от у мерч пропозиції або на продаж. Вартість послуги тільки за порізку без підготовки макету ">
-                                        Наскрізна порізка</th>
-                                    <td>*</td> <!-- 1..5 -->
-                                    <td>*</td> <!-- 6..10 -->
-                                    <td>*</td> <!-- 11...20 -->
-                                    <td>*</td> <!-- 21...40 -->
-                                    <td>*</td> <!-- 41...50 -->
-                                    <td>*</td> <!-- 51...100 -->
-                                    <td>*</td> <!-- 101...200 -->
-                                    
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Ламінація паперової продукції або прозорого вінілу. Варто звернути увагу що ламінація не робить виріб вічним, але лише здебільшого декоративну фунцію, оскільки кромка по периметру зрізана і не ламінована">
-                                        Ламінація гаряча</th>
-                                        <td>40</td> <!-- 1..5 -->
-                                        <td>24</td> <!-- 6..10 -->
-                                        <td>19</td> <!-- 11...20 -->
-                                        <td>17</td> <!-- 21...40 -->
-                                        <td>14</td> <!-- 41...50 -->
-                                        <td>12</td> <!-- 51...100 -->
-                                        <td>12</td> <!-- 101...200 -->
-                                </tr>
-                                <tr>
-                                    <th
-                                        title="Ламінація вінілових наліпок цілове призначення яких - постійне механічна взаємодія. Цей метод найбільш поширений у стікер паках де наліпки клеються на мобільні пристрої які увесь час дістаються і кладуться у сумку або кишеню">
-                                        Ламінація холодна</th>
-                                    <td>70</td> <!-- 1..5 -->
-                                    <td>40</td> <!-- 6..10 -->
-                                    <td>*</td> <!-- 11...20 -->
-                                    <td>*</td> <!-- 21...40 -->
-                                    <td>*</td> <!-- 41...50 -->
-                                    <td>*</td> <!-- 51...100 -->
-                                    <td>*</td> <!-- 101...200 -->
-                                   
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>                   
-                </div>                
-            </div>
-        </section>
+       
 
         <section class="section">
             <div class="container col big_gap">
