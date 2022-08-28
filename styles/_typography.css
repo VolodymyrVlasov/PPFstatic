@@ -2,7 +2,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: var(--font-text-16);
-    line-height: var(--size-line-heignt);
+    line-height: 150%;
 }
 
 .list {
