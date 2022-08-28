@@ -141,6 +141,7 @@
     width: 1%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_1 {
@@ -150,6 +151,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_1::after {
@@ -162,6 +164,7 @@
     width: 10%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_2 {
@@ -171,6 +174,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_2::after {
@@ -183,6 +187,7 @@
     width: 20%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_3 {
@@ -192,6 +197,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_3::after {
@@ -204,6 +210,7 @@
     width: 30%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_4 {
@@ -213,6 +220,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_4::after {
@@ -225,6 +233,7 @@
     width: 40%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_5 {
@@ -234,6 +243,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_5::after {
@@ -246,6 +256,7 @@
     width: 50%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_6 {
@@ -255,6 +266,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_6::after {
@@ -267,6 +279,7 @@
     width: 60%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_7 {
@@ -276,6 +289,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;    
 }
 
 .raiting_7::after {
@@ -288,6 +302,7 @@
     width: 70%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_8 {
@@ -297,6 +312,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_8::after {
@@ -309,6 +325,7 @@
     width: 80%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_9 {
@@ -318,6 +335,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_9::after {
@@ -330,6 +348,7 @@
     width: 90%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
 }
 
 .raiting_10 {
@@ -339,6 +358,7 @@
     background-color: var(--color-light-gray);
     position: relative;
     border-radius: 999px;
+    cursor: help;
 }
 
 .raiting_10::after {
@@ -351,6 +371,62 @@
     width: 100%;
     border-radius: 999px;
     background-color: var(--color-light-theme);
+    transition: var(--time-tr-time);
+}
+
+.raiting_0:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_1:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_2:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_3:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_4:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_5:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_6:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_7:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_8:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_9:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
+}
+
+.raiting_10:hover:after{
+    background-color: var(--color-theme);
+    transform: scaleY(1.2);
 }
 
 .border_right {
