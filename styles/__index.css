@@ -16,6 +16,7 @@
 @import "./_buttons.css";
 @import "./_aminations.css";
 @import "./_materialCard.css";
+@import "./_anchorWidget.css";
 
 * {
     margin: 0;
