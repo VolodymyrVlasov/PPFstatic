@@ -1,0 +1,65 @@
+:root {
+    --image-height: 200px !important;
+}
+
+.product_card {
+    width: calc(25% - (var(--size-big-gap) - (var(--size-big-gap) / 4)));
+    width: calc((100% - (var(--size-big-gap) * 3)) / 4);
+}
+
+.product_card p {
+    min-height: calc(var(--size-line-heignt) * 3);
+}
+
+.product_card__image_wrapper {
+    width: 100%;
+    height: var(--image-height) !important;
+}
+
+.product_card__image {
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.15);
+    /* filter: sepia(10%); */
+}
+
+
+/* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+   
+}
+
+/*`xl` applies to x-large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+   
+}
+
+/* `lg` applies to large devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .product_card {
+        width: calc(50% - (var(--size-big-gap) / 2));
+    }
+}
+
+/*-------------------------------------------*/
+/* `md` applies to medium devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+   
+}
+
+/* `sm` applies to small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .product_card {
+        width: 100%;
+    }
+}
+
+/* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
+@media (max-width: 320px) {
+
+}
+
+
+

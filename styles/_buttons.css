@@ -1,0 +1,131 @@
+.sub_link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 24px 12px 0;
+    transition: var(--time-tr-time);
+}
+
+.sub_link :last-child {
+    color: var(--color-gray);
+    font-size: 14px;
+    transition: var(--time-tr-time);
+}
+
+.sub_link :first-child {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 8px;
+    transition: var(--time-tr-time);
+}
+
+.sub_link :first-child:after {
+    content: "";
+    background: url("../static/ico-arrow-menu.svg") no-repeat 100% top;
+    background-size: 100% 200%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 16px -4px 22px;
+    transition: var(--time-tr-time);
+}
+
+.sub_link:hover :first-child:after {
+    background-position: bottom;
+    transition: var(--time-tr-time);
+}
+
+.sub_link:hover :first-child {
+    color: var(--color-theme);
+    transition: var(--time-tr-time);
+}
+
+.button__secondary {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: var(--size-button-padding);
+    border-radius: var(--size-border-radius);
+    border: 1px solid transparent;
+    min-width: var(--size-button-min-width);
+    height: fit-content;
+    background-color: var(--color-light-gray);
+    color: var(--color-gray);
+    transition: var(--time-tr-time);
+}
+
+.button__secondary:hover {
+    background-color: var(--color-light-light-theme);
+    color: var(--color-theme);
+}
+
+.button__normal {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: var(--size-button-padding);
+    border-radius: var(--size-border-radius);
+    border: 1px solid;
+    min-width: var(--size-button-min-width);
+    height: fit-content;
+    transition: var(--time-tr-time);
+}
+
+.button__normal:hover {
+    border: 1px solid var(--color-theme);
+    color: var(--color-theme);
+}
+
+.button__primary {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    padding: var(--size-button-padding);
+    border-radius: var(--size-border-radius);
+    border: 1px solid var(--size-border-radius);
+    min-width: var(--size-button-min-width);
+    background-color: var(--color-theme);
+    height: fit-content;
+    color: white;
+    transition: var(--time-tr-time);
+}
+
+.button__primary:hover {
+    background-color: var(--color-light-theme);
+    color: var(--color-theme);
+}
+
+.button_icon {
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-viber.svg") center/100% no-repeat;
+    margin-right: 12px;
+    margin-top: 4px;
+    filter: grayscale(100%);
+    transition: var(--time-tr-time);
+}
+
+.button__secondary:hover>.button_icon,
+.button__normal:hover>.button_icon,
+.button__primary:hover>.button_icon {
+    filter: none;
+}
+
+.button_icon__primary {
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-viber.svg") center/100% no-repeat;
+    margin-right: 12px;
+    margin-top: 4px;
+    filter: invert(1) brightness(10)!important;  
+    transition: var(--time-tr-time); 
+}
+
+.button__secondary:hover>.button_icon__primary,
+.button__normal:hover>.button_icon__primary,
+.button__primary:hover>.button_icon__primary {
+    filter: none !important;
+    transition: calc(var(--time-tr-time) / 2);    
+}

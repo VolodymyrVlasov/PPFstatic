@@ -1,0 +1,125 @@
+.contact_widget_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    max-width: calc(25% - var(--size-big-gap) + var(--size-big-gap) / 4);
+}
+
+.contact_widget_card>u {
+    color: var(--color-theme);
+}
+
+.contact_widget_card>span {
+    display: flex;
+    position: relative;
+    padding-top: 34px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: var(--color-theme);
+}
+
+.contact_widget_card:hover>span:before,
+.contact_widget_card:focus>span:before {
+    transform: scale(1.7);
+    outline: none;
+}
+
+.contact_widget_card__telegram:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-telegram.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+
+.contact_widget_card__viber:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-viber.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+
+.contact_widget_card__email:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-email.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+
+.contact_widget_card__phone:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-tel.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+.contact_widget_card__location:before {
+    content: "";
+    width: var(--size-icon);
+    height: var(--size-icon);
+    background: url("../static/icon-tel.svg") no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    transition: 300ms;
+}
+
+@media (max-width: 991.98px) {
+    .contact_widget_card {
+        max-width: calc(50% - var(--size-big-gap) + var(--size-big-gap) / 2);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact_widget_card {
+        max-width: calc(50% - var(--size-big-gap) + var(--size-big-gap) / 2);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact_widget_card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        max-width: 100%;
+        /* padding-left: 60px; */
+        border: 1px solid var(--color-theme);
+        border-radius: var(--size-border-radius);
+    }
+
+    .contact_widget_card>span {
+        margin: 0;
+        padding: 0;
+    }
+
+    .contact_widget_card>p,
+    .contact_widget_card>u {
+       display: none;
+    }
+
+    .contact_widget_card__viber:before,
+    .contact_widget_card__email:before,
+    .contact_widget_card__phone:before,
+    .contact_widget_card__telegram:before {
+        content: "";
+        width: var(--size-icon);
+        height: var(--size-icon);
+        position: absolute;
+        top: 7px;
+        left: -40px;
+        transition: 300ms;
+    }
+}

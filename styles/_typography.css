@@ -1,0 +1,98 @@
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: var(--font-text-16);
+    line-height: var(--size-line-heignt);
+}
+
+.list {
+    list-style: disc outside;
+    padding-left: 16px;
+}
+
+.text_center {
+    display: inline;
+    text-align: center;
+}
+
+.text {
+    width: 300px;
+}
+
+
+.text_60 {
+    font-size: var(--font-text-60);
+    font-weight: bold;
+}
+
+.text_32 {
+    font-size: var(--font-text-32);
+    font-weight: 600;
+}
+
+.text_24 {
+    font-size: var(--font-text-24);
+}
+
+.text_24__bold {
+    font-size: var(--font-text-24);
+    font-weight: 600;
+}
+
+.text_16__bold {
+    font-size: var(--font-text-16);
+    font-weight: 600;
+}
+
+.text_14 {
+    font-size: var(--font-text-14);
+}
+
+.text_14__gray {
+    font-size: var(--font-text-14);
+    color: var(--color-gray);
+}
+
+.text_12__gray {
+    font-size: var(--font-text-12);
+    color: var(--color-gray);
+}
+
+.link {
+    cursor: pointer;
+    color: inherit;
+}
+
+.link:hover {
+    transition: 300ms ease;
+    color: var(--color-theme);
+}
+
+
+@media (max-width: 991.98px) {
+    :root {
+        --font-text-60: 48px;
+        --font-text-32: 32px;
+        --font-text-24: 18px;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        --font-text-60: 36px;
+        --font-text-32: 24px;
+        --font-text-24: 18px;
+    }
+}
+
+@media (max-width: 320px) {
+    :root {
+        --font-text-60: 36px;
+        --font-text-32: 24px;
+        --font-text-24: 18px;
+    }
+}
