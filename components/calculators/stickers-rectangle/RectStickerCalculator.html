@@ -17,26 +17,30 @@
             <form id="calculator" class="calculator">
                 <div class="inputs col big_gap">
                     <div class="row big_gap width_100">
-                        <div class="custom_input" id="input_diameter">
+                        <div class="custom_input flex_2" id="input_diameter">
                             <span for="input_label_diameter" class="label">40</span>
                             <label for="input_range_diameter" class="custom_input_label"
                                 aria-label="Обери розмір у міліметрах">Ширина (мм)</label>
                             <input type="range" id="input_range_diameter" class="custom_input_input__range" min="5"
                                 max="300" value="50" />
                         </div>
-                        <div class="custom_input" id="input_amount">
+                        <div class="custom_input flex_2" id="input_amount">
                             <span for="input_range_amount" id="input_label_amount" class="text_16__bold">40</span>
                             <label aria-label="Обери кількість" class="custom_input_label"
                                 for="input_range_amount">Довжина (мм)</label>
                             <input type="range" id="input_range_amount" class="custom_input_input__range" min="40"
                                 max="2000" value="40" step="40" />
                         </div>
-                        <div class="custom_input" id="input_diameter">
-                            <span for="input_label_diameter" class="label">40</span>
-                            <label for="input_range_diameter" class="custom_input_label"
-                                aria-label="Обери розмір у міліметрах">Заокруглення (R мм)</label>
-                            <input type="range" id="input_range_diameter" class="custom_input_input__range" min="5"
-                                max="300" value="50" />
+                        <div class="custom_number" id="input-amount">
+                            <label for="amount" class="custom_input-label">Кількість (шт)</label>
+                            <div class="custom_number-wrapper">
+                                <button type="button" id="amount-minus" class="custom_number-btn minus"
+                                    aria-label="зменшити кількість на 1"></button>
+                                <input type="number" value="1" min="1" max="100" id="amount"
+                                    class="custom_input-input--number">
+                                <button type="button" id="amount-plus" class="custom_number-btn plus"
+                                    aria-label="збільшити кількість на 1"></button>
+                            </div>
                         </div>
                     </div>
                     <div class="row big_gap width_100">
@@ -76,7 +80,9 @@
                         </div>
                         <div class="col gap">
                             <label for="price">Варстіть:</label>
-                            <strong id="price" class="price" title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70 грн</strong>
+                            <strong id="price" class="price"
+                                title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70
+                                грн</strong>
                         </div>
                     </div>
                     <button type="button" id="detailed_price_btn" class="summary_details_btn"
