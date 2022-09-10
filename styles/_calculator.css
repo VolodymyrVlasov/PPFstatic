@@ -35,6 +35,8 @@
     background-color: var(--color-theme);
     border: 1px solid transparent;
     color: white;
+    line-height: 1em;
+    font-size: 12px;
 }
 
 .summary_details_btn:hover {
