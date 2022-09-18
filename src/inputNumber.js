@@ -1,16 +1,16 @@
-const input = document.getElementById("input")
 
 
-const inputNumber = ({ node, min, max, step, dispatch }) => {
+export const inputNumber = ({ inputId, min, max, step, dispatch }) => {
+    const node = document.getElementById(inputId)
     let value = Number(node.value)
+    step = !step ? step : 1
+    min = !min ? min : 1
+    max = !max ? max : 1000
+    node.min = min
+    node.max = max
+    node.step = step
  
     const changeAmount = (operation) => {
-        step = !step ? step : 1
-        min = !min ? min : 1
-        max = !max ? max : 1000
-        node.min = min
-        node.max = max
-        node.step = step
         if (operation === "minus" && value > Number(node.min)) {
             value -= Number(node.step)
         } else if (operation === "plus" && value < Number(node.max)) {
@@ -33,7 +33,7 @@ const inputNumber = ({ node, min, max, step, dispatch }) => {
         }
     })
 
-    return { value, min, max, step, dispatch }
+    return { node, value, min, max, step }
 }
 
-const exampleInput = inputNumber({ node: input, min: 1, max: 1000, step: 100 })
+const exampleInput = inputNumber({ inputId: "input", min: 1, max: 1000, step: 100 })
