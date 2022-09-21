@@ -30,7 +30,7 @@ export class AbstractCalculator {
     }
 
     getSheetsAtPrintingRun() {
-        this.product.sheetsAtPrintingRun = Math.ceil(this.product.targetStickerAmount / this.product.amountAtSheet);
+        this.product.sheetsAtPrintingRun = Math.ceil(this.product.targetAmount / this.product.amountAtSheet);
         return this.product.sheetsAtPrintingRun;
     }
 
