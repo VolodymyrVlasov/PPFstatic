@@ -57,11 +57,11 @@ export class RectStickerCalculator extends AbstractCalculator {
 
     getCutAtSheet() {
         if ((this.product.cutType === KISS_CUT_A3 || this.product.cutType === KISS_CUT_A4) && this.product.cornerRadius === 0) {
-            return Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 0.6) / 1000).toFixed(1));
+            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 0.6) / 1000).toFixed(1));
         }
 
         if (this.product.cutType === DIE_CUT && this.product.cornerRadius === 0) {
-            return Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 2) / 1000).toFixed(1));
+            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 2) / 1000).toFixed(1));
         }
 
         if ((this.product.cutType === KISS_CUT_A3 || this.product.cutType === KISS_CUT_A4) && this.product.cornerRadius > 0) {
@@ -69,8 +69,10 @@ export class RectStickerCalculator extends AbstractCalculator {
             let heightSum = (this.product.height - this.product.cornerRadius * 2) * 2;
             let cornerRadius = 2 * Math.PI * this.product.cornerRadius;
 
-            return Number(((widthSum + heightSum + cornerRadius) / 1000 * this.product.amountAtSheet).toFixed(1));
+            this.product.cutAtSheet = Number(((widthSum + heightSum + cornerRadius) / 1000 * this.product.amountAtSheet).toFixed(1));
         }
+
+        return this.product.cutAtSheet;
     }
 
     calculateTime(product) {
