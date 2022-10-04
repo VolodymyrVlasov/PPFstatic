@@ -15,7 +15,7 @@
             <h2 class="text_32">Розрахунок вартості друку</h2>
             <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
             <form id="calculator" class="calculator">
-                <div class="inputs col big_gap">
+                <div class="inputs col big_gap flex_3">
                     <div class="row big_gap width_100">
                         <div class="custom_input" id="input_width" title="Обери ширину у міліметрах">
                             <span class="label">40</span>
@@ -76,22 +76,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="summary_wrapper flex_1">
-                    <div id="summary" class="summary">
-                        <div class="col gap">
-                            <label for="prod-time">Готовність:</label>
-                            <strong id="prod-time" class="link">1 жовтня 18:00</strong>
-                        </div>
-                        <div class="col gap">
-                            <label for="price">Варстіть:</label>
-                            <strong id="price" class="price"
-                                title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70
-                                грн</strong>
-                        </div>
-                    </div>
+                <div id="summary" class="summary flex_1">
                     <button type="button" id="detailed_price_btn" class="summary_details_btn"
-                        aria-label="Більше інформації про розрахунок"
-                        title="Більше інформації про розрахунок">i</button>
+                    aria-label="Більше інформації про розрахунок"
+                    title="Більше інформації про розрахунок">i</button>
+                    <div class="col gap">
+                        <label for="prod-time">Готовність:</label>
+                        <strong id="prod-time" class="link">1 жовтня 18:00</strong>
+                    </div>
+                    <div class="col gap">
+                        <label for="price">Варстіть:</label>
+                        <strong id="price" class="price"
+                            title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70
+                            грн</strong>
+                    </div>
                 </div>
             </form>
             <div>

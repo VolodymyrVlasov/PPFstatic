@@ -8,13 +8,11 @@ const { changeRangeUI: renderCornerRadiusRangeUI, inputNode: cornerRadiusInput }
 const { changeRangeUI: renderWidthRangeUI, inputNode: widthInput } = customRange("input_width", 32, 50);
 const { changeRangeUI: renderHeightUI, inputNode: heightInput } = customRange("input_height", 32, 50);
 
-let isParameterChanged = false;
 let isShowDetails = false;
 
 const cuttingTypeSelect = document.getElementById("cut");
 const summaryCard = document.getElementById("summary");
 const priceLabel = document.getElementById("price");
-const timeLabel = document.getElementById("prod-time");
 const detailedPriceBtn = document.getElementById("detailed_price_btn")
 
 let product = {
@@ -28,87 +26,21 @@ let product = {
 };
 
 const calculator = new RectStickerCalculator(product);
+calculator.appendInputElements({ amountInput, cornerRadiusInput, widthInput, heightInput, cuttingTypeSelect });
 
-const setConditions = () => {
-    if (isParameterChanged) {
-        amountInput.min = product.amountAtSheet;
-        amountInput.value = product.amountAtSheet;
-        amountInput.step = product.amountAtSheet;
-        amountInput.max = product.amountAtSheet * 50;
-        product.targetStickerAmount = product.amountAtSheet;
-        product.sheetsAtPrintingRun = 1;
-        isParameterChanged = false;
-    }
-    if (product.width < 50 || product.height < 50 && cuttingTypeSelect.children.length == 3) {
-        cuttingTypeSelect.children[2].disabled = true;
-    } else if (product.width >= 50 || product.height >= 50) {
-        cuttingTypeSelect.children[2].disabled = false;
-    }
-    if (product.cutType === "KISS_CUT_A4") {
-        widthInput.min = 5;
-        widthInput.max = 297;
-        heightInput.min = 5;
-        heightInput.max = 297;
-        if (widthInput.value > 210) {
-            heightInput.max = 210;
-            widthInput.max = 297;
-        }
-        if (heightInput.value > 210) {
-            widthInput.max = 210;
-            heightInput.max = 297;
-        }
-    }
-    if (product.cutType === "DIE_CUT") {
-        cornerRadiusInput.max = 250;
-        cornerRadiusInput.min = 50;
-    }
-    if (product.cutType === "KISS_CUT_A3" && cornerRadiusInput.max !== 300) {
-        widthInput.min = 5;
-        widthInput.max = 420;
-        heightInput.min = 5;
-        heightInput.max = 420;
-        if (widthInput.value > 297) {
-            heightInput.max = 297;
-            widthInput.max = 420;
-        }
-        if (heightInput.value > 297) {
-            widthInput.max = 297;
-            heightInput.max = 420;
-        }
-    }
-    if (Number(widthInput.value) < Number(heightInput.value)) {
-        cornerRadiusInput.max = Math.floor(widthInput.value / 2);
-    } else {
-        cornerRadiusInput.max = Math.floor(heightInput.value / 2);
-    }
-
-    if (product.material === "TRANSPARENT_WHITE" || product.material === "TRANSPARENT_FOIL") {
-        cuttingTypeSelect.children[0].disabled = true;
-        cuttingTypeSelect.children[1].selected = true;
-        cuttingTypeSelect.children[2].disabled = true;
-        widthInput.max = 210;
-        heightInput.max = 297;
-    } else {
-        cuttingTypeSelect.children[0].disabled = false;
-        cuttingTypeSelect.children[2].disabled = false;
-    }
-}
-
-const render = ({ product }) => {
-    setConditions();
-
+const render = ({ product, isShowDetails }) => {
     if (isShowDetails) {
         detailedPriceBtn.innerText = "+"
-        summaryCard.parentElement.classList.remove("flex_1");
+        // summaryCard.parentElement.classList.remove("flex_1");
         summaryCard.parentElement.classList.add("flex_3");
         detailedPriceBtn.classList.add("rotate_45");
         summaryCard.innerHTML = DetailedSummaryCard({ product });
     }
     if (!isShowDetails) {
-        summaryCard.parentElement.classList.remove("flex_3");
+        // summaryCard.parentElement.classList.remove("flex_3");
         detailedPriceBtn.classList.remove("rotate_45");
         detailedPriceBtn.innerText = "i"
-        summaryCard.parentElement.classList.add("flex_1");
+        summaryCard.parentElement.classList.replace("flex_1", "flex_2");
         summaryCard.innerHTML = SummaryCard({ product });
         priceLabel.title = `
         Наліпок на аркуші${product.cutType == "KISS_CUT_A4" ? ` А4:\t${product.amountAtSheet / 2}` : ` А3:\t${product.amountAtSheet}`}\t\tшт.
@@ -121,51 +53,66 @@ const render = ({ product }) => {
     }
 
     renderCornerRadiusRangeUI();
-    renderAmountUI();
     renderWidthRangeUI();
     renderHeightUI();
+    renderAmountUI();
 
     setTimeout(() => {
         renderCornerRadiusRangeUI();
-        renderAmountUI();
         renderWidthRangeUI();
         renderHeightUI();
+        renderAmountUI();
     }, 150);
 };
 
-document.getElementById("calculator").addEventListener("input", (e) => {
-    const target = e.target;
-    switch (target.id) {
-        case "input_range_width":
-            product.width = Number(target.value);
-            break;
-        case "input_range_height":
-            product.height = Number(target.value);
-            break;
-        case "input_range_diameter":
-            product.cornerRadius = Number(target.value);
-            break;
-        case "input_range_amount":
-            product.targetAmount = Number(target.value);
-            break;
-        case "material":
-            product.material = target.value;
-            break;
-        case "cut":
-            product.cutType = target.value;
-            break;
+const updateCalculator = (e) => {
+    e?.preventDefault();
+    let isSizeChanged = false;
+    let isCuttingTypeChanged = false;
+
+    if (e?.type === "change") {
+        switch (e?.target?.id) {
+            case "input_range_width":
+                product.width = Number(e.target.value);
+                isSizeChanged = true;
+                break;
+            case "input_range_height":
+                product.height = Number(e.target.value);
+                isSizeChanged = true;
+                break;
+            case "input_range_corner_radius":
+                product.cornerRadius = Number(e.target.value);
+                isSizeChanged = true;
+                break;
+            case "input_range_amount":
+                product.targetAmount = Number(e.target.value);
+                break;
+            case "material":
+                product.material = e.target.value;
+                break;
+            case "cut":
+                product.cutType = e.target.value;
+                isCuttingTypeChanged = true;
+                break;
+        }
     }
-    isParameterChanged = true;
-    product = calculator.calculate(product)
-    console.table(product);
-    render({ product });
-});
+    if (e?.type === "click") {
+        if (e?.target?.id === "detailed_price_btn") {
+            isShowDetails = !isShowDetails;
+        }
+    }
 
-detailedPriceBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    isShowDetails = !isShowDetails;
-    render({ product });
-});
+    calculator.calculate(product);
+    calculator.applyConditions({ isSizeChanged, isCuttingTypeChanged });
+    calculator.renderCalculatorForm({
+        UIComponents: [renderAmountUI, renderCornerRadiusRangeUI, renderWidthRangeUI, renderHeightUI],
+        isShowDetails: isShowDetails
+    });
+}
 
-render({ product });
+document.getElementById("calculator").addEventListener("change", (e) => updateCalculator(e));
+document.getElementById("calculator").addEventListener("click", (e) => updateCalculator(e));
+
+
+updateCalculator();
 
