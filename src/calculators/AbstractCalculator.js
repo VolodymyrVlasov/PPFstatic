@@ -1,4 +1,6 @@
 import { PRINTRUN_INDEXES } from "../Prices.js";
+import { SummaryCard } from "../../components/SummaryCard/SummaryCard.js";
+import { DetailedSummaryCard } from "../../components/DetailedSummaryCard/DetailedSummaryCard.js";
 
 export class AbstractCalculator {
     constructor(basicProduct) {
@@ -62,5 +64,43 @@ export class AbstractCalculator {
         this.product.summaryStickerAmout = this.getSummaryAmount();
         this.product.totalPrice = this.getTotalPrice();
         return this.product;
+    }
+
+    appendInputElements({ widthInput, heightInput, diameterInput, cornerRadiusInput, amountInput, cuttingTypeSelect }) {
+        this.amountInput = amountInput;
+        this.heightInput = heightInput;
+        this.widthInput = widthInput;
+        this.diameterInput = diameterInput;
+        this.cornerRadiusInput = cornerRadiusInput;
+        this.cuttingTypeSelect = cuttingTypeSelect;
+    }
+
+    renderCalculatorForm({ UIComponents, isShowDetails }) {
+        const container = document.getElementById("summary");
+        container.classList.replace
+
+        if (isShowDetails) {
+            container.classList.replace("flex_1", "flex_2");
+            setTimeout(() => {
+                container.innerHTML = DetailedSummaryCard({ product: this.product })
+            }, 50);
+            // container.innerHTML = DetailedSummaryCard({ product: this.product });
+        } else {
+            container.classList.replace("flex_2", "flex_1");
+            container.innerHTML = SummaryCard({ product: this.product });
+        }
+        // container.innerHTML =
+        //     isShowDetails ?
+        //         DetailedSummaryCard({ product: this.product }) :
+        //         SummaryCard({ product: this.product });
+
+        // if (isShowDetails) {
+        //     document.getElementById("summary").style.flex = "flex_2";
+        // }
+
+        UIComponents.forEach(renderComponent => {
+            renderComponent()
+            setTimeout(renderComponent, 150);
+        });
     }
 }

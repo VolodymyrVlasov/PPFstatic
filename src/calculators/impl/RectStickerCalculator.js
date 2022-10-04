@@ -57,25 +57,22 @@ export class RectStickerCalculator extends AbstractCalculator {
 
     getCutAtSheet() {
         if ((this.product.cutType === KISS_CUT_A3 || this.product.cutType === KISS_CUT_A4) && this.product.cornerRadius === 0) {
-            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 0.6) / 1000).toFixed(1));
+            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 0.6) / 1000).toFixed(2));
         }
-
         if (this.product.cutType === DIE_CUT && this.product.cornerRadius === 0) {
-            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 2) / 1000).toFixed(1));
+            this.product.cutAtSheet = Number(((((this.product.width * 2 + this.product.height * 2) * this.product.amountAtSheet) * 2) / 1000).toFixed(2));
         }
-
         if ((this.product.cutType === KISS_CUT_A3 || this.product.cutType === KISS_CUT_A4) && this.product.cornerRadius > 0) {
             let widthSum = (this.product.width - this.product.cornerRadius * 2) * 2;
             let heightSum = (this.product.height - this.product.cornerRadius * 2) * 2;
-            let cornerRadius = 2 * Math.PI * this.product.cornerRadius;
-
-            this.product.cutAtSheet = Number(((widthSum + heightSum + cornerRadius) / 1000 * this.product.amountAtSheet).toFixed(1));
+            let cornerRadius = Number((2 * Math.PI * this.product.cornerRadius).toFixed(0));
+            console.log("widthSum: ", widthSum, "heightSum: ", heightSum, "cornerRadius: ", cornerRadius);
+            this.product.cutAtSheet = Number(((widthSum + heightSum + cornerRadius) / 1000 * this.product.amountAtSheet).toFixed(2));
         }
-
         return this.product.cutAtSheet;
     }
 
-    calculateTime(product) {
+    calculateTime() {
         const date = new Date();
         const material = this.product.material;
         const printRun = this.product.sheetsAtPrintingRun;
@@ -102,6 +99,73 @@ export class RectStickerCalculator extends AbstractCalculator {
         const finishDate = date.toLocaleString("uk-UA", { day: "numeric", month: "long" });
         return `${finishDate} 18:00`;
     };
+
+    applyConditions({ isSizeChanged, isCuttingTypeChanged }) {
+
+        if (isSizeChanged || isCuttingTypeChanged) {
+            this.amountInput.min = this.product.amountAtSheet;
+            this.amountInput.value = this.product.amountAtSheet;
+            this.amountInput.step = this.product.amountAtSheet;
+            this.amountInput.max = this.product.amountAtSheet * 50;
+            this.product.targetStickerAmount = this.product.amountAtSheet;
+            this.product.sheetsAtPrintingRun = 1;
+        }
+        if (this.product.width < 50 || this.product.height < 50 && this.cuttingTypeSelect.children.length == 3) {
+            this.cuttingTypeSelect.children[2].disabled = true;
+        } else if (this.product.width >= 50 || product.height >= 50) {
+            this.cuttingTypeSelect.children[2].disabled = false;
+        }
+        if (this.product.cutType === "KISS_CUT_A4") {
+            this.widthInput.min = 5;
+            this.widthInput.max = 297;
+            this.heightInput.min = 5;
+            this.heightInput.max = 297;
+            if (this.widthInput.value > 210) {
+                this.heightInput.max = 210;
+                this.widthInput.max = 297;
+            }
+            if (this.heightInput.value > 210) {
+                this.widthInput.max = 210;
+                this.heightInput.max = 297;
+            }
+        }
+        if (this.product.cutType === "DIE_CUT") {
+            this.cornerRadiusInput.max = 250;
+            this.cornerRadiusInput.min = 50;
+        }
+        if (this.product.cutType === "KISS_CUT_A3" && this.cornerRadiusInput.max !== 300) {
+            this.widthInput.min = 5;
+            this.widthInput.max = 420;
+            this.heightInput.min = 5;
+            this.heightInput.max = 420;
+            if (this.widthInput.value > 297) {
+                this.heightInput.max = 297;
+                this.widthInput.max = 420;
+            }
+            if (this.heightInput.value > 297) {
+                this.widthInput.max = 297;
+                this.heightInput.max = 420;
+            }
+        }
+        if (Number(this.widthInput.value) < Number(this.heightInput.value)) {
+            this.cornerRadiusInput.max = Math.floor(this.widthInput.value / 2);
+        } else {
+            this.cornerRadiusInput.max = Math.floor(this.heightInput.value / 2);
+        }
+
+        if (this.product.material === "TRANSPARENT_WHITE" || this.product.material === "TRANSPARENT_FOIL") {
+            this.cuttingTypeSelect.children[0].disabled = true;
+            this.cuttingTypeSelect.children[1].selected = true;
+            this.cuttingTypeSelect.children[2].disabled = true;
+            this.widthInput.max = 210;
+            this.heightInput.max = 297;
+        } else {
+            this.cuttingTypeSelect.children[0].disabled = false;
+            this.cuttingTypeSelect.children[2].disabled = false;
+        }
+        // isSizeChanged = false;
+        // isCuttingTypeChanged = false;
+    }
 
     calculate(product) {
         this.product = product;

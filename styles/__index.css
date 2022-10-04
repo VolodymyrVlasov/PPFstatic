@@ -17,6 +17,7 @@
 @import "./_aminations.css";
 @import "./_materialCard.css";
 @import "./_anchorWidget.css";
+@import "./_inputNumber.css";
 
 * {
     margin: 0;

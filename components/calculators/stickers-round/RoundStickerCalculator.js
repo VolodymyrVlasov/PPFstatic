@@ -20,6 +20,7 @@ const timeLabel = document.getElementById("prod-time");
 const detailedPriceBtn = document.getElementById("detailed_price_btn")
 
 const product = {
+  productType: "ROUND_STICKER",
   diameter: 50,
   targetStickerAmount: 2,
   material: "RAFLATAC",
