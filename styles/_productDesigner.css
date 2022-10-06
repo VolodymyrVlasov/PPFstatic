@@ -1,0 +1,83 @@
+.pd_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    height: auto;
+    padding: 16px
+}
+
+.pd_panel {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.pd_tool {
+    padding: 8px 16px;
+    background-color: var(--color-light-light-gray);
+    border: 0.1px solid var(--color-light-theme);
+    border-radius: 12px;
+}
+
+.pd_workspace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pd_page {
+    width: 200mm;
+    height: 90mm;
+    background-color: white;
+    border: 0.1px solid gray;
+    box-shadow: 2px 2px 2px 2px gray;
+
+
+}
+
+.pd_obj_wrapper {
+    -webkit-print-color-adjust: exact;
+    transition: ease 150ms;
+}
+
+.pd_obj_wrapper:hover {
+    transform: scale(1.01);
+}
+
+.pd_obj_wrapper:focus {
+    transform: scale(1);
+    border: 1px outset blue;
+}
+
+
+@media print {
+    .pd_panel {
+        display: none;
+    }
+
+    .pd_page {
+        -webkit-print-color-adjust: exact;
+        border:none;
+        box-shadow: none;
+        margin: 0;
+        background: greenyellow;
+    }
+
+    .pd_container {
+        -webkit-print-color-adjust: exact;
+        background: blue;
+        padding: 0;
+    }
+}
+
+@page {
+    size: 200mm 90mm;
+    margin: 0;
+}

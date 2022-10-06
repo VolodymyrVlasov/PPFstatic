@@ -18,6 +18,7 @@
 @import "./_materialCard.css";
 @import "./_anchorWidget.css";
 @import "./_inputNumber.css";
+@import "./_productDesigner.css";
 
 * {
     margin: 0;
