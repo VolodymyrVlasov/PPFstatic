@@ -19,6 +19,7 @@
 @import "./_anchorWidget.css";
 @import "./_inputNumber.css";
 @import "./_productDesigner.css";
+@import "./_test.css";
 
 * {
     margin: 0;

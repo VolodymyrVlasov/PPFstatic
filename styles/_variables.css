@@ -35,6 +35,8 @@
     --font-text-12: 12px;
 
     --size-line-heignt: 1.5rem;
+
+    --shadow: 0px 0px 16px -8px rgba(34, 60, 80, 0.28);
 }
 
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
@@ -81,7 +83,7 @@
 @media (max-width: 575.98px) {
     :root {
         --color-background-overlayout: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85));
-   
+
         --size-small-gap: 8px;
         --size-gap: 12px;
         --size-big-gap: 24px;
@@ -89,6 +91,4 @@
 }
 
 /* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
-@media (max-width: 320px) {
-
-}
+@media (max-width: 320px) {}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Component</title>
+    <link rel="stylesheet" href="../../styles/__index.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="col big_gap">
+                <div class="row big_gap width_100">
+                    <div class="col flex_1">
+                        <div class="wrapper" id="wrapper">
+                            <i class="resizer" id="resizer"></i>
+                            <i class="rotator" id="rotator"></i>
+                            <i class="deleter" id="deleter"></i>
+                            <img src="../../static/ritrama-matte-paperfox.jpeg" id="content" class="content">
+                        </div>
+                    </div>
+                    <div class="col flex_1 big_gap width_100">
+                        <label for="range-x" class="col width_100">
+                            <span>X:</span>   
+                            <input type="range" min="-100" max="100" step="1" class="width_100 row" id="range-x">
+                        </label>
+                        <label for="range-y" class="col width_100">
+                            <span>Y:</span>  
+                            <input type="range" min="-100" max="100" step="1" class="width_100" id="range-y">
+                        </label>
+                        <label for="range-y" class="col width_100">
+                            <span>rotate:</span>  
+                            <input type="range" min="-360" max="360" step="1" class="width_100" id="range-y">
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+
+</html>

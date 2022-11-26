@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    border: 1px dashed red;
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    cursor: move;
+}
+
+.resizer {
+    display: flex;
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid red;
+    z-index: 2;
+    cursor: nwse-resize;
+}
+
+.rotator {
+    display: flex;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid red;
+    z-index: 2;
+    cursor: crosshair;
+}
+
+.rotator:hover,
+.resizer:hover {
+    transition: 80ms;
+    transform: scale(2.5);
+}
+
+
+.content {
+    display: flex;
+    width: 200px;
+    height: auto;
+}

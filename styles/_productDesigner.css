@@ -1,3 +1,91 @@
+
+.pd_image {
+    height: 100%;
+    width: 100%;
+} 
+
+.pd_text {
+    height: auto;
+    width: auto;
+}
+
+.resizable {
+    /* background: white; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: red;
+}
+
+.resizable .resizers {
+    width: 100%;
+    height: 100%;
+    border: 0.1px dashed transparent;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.resizable .resizers:hover,
+.resizable .resizers:focus {
+    cursor: move;
+    border:  0.1px dashed black;
+}
+
+.resizable .resizers:hover .resizer.bottom-right,
+.resizable .resizers:focus .resizer.bottom-right {
+    cursor: nwse-resize;
+    bottom: -18px;
+    right: -18px;
+    transform: rotate(90deg);
+    background: url("../static/icon-scale.svg") center no-repeat;
+
+}
+
+
+.resizable .resizers .resizer {
+    width: 18px;
+    height: 18px;
+    border-radius: 1px;
+    /*magic to turn square into circle*/
+    background: white;
+    /* border: 3px solid transparent; */
+    position: absolute;
+    background: none;
+}
+
+/* .resizable .resizers .resizer:hover,
+.resizable .resizers .resizer:focus {
+    border: 3px solid #4286f4;
+} */
+
+.resizable .resizers .resizer.top-left {
+    left: -5px;
+    top: -5px;
+    cursor: nwse-resize;
+    /*resizer cursor*/
+}
+
+.resizable .resizers .resizer.top-right {
+    right: -5px;
+    top: -5px;
+    cursor: nesw-resize;
+}
+
+.resizable .resizers .resizer.bottom-left {
+    left: -5px;
+    bottom: -5px;
+    cursor: nesw-resize;
+}
+
+.resizable .resizers .resizer.bottom-right {
+    cursor: nwse-resize;
+    bottom: -18px;
+    right: -18px;
+    /* background: url("../static/icon-scale.svg") center no-repeat; */
+}
+
 .pd_container {
     display: flex;
     flex-direction: column;
@@ -6,7 +94,8 @@
     width: 100%;
     background-color: white;
     height: auto;
-    padding: 16px
+    padding: 16px;
+    position: relative;
 }
 
 .pd_panel {
@@ -29,17 +118,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    padding: 48px;
 }
 
 .pd_page {
-    width: 200mm;
-    height: 90mm;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
     background-color: white;
-    border: 0.1px solid gray;
-    box-shadow: 2px 2px 2px 2px gray;
-
-
+    box-shadow: var(--shadow);
 }
 
 .pd_obj_wrapper {
@@ -57,6 +146,107 @@
 }
 
 
+.pd_popup_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pd_popup {
+    padding: 16px;
+    width: 80%;
+    height: 80%;
+    background: white;
+    z-index: 999;
+    border-radius: var(--size-border-radius);
+    box-shadow: var(--shadow);
+}
+
+.pd_image {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.pd_object_wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border: 0.1px dashed;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+}
+
+.pd_scale_btn {
+    /* visibility: none; */
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 18px;
+    height: 18px;
+    background: url("../static/icon-scale.svg") center no-repeat;
+    cursor: nesw-resize;
+}
+
+.pd_def_btn {
+    /* visibility: none; */
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    width: 18px;
+    height: 18px;
+    background-color: #E5E5E5;
+    border-radius: 2px;
+    cursor: not-allowed;
+}
+
+.pd_delete_btn {
+    /* visibility: none; */
+    position: absolute;
+    bottom: -18px;
+    left: -18px;
+    width: 18px;
+    height: 18px;
+    background: url("../static/icon-trash.svg") center no-repeat;
+    cursor: pointer;
+}
+
+.pd_rotate_btn {
+    /* visibility: none; */
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    width: 18px;
+    height: 18px;
+    background: url("../static/icon-rotate.svg") center no-repeat;
+    cursor: pointer;
+}
+
+.pd_object_container {
+    cursor: move;
+    background: gray !important;
+}
+
+.pd_object_container:focus>.pd_rotate_btn,
+.pd_delete_btn,
+.pd_def_btn,
+.pd_scale_btn {
+    visibility: visible;
+}
+
+
 @media print {
     .pd_panel {
         display: none;
@@ -64,7 +254,7 @@
 
     .pd_page {
         -webkit-print-color-adjust: exact;
-        border:none;
+        border: none;
         box-shadow: none;
         margin: 0;
         background: greenyellow;

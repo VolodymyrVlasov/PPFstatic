@@ -1,0 +1,7 @@
+.popover_down {
+    position: absolute;
+    padding: 16px;
+    border-radius: var(--size-borfder-radius);
+    z-index: 999;
+    box-shadow: ;
+}
