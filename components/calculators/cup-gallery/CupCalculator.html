@@ -11,10 +11,12 @@
 
 <body>
     <section class="section">
-        <div class="container col gap">
-            <h3 itemprop="name" class="text_32" content="Замовити друк на чашках">Замовити друк на чашках</h3>
-            <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
-            <form id="mug_calculator" class="mug_calculator row big_gap">
+        <div class="container col big_gap">
+            <div class="col gap">
+                <h3 itemprop="name" class="text_32" content="Замовити друк на чашках">Замовити друк на чашках</h3>
+                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
+            </div>
+            <form id="mug_calculator" class="mug_calculator big_gap">
                 <div class="calculator_slider col big_gap flex_1">
                     <div class="slider" id="mug_slider">
                         <div class="slider__display">
@@ -80,10 +82,11 @@
 
                 </div>
                 <div class="calculator_details col big_gap flex_1">
+                    <h2 class="text_32__bold" id="calculator_details_name">Чашка білa</h2>
                     <div class="col gap">
                         <div class="row gap">
                             <span class="text_14__gray">Об'єм:</span>
-                            <span id="current-capacity">330 мл</span>
+                            <span id="calculator_details_capacity">330 мл</span>
                         </div>
                         <ul class="row small_gap width_100" id="product-capacity">
                             <li class="radio_capacity_wrapper" title="чашка міні об'ємом 180 мл">

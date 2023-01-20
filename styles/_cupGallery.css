@@ -1,3 +1,7 @@
+.mug_calculator {
+    display: flex;
+}
+
 .radio_capacity {
     padding: var(--size-button-padding);
     width: var(--size-button-min-width);
@@ -73,7 +77,14 @@ input[type="radio"]:checked+.color_picker {
     padding-top: 48px;
 }
 
+.slider_arrow {
+    fill: var(--color-light-gray);
+}
 
+.product_slider__button_next:hover .slider_arrow {
+    fill: var(--color-theme);
+    transition: var(--time-tr-time);
+}
 
 .white {
     background-color: #fff;
@@ -137,4 +148,19 @@ input[type="radio"]:checked+.color_picker {
 
 .hidden-color {
     visibility: hidden;
+}
+
+
+
+
+@media (max-width: 767.98px) {
+
+    .mug_calculator {
+        flex-direction: column;
+    }
+
+    .color_picker {
+        width: 32px;
+        height: 32px; 
+    }
 }

@@ -1,0 +1,214 @@
+[
+    {
+        "capacity": 330,
+        "colorValue": "white",
+        "color": "Білий", 
+        "name": "Чашка білa",
+        "images": [
+            "/static/mugs/330_white_front.jpeg",
+            "/static/mugs/330_white_side.jpeg",
+            "/static/mugs/330_white.jpeg"
+        ],
+        "price": [
+            140
+        ],
+        "URL": "mug-white",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "orange",
+        "color": "Помаранчевий", 
+        "name": "Чашка помаранчева середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-orange"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-orange-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "yellow",
+        "color": "Жовтий", 
+        "name": "Чашка жовта середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-yellow"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-yellow-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "red",
+        "color": "Червоний", 
+        "name": "Чашка червона середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-red"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-red-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "pink",
+        "color": "Рожевий", 
+        "name": "Чашка рожева середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-pink"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-pink-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "light-blue",
+        "color": "Блактиний", 
+        "name": "Чашка блакитна середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-light-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-light-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "blue",
+        "color": "Темно-синій",
+        "name": "Чашка темно-синя середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "green",
+        "color": "Зелений",
+        "name": "Чашка зелена середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "light-green",
+        "color": "Салатовий",
+        "name": "Чашка салатова середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-light-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-llight-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "black",
+        "color": "Чорний",
+        "name": "Чашка чорна середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-black"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-black-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "maroon",
+        "color": "Бордовий",
+        "name": "Чашка бордова середина та ручка",
+        "images": [
+            "/static/mugs/mug-print-310-inner-maroon"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-maroon-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "chameleon-black",
+        "color": "Хамелеон чорний",
+        "name": "Чорний хамелеон",
+        "images": [
+            "/static/mugs/mug-print-310-hameleon-black"
+        ],
+        "price": [
+            300
+        ],
+        "URL": "mug-hameleon-black-310",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "chameleon-blue",
+        "color": "Синій хамелеон",
+        "name": "Синій хамелеон",
+        "images": [
+            "/static/mugs/mug-print-310-hameleon-blue"
+        ],
+        "price": [
+            300
+        ],
+        "URL": "mug-hameleon-blue",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 330,
+        "colorValue": "chameleon-red",
+        "color": "Червоний хамелеон",
+        "name": "Червоний хамелеон",
+        "images": [
+            "/static/mugs/mug-print-310-hameleon-red"
+        ],
+        "price": [
+            300
+        ],
+        "URL": "mug-hameleon-red",
+        "articul": "",
+        "productType": "MUG"
+    }
+]
