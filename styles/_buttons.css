@@ -88,6 +88,7 @@
     min-width: var(--size-button-min-width);
     background-color: var(--color-theme);
     height: fit-content;
+    width: fit-content;
     color: white;
     transition: var(--time-tr-time);
 }
