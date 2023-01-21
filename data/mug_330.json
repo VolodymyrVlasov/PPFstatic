@@ -78,7 +78,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "light-blue",
+        "colorValue": "light_blue",
         "color": "Блактиний", 
         "name": "Чашка блакитна середина та ручка",
         "images": [
@@ -93,7 +93,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "blue",
+        "colorValue": "cobalt_blue",
         "color": "Темно-синій",
         "name": "Чашка темно-синя середина та ручка",
         "images": [
@@ -123,7 +123,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "light-green",
+        "colorValue": "light_green",
         "color": "Салатовий",
         "name": "Чашка салатова середина та ручка",
         "images": [
@@ -168,7 +168,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "chameleon-black",
+        "colorValue": "chameleon_black",
         "color": "Хамелеон чорний",
         "name": "Чорний хамелеон",
         "images": [
@@ -183,7 +183,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "chameleon-blue",
+        "colorValue": "chameleon_blue",
         "color": "Синій хамелеон",
         "name": "Синій хамелеон",
         "images": [
@@ -198,7 +198,7 @@
     },
     {
         "capacity": 330,
-        "colorValue": "chameleon-red",
+        "colorValue": "chameleon_red",
         "color": "Червоний хамелеон",
         "name": "Червоний хамелеон",
         "images": [

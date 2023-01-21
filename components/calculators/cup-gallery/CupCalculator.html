@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/icons/icon-default-avatar.webp">
     <title>CUP CALCULATOR | COMPONENT</title>
     <link rel="stylesheet" href="/styles/__index.css">
 </head>
@@ -88,17 +89,17 @@
                             <span class="text_14__gray">Об'єм:</span>
                             <span id="calculator_details_capacity">330 мл</span>
                         </div>
-                        <ul class="row small_gap width_100" id="product-capacity">
+                        <ul class="row small_gap width_100" id="mug_calculator__product_capacity">
                             <li class="radio_capacity_wrapper" title="чашка міні об'ємом 180 мл">
-                                <input type="radio" name="cup_capacity" value="180" id="capacity_180">
+                                <input type="radio" name="capacity" value="180" id="capacity_180">
                                 <label for="capacity_180" class="radio_capacity text_14__gray">180 мл</label>
                             </li>
                             <li class="radio_capacity_wrapper" value="330" title="чашка стандартна об'ємом 330 мл">
-                                <input type="radio" name="cup_capacity" value="330" id="capacity_330" checked>
+                                <input type="radio" name="capacity" value="330" id="capacity_330" checked>
                                 <label for="capacity_330" class="radio_capacity text_14__gray">330 мл</label>
                             </li>
                             <li class="radio_capacity_wrapper" value="425" title="чашка велика XL об'ємом 425 мл">
-                                <input type="radio" name="cup_capacity" value="425" id="capacity_425">
+                                <input type="radio" name="capacity" value="425" id="capacity_425">
                                 <label for="capacity_425" class="radio_capacity text_14__gray">425 мл</label>
                             </li>
                         </ul>
@@ -108,7 +109,7 @@
                             <span class="text_14__gray">Колір:</span>
                             <span id="current-capacity">Білий</span>
                         </div>
-                        <ul class="row small_gap color_picker_cnt" id="color-set">
+                        <ul class="row small_gap color_picker_cnt" id="mug_calculator__color_set">
                             <li title="Білий" itemprop="color" content="Білий" class="color_picker_wrapper">
                                 <input type="radio" name="color" value="white" id="color_white" checked>
                                 <label for="color_white" class="color_picker white" aria-label="Білий"></label>
@@ -262,7 +263,7 @@
         </ul>
 
     </div> -->
-    <!-- <script type="module" src="./CupGallery.js"></script> -->
+    <script type="module" src="./CupGallery.js"></script>
 </body>
 
 </html>

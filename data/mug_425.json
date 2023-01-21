@@ -1,0 +1,169 @@
+[
+    {
+        "capacity": 425,
+        "colorValue": "white",
+        "color": "Білий", 
+        "name": "Чашка велика XL білa",
+        "images": [
+            "/static/mugs/425_white_front.jpeg",
+            "/static/mugs/425_white_side.jpeg",
+            "/static/mugs/425_white.jpeg"
+        ],
+        "price": [
+            140
+        ],
+        "URL": "mug-white",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "orange",
+        "color": "Помаранчевий", 
+        "name": "Чашка велика XL помаранчева середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-orange"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-orange-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "yellow",
+        "color": "Жовтий", 
+        "name": "Чашка велика XL жовта середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-yellow"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-yellow-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "red",
+        "color": "Червоний", 
+        "name": "Чашка велика XL червона середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-red"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-red-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "pink",
+        "color": "Рожевий", 
+        "name": "Чашка велика XL рожева середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-pink"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-pink-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "light_blue",
+        "color": "Блактиний", 
+        "name": "Чашка велика XL блакитна середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-light-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-light-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "cobalt_blue",
+        "color": "Темно-синій",
+        "name": "Чашка велика XL темно-синя середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "green",
+        "color": "Зелений",
+        "name": "Чашка велика XL зелена середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "light_green",
+        "color": "Салатовий",
+        "name": "Чашка велика XL салатова середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-light-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-llight-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "black",
+        "color": "Чорний",
+        "name": "Чашка велика XL чорна середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-black"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-black-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 425,
+        "colorValue": "maroon",
+        "color": "Бордовий",
+        "name": "Чашка велика XL бордова середина",
+        "images": [
+            "/static/mugs/mug-print-425-inner-maroon"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-maroon-",
+        "articul": "",
+        "productType": "MUG"
+    }
+]

@@ -1,0 +1,169 @@
+[
+    {
+        "capacity": 180,
+        "colorValue": "white",
+        "color": "Білий", 
+        "name": "Чашка міні білa",
+        "images": [
+            "/static/mugs/180_white_front.jpeg",
+            "/static/mugs/180_white_side.jpeg",
+            "/static/mugs/180_white.jpeg"
+        ],
+        "price": [
+            140
+        ],
+        "URL": "mug-white",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "orange",
+        "color": "Помаранчевий", 
+        "name": "Чашка міні помаранчева середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-orange"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-orange-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "yellow",
+        "color": "Жовтий", 
+        "name": "Чашка міні жовта середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-yellow"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-yellow-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "red",
+        "color": "Червоний", 
+        "name": "Чашка міні червона середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-red"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-red-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "pink",
+        "color": "Рожевий", 
+        "name": "Чашка міні рожева середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-pink"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-pink-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "light_blue",
+        "color": "Блактиний", 
+        "name": "Чашка міні блакитна середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-light-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-light-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "cobalt_blue",
+        "color": "Темно-синій",
+        "name": "Чашка міні темно-синя середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-blue"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "green",
+        "color": "Зелений",
+        "name": "Чашка міні зелена середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "light_green",
+        "color": "Салатовий",
+        "name": "Чашка міні салатова середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-light-green"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-llight-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "black",
+        "color": "Чорний",
+        "name": "Чашка міні чорна середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-black"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-black-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "capacity": 180,
+        "colorValue": "maroon",
+        "color": "Бордовий",
+        "name": "Чашка міні бордова середина",
+        "images": [
+            "/static/mugs/mug-print-180-inner-maroon"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-maroon-",
+        "articul": "",
+        "productType": "MUG"
+    }
+]
