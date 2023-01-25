@@ -1,3 +1,7 @@
+import { CapacityPicker } from "./CapacityPicker.js";
+import { ColorPicker } from "./ColorPicker.js";
+import { ImageSlider } from "./ImageSlider.js";
+
 const calculator = document.getElementById("mug_calculator");
 const productCapacityListContainer = document.getElementById("mug_calculator__product_capacity");
 const productColorListContainer = document.getElementById("mug_calculator__color_set");
@@ -30,43 +34,18 @@ const loadProductData = async () => {
         .catch(error => console.log(error));
 }
 
-const renderCapacity = () => {
-    productCapacityListContainer.innerHTML = Object.values(products).map((value) => {
-        return `
-        <li class="radio_capacity_wrapper" title="чашка міні об'ємом ${value[0].capacity} мл">
-            <input type="radio" name="capacity" 
-                    value="${value[0].capacity}" 
-                    id="capacity_${value[0].capacity}"
-                    ${value[0].capacity == selectedProduct.capacity ? "checked" : ""}>
-             <label for="capacity_${value[0].capacity}" 
-             class="radio_capacity text_14__gray">${value[0].capacity} мл</label>
-        </li>`
-    }).join("")
-}
-
-const renderColors = () => {
-    productColorListContainer.innerHTML = Object.values(products).map(array => {
-        if (array[0].capacity === selectedProduct.capacity) {
-            return array.map(mug => {
-                return `
-                    <li title="${mug.color}" itemprop="color" content="${mug.color}" class="color_picker_wrapper">
-                        <input type="radio" name="color" value="${mug.colorValue}" id="color_${mug.colorValue}"
-                        ${mug.colorValue === selectedProduct.color ? "checked" : ""}>
-                        <label for="color_${mug.colorValue}" class="color_picker ${mug.colorValue}" aria-label="${mug.color}"></label>
-                    </li>`
-            }).join("");
-        }
-    }).join("");
-}
-
-const addActionLink = () => {
-    orderLinkBtn.href = products[`_${selectedProduct.capacity}`]
+const ProductLink = () => {
+    const url = products[`_${selectedProduct.capacity}`]
         .find(item => item.colorValue === selectedProduct.color).URL;
+    return `https://www.paperfox.com.ua/product/${url}`;
 }
 
 await loadProductData()
 
-// setTimeout(() => { renderCapacity(); renderColors(); }, 200);
+setTimeout(() => {
+    productCapacityListContainer.innerHTML = CapacityPicker(products, selectedProduct);
+    productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+}, 100);
 
 calculator.addEventListener("click", (e) => {
     const currentType = e.target.name;
@@ -75,14 +54,12 @@ calculator.addEventListener("click", (e) => {
     switch (currentType) {
         case "color":
             selectedProduct.color = currentValue;
-            addActionLink();
+            orderLinkBtn.href = ProductLink(products);
             break;
-
         case "capacity":
             selectedProduct.capacity = Number(currentValue);
-            renderColors();
-            addActionLink();
+            productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+            orderLinkBtn.href = ProductLink(products);
             break;
     }
-
 })
