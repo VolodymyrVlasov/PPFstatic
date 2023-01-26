@@ -6,15 +6,16 @@ const calculator = document.getElementById("mug_calculator");
 const productCapacityListContainer = document.getElementById("mug_calculator__product_capacity");
 const productColorListContainer = document.getElementById("mug_calculator__color_set");
 const orderLinkBtn = document.getElementById("order_link_btn");
+const slider = new ImageSlider({ containerSelector: "#mug_slider" })
 
 
 const products = {};
-const selectedProduct = {
+let selectedProduct = {
     productType: "MUG",
     capacity: 330,
     color: "white",
     price: 140,
-    URL: "mug-white"
+    // URL: "mug-white"
 }
 
 const loadProductData = async () => {
@@ -40,12 +41,14 @@ const ProductLink = () => {
     return `https://www.paperfox.com.ua/product/${url}`;
 }
 
-await loadProductData()
+
 
 setTimeout(() => {
     productCapacityListContainer.innerHTML = CapacityPicker(products, selectedProduct);
     productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
-}, 100);
+}, 200);
+
+await loadProductData()
 
 calculator.addEventListener("click", (e) => {
     const currentType = e.target.name;
@@ -54,12 +57,18 @@ calculator.addEventListener("click", (e) => {
     switch (currentType) {
         case "color":
             selectedProduct.color = currentValue;
-            orderLinkBtn.href = ProductLink(products);
+            orderLinkBtn.href = ProductLink();
             break;
         case "capacity":
             selectedProduct.capacity = Number(currentValue);
             productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
-            orderLinkBtn.href = ProductLink(products);
+            orderLinkBtn.href = ProductLink();
             break;
     }
+
+    const o = products[`_${selectedProduct.capacity}`]
+        .find(item => item.colorValue === selectedProduct.color);
+
+    slider.updateSlider(o);
+    // ImageSlider({ containerSelector: "#mug_slider", product: o })
 })

@@ -1,5 +1,6 @@
 .mug_calculator {
     display: flex;
+    width: 100%;
 }
 
 .radio_capacity {
@@ -150,10 +151,21 @@ input[type="radio"]:checked+.color_picker {
     visibility: hidden;
 }
 
-
-
-
 @media (max-width: 767.98px) {
+    .calculator_slider {
+        width: 100%;
+    }
+
+    .calculator_details {
+        align-items: center;
+        width: 100%;
+    }
+
+    .color_picker_cnt {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
 
     .mug_calculator {
         flex-direction: column;
