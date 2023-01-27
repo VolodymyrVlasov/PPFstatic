@@ -23,7 +23,7 @@
     width: 100%;
     height: 100%;
     gap: 24px;
-    animation: fade-in 800ms 1;
+    animation: fade-in 600ms 1;
 }
 
 .slider__arrow {

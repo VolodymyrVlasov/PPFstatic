@@ -56,18 +56,21 @@ export class ImageSlider {
         }).join(""));
     }
 
-    PrevButton() {
-        return (`
-            <button type="button" class="slider__button_next" id="mug_slider_prev_btn">
+    PrevButton(foo) {
+        const button = document.createElement("button");
+        button.className = "slider__button_next";
+        button.type = "button";
+        button.id = "mug_slider_next_btn";
+        button.innerHTML = `
                 <svg class="" width="16" height="40" aria-hidden="true">
                     <path class="slider__arrow"
                         d="M13.18,39.64a1,1,0,0,0,.57-.17A1.05,1.05,0,0,0,14.07,38L2.52,19.86,14.07,1.63A1.06,1.06,0,0,0,12.28.49L0,19.86,12.28,39.15A1.06,1.06,0,0,0,13.18,39.64Z" />
-                </svg>
-            </button>`
-        )
+                </svg>  `;
+        button.onclick = foo();
+        return button;
     }
 
-    NextButton(onclick, counter) {
+    NextButton(foo) {
         const button = document.createElement("button");
         button.className = "slider__button_next";
         button.type = "button";
@@ -77,29 +80,29 @@ export class ImageSlider {
                 <path class="slider__arrow"
                     d="M1.06,39.64a1,1,0,0,1-.57-.17A1.05,1.05,0,0,1,.17,38L11.72,19.86.17,1.63A1.05,1.05,0,0,1,.49.17,1.06,1.06,0,0,1,2,.49L14.24,19.86,2,39.15A1.06,1.06,0,0,1,1.06,39.64Z" />
             </svg>`;
-        button.addEventListener("click", onclick(counter));
+        button.onclick = foo();
         return button;
     }
 
     handlePrevButton() {
-        this.counter--;
-        console.log(this.counter);
+        console.log("prev");
     }
 
-    handleNextButton(counter) {
-        console.log("next", this.counter, counter);
+    handleNextButton() {
+        console.log("next");
     }
 
     updateSlider(product) {
+
         this.slider.innerHTML = `
                 <div class="slider__display">
-                        ${this.PrevButton(this.handlePrevButton)}
+                        ${this.PrevButton(() => console.log("prev")).outerHTML}
                         <div class="slider__slides_cnt">
                             <div class="slider__slides">
                                 ${this.Slide(product)}
                             </div>
                         </div>
-                        ${this.NextButton(this.handleNextButton,  counter).outerHTML}
+                        ${this.NextButton(() => console.log("next")).outerHTML}
                     </div>
                     <div class="slider__picture_array">
                     ${this.SlideArray(product)}
