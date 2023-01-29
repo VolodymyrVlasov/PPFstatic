@@ -17,8 +17,8 @@
 		transform: translateY(0px);
 	}
 
-	80% {
-		transform: scale(1.01);
+	50% {
+		transform: scale(0.95);
 
 	}
 

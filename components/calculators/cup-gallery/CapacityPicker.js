@@ -7,7 +7,7 @@ export const CapacityPicker = (products, selectedProduct) => {
                     id="capacity_${value[0].capacity}"
                     ${value[0].capacity == selectedProduct.capacity ? "checked" : ""}>
              <label for="capacity_${value[0].capacity}" 
-             class="radio_capacity text_14__gray">${value[0].capacity} мл</label>
+             class="radio_capacity">${value[0].capacity} мл</label>
         </li>`
     }).join(""));
 }

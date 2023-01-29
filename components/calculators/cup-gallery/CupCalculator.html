@@ -11,17 +11,20 @@
 </head>
 
 <body>
+
+
     <section class="section">
         <div class="container col big_gap">
             <div class="col gap">
                 <h3 itemprop="name" class="text_32" content="Замовити друк на чашках">Замовити друк на чашках</h3>
-                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
+                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва
+                </p>
             </div>
             <div id="mug_calculator" class="mug_calculator big_gap">
                 <div class="calculator_slider col big_gap">
                     <div class="slider" id="mug_slider">
                         <div class="slider__display">
-                            <button type="button" class="slider__button_next" id="mug_slider_prev_btn">
+                            <button type="button" class="slider__button_next" id="mug_slider_prev_btn" aria-label="Попередній слайд";>
                                 <svg class="" width="16" height="40" aria-hidden="true">
                                     <path class="slider__arrow"
                                         d="M13.18,39.64a1,1,0,0,0,.57-.17A1.05,1.05,0,0,0,14.07,38L2.52,19.86,14.07,1.63A1.06,1.06,0,0,0,12.28.49L0,19.86,12.28,39.15A1.06,1.06,0,0,0,13.18,39.64Z" />
@@ -46,41 +49,37 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <button type="button" class="slider__button_next" id="mug_slider_next_btn">
+                            <button type="button" class="slider__button_next" id="mug_slider_next_btn" aria-label="Наступний слайд">
                                 <svg width="16" height="40" aria-hidden="true">
                                     <path class="slider__arrow"
                                         d="M1.06,39.64a1,1,0,0,1-.57-.17A1.05,1.05,0,0,1,.17,38L11.72,19.86.17,1.63A1.05,1.05,0,0,1,.49.17,1.06,1.06,0,0,1,2,.49L14.24,19.86,2,39.15A1.06,1.06,0,0,1,1.06,39.64Z" />
                                 </svg>
                             </button>
-
                         </div>
-                        <div class="slider__picture_array">
-                            <div class="slider__picture_array_cnt">
-                                <input type="radio" name="picture_array" id="mug_slider_slide_1" checked>
-                                <label for="mug_slider_slide_1">
-                                    <img src="/static/mugs/330/mug_330_ml_white_1.png" alt="">
+                        <ul class="slider__picture_array">
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_1" checked>
+                                <label for="slider_slide_1">
+                                    <img src="/static/mugs/330/mug_330_ml_white_1.png" alt=""
+                                        class="slider__picture_array_img">
                                 </label>
-                            </div>
-
-                            <div class="slider__picture_array_cnt">
-                                <input type="radio" name="picture_array" id="mug_slider_slide_2">
-                                <label for="mug_slider_slide_2">
-                                    <img src="/static/mugs/330/mug_330_ml_white_2.png" alt="">
+                            </li>
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_2">
+                                <label for="slider_slide_2">
+                                    <img src="/static/mugs/330/mug_330_ml_white_2.png" alt=""
+                                        class="slider__picture_array_img">
                                 </label>
-
-                            </div>
-
-                            <div class="slider__picture_array_cnt">
-                                <input type="radio" name="picture_array" id="mug_slider_slide_3">
-                                <label for="mug_slider_slide_3">
-                                    <img src="/static/mugs/330/mug_330_ml_white_3.png" alt="">
+                            </li>
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_3">
+                                <label for="slider_slide_3">
+                                    <img src="/static/mugs/330/mug_330_ml_white_3.png" alt=""
+                                        class="slider__picture_array_img">
                                 </label>
-                            </div>
-
-                        </div>
+                            </li>
+                        </ul>
                     </div>
-
                 </div>
                 <div class="calculator_details col big_gap flex_1">
                     <h2 class="text_32__bold" id="calculator_details_name">Чашка білa</h2>
@@ -92,15 +91,15 @@
                         <ul class="row small_gap width_100" id="mug_calculator__product_capacity">
                             <li class="radio_capacity_wrapper" title="чашка міні об'ємом 180 мл">
                                 <input type="radio" name="capacity" value="180" id="capacity_180">
-                                <label for="capacity_180" class="radio_capacity text_14__gray">180 мл</label>
+                                <label for="capacity_180" class="radio_capacity ">180 мл</label>
                             </li>
                             <li class="radio_capacity_wrapper" value="330" title="чашка стандартна об'ємом 330 мл">
                                 <input type="radio" name="capacity" value="330" id="capacity_330" checked>
-                                <label for="capacity_330" class="radio_capacity text_14__gray">330 мл</label>
+                                <label for="capacity_330" class="radio_capacity ">330 мл</label>
                             </li>
                             <li class="radio_capacity_wrapper" value="425" title="чашка велика XL об'ємом 425 мл">
                                 <input type="radio" name="capacity" value="425" id="capacity_425">
-                                <label for="capacity_425" class="radio_capacity text_14__gray">425 мл</label>
+                                <label for="capacity_425" class="radio_capacity ">425 мл</label>
                             </li>
                         </ul>
                     </div>
@@ -114,7 +113,6 @@
                                 <input type="radio" name="color" value="white" id="color_white" checked>
                                 <label for="color_white" class="color_picker white" aria-label="Білий"></label>
                             </li>
-
                             <li title="Червоний" itemprop="color" content="Червоний" class="color_picker_wrapper">
                                 <input type="radio" name="color" value="red" id="color_red">
                                 <label for="color_red" class="color_picker red" aria-label="Білий"></label>
@@ -204,7 +202,8 @@
                                 <span class="text_16__bold" id="current-capacity">29 лютого 2123 р.</span>
                             </div>
                         </div>
-                        <a class="button__primary" id="order_link_btn" target="_blank" href="#" rel="noreferer nofollow">Замовити</a>
+                        <a class="button__primary" id="order_link_btn" target="_blank" href="#"
+                            rel="noreferer nofollow">Замовити</a>
                     </div>
                 </div>
             </div>

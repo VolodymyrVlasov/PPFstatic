@@ -11,11 +11,21 @@ const slider = new ImageSlider({ containerSelector: "#mug_slider" })
 
 const products = {};
 let selectedProduct = {
-    productType: "MUG",
     capacity: 330,
-    color: "white",
-    price: 140,
-    // URL: "mug-white"
+    colorValue: "white",
+    color: "Білий", 
+    name: "Чашка білa",
+    images: [
+        "/static/mugs/330/mug_330_ml_white_1.png",
+        "/static/mugs/330/mug_330_ml_white_2.png",
+        "/static/mugs/330/mug_330_ml_white_3.png"
+    ],
+    price: [
+        140
+    ],
+    URL: "mug-white",
+    articul: "",
+    productType: "MUG"
 }
 
 const loadProductData = async () => {
@@ -41,34 +51,39 @@ const ProductLink = () => {
     return `https://www.paperfox.com.ua/product/${url}`;
 }
 
-
-
 setTimeout(() => {
     productCapacityListContainer.innerHTML = CapacityPicker(products, selectedProduct);
     productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
 }, 200);
 
-await loadProductData()
+await loadProductData(); 
+slider.updateSlider(selectedProduct);
 
 calculator.addEventListener("click", (e) => {
     const currentType = e.target.name;
     const currentValue = e.target.value
+    const id = e.target.id;
+    let isSliderChange = false;
 
     switch (currentType) {
         case "color":
             selectedProduct.color = currentValue;
             orderLinkBtn.href = ProductLink();
+            isSliderChange = !isSliderChange;
             break;
         case "capacity":
             selectedProduct.capacity = Number(currentValue);
             productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
             orderLinkBtn.href = ProductLink();
+            isSliderChange = !isSliderChange;
             break;
     }
 
-    const selectedProduct = products[`_${selectedProduct.capacity}`]
-        .find(item => item.colorValue === selectedProduct.color);
+    if (isSliderChange) {
+        const o = products[`_${selectedProduct.capacity}`]
+            .find(item => item.colorValue === selectedProduct.color);
 
-    slider.updateSlider(selectedProduct);
-    // ImageSlider({ containerSelector: "#mug_slider", product: o })
+        slider.updateSlider(o);
+        isSliderChange = !isSliderChange;
+    }
 })

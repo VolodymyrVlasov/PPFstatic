@@ -36,22 +36,22 @@ export class ImageSlider {
         return (product?.images?.map((slide, index) => {
             if (slide.includes(".mp4")) {
                 return (`
-                    <div class="slider__picture_array_cnt">
-                        <input type="radio" name="picture_array" id="slider_slide_${index}">
+                    <li class="slider__picture_array_cnt">
+                        <input type="radio" name="picture_array" id="slider_slide_${index}" ${index === 0 ? "checked" : ""}">
                         <label for="slider_slide_${index}">
-                            <video src="${slide}" width="65" heigt="65">
+                            <video src="${slide}" width="65" heigt="65" class="slider__picture_array_img">
                         </label>
-                    </div>`
+                    </li>`
                 );
             }
 
             return (`
-                <div class="slider__picture_array_cnt">
-                    <input type="radio" name="picture_array" id="slider_slide_${index}">
+                <li class="slider__picture_array_cnt">
+                    <input type="radio" name="picture_array" id="slider_slide_${index}" ${index === 0 ? "checked" : ""}">
                     <label for="slider_slide_${index}"> 
-                        <img src="${slide}" alt="${slide}"  width="65" heigt="65">
+                        <img src="${slide}" alt="${slide}" class="slider__picture_array_img">
                     </label>
-                </div>`
+                </li>`
             )
         }).join(""));
     }
@@ -60,14 +60,14 @@ export class ImageSlider {
         const button = document.createElement("button");
         button.className = "slider__button_next";
         button.type = "button";
-        button.id = "mug_slider_next_btn";
+        button.id = "mug_slider_prev_btn";
+        button.ariaLabel = "Попередній слайд";
         button.innerHTML = `
                 <svg class="" width="16" height="40" aria-hidden="true">
                     <path class="slider__arrow"
                         d="M13.18,39.64a1,1,0,0,0,.57-.17A1.05,1.05,0,0,0,14.07,38L2.52,19.86,14.07,1.63A1.06,1.06,0,0,0,12.28.49L0,19.86,12.28,39.15A1.06,1.06,0,0,0,13.18,39.64Z" />
                 </svg>  `;
-        button.onclick = foo();
-        return button;
+        return button.outerHTML;
     }
 
     NextButton(foo) {
@@ -75,37 +75,66 @@ export class ImageSlider {
         button.className = "slider__button_next";
         button.type = "button";
         button.id = "mug_slider_next_btn";
+        button.ariaLabel = "Наступний слайд";
         button.innerHTML = `
             <svg width="16" height="40" aria-hidden="true">
                 <path class="slider__arrow"
                     d="M1.06,39.64a1,1,0,0,1-.57-.17A1.05,1.05,0,0,1,.17,38L11.72,19.86.17,1.63A1.05,1.05,0,0,1,.49.17,1.06,1.06,0,0,1,2,.49L14.24,19.86,2,39.15A1.06,1.06,0,0,1,1.06,39.64Z" />
             </svg>`;
-        button.onclick = foo();
-        return button;
+        return button.outerHTML;
     }
 
     handlePrevButton() {
-        console.log("prev");
+        const arr = document.getElementsByName("picture_array");
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].checked == true) {
+                if (i > 0) {
+                    arr[i - 1].checked = true;
+                    break;
+                }
+                if (i === 0) {
+                    arr[arr.length - 1].checked = true;
+                    break;
+                }
+            }
+        }
     }
 
     handleNextButton() {
-        console.log("next");
+        const arr = document.getElementsByName("picture_array");
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].checked == true) {
+                if (i < arr.length - 1) {
+                    arr[i + 1].checked = true;
+                    break;
+                }
+                if (i == arr.length - 1) {
+                    arr[0].checked = true;
+                    break;
+                }
+            }
+        }
     }
 
     updateSlider(product) {
-
         this.slider.innerHTML = `
                 <div class="slider__display">
-                        ${this.PrevButton(() => console.log("prev")).outerHTML}
+                        ${this.PrevButton()}
                         <div class="slider__slides_cnt">
                             <div class="slider__slides">
                                 ${this.Slide(product)}
                             </div>
                         </div>
-                        ${this.NextButton(() => console.log("next")).outerHTML}
-                    </div>
-                    <div class="slider__picture_array">
+                        ${this.NextButton()}
+                </div>
+                <ul class="slider__picture_array">
                     ${this.SlideArray(product)}
-                </div>`
+                </ul>`;
+
+        document.getElementById("mug_slider_prev_btn").addEventListener("click", this.handlePrevButton);
+        document.getElementById("mug_slider_next_btn").addEventListener("click", this.handleNextButton);
+        document.getElementsByName("picture_array")[0].checked = true;
     }
 }
