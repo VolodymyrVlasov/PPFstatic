@@ -66,9 +66,9 @@ calculator.addEventListener("click", (e) => {
             break;
     }
 
-    const o = products[`_${selectedProduct.capacity}`]
+    const selectedProduct = products[`_${selectedProduct.capacity}`]
         .find(item => item.colorValue === selectedProduct.color);
 
-    slider.updateSlider(o);
+    slider.updateSlider(selectedProduct);
     // ImageSlider({ containerSelector: "#mug_slider", product: o })
 })
