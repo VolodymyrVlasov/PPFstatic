@@ -4,6 +4,9 @@
     width: 100%;
 }
 
+.calculator_details_name {
+    height: 2rem;
+}
 .radio_capacity {
     padding: var(--size-button-padding);
     width: var(--size-button-min-width);

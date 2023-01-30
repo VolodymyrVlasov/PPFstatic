@@ -5,11 +5,15 @@ import { ImageSlider } from "./ImageSlider.js";
 const calculator = document.getElementById("mug_calculator");
 const productCapacityListContainer = document.getElementById("mug_calculator__product_capacity");
 const productColorListContainer = document.getElementById("mug_calculator__color_set");
+const nameLabel = document.getElementById("mug_calculator_details_name");
+const capacityLabel = document.getElementById("mug_calculator_details_capacity");
+const colorLabel = document.getElementById("mug_calculator_details_color");
+const priceLabel = document.getElementById("mug_calculator_details_price");
+const dateLabel = document.getElementById("mug_calculator_details_date");
 const orderLinkBtn = document.getElementById("order_link_btn");
 const slider = new ImageSlider({ containerSelector: "#mug_slider" })
 
 const products = {};
-
 const defaultProduct = {
     capacity: 330,
     colorValue: "white",
@@ -54,6 +58,13 @@ const ProductLink = (product) => {
     return `https://www.paperfox.com.ua/product/${url}`;
 }
 
+const FindProduct = (product) => {
+    const result = {
+        ...products[`_${product.capacity}`]?.find(item => item.colorValue === product.colorValue)
+    };
+    return result.colorValue ? result : undefined;
+}
+
 setTimeout(() => {
     productCapacityListContainer.innerHTML = CapacityPicker(products, defaultProduct);
     productColorListContainer.innerHTML = ColorPicker(products, defaultProduct);
@@ -73,7 +84,7 @@ calculator.addEventListener("click", (e) => {
             isProductChanged = !isProductChanged;
             break;
         case "capacity":
-            selectedProduct = {};
+            defaultProduct.capacity = Number(currentValue);
             selectedProduct.capacity = Number(currentValue);
             productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
             isProductChanged = !isProductChanged;
@@ -81,20 +92,24 @@ calculator.addEventListener("click", (e) => {
     }
 
     if (isProductChanged) {
-        console.log("selectedProduct", selectedProduct)
-        if (!selectedProduct.colorValue) {
+        selectedProduct = FindProduct(selectedProduct);
+        if (!selectedProduct) {
             selectedProduct = {
                 ...selectedProduct,
-                colorValue: defaultProduct.colorValue
+                colorValue: defaultProduct.colorValue,
+                capacity: defaultProduct.capacity
             };
-            productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+            selectedProduct = FindProduct(selectedProduct);
         }
-
-        selectedProduct = {
-            ...products[`_${selectedProduct.capacity}`].find(item => item.colorValue === selectedProduct.colorValue)
-        };
+        productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
         slider.updateSlider(selectedProduct);
         orderLinkBtn.href = ProductLink(selectedProduct);
+        nameLabel.innerText = selectedProduct.name;
+        colorLabel.innerText = selectedProduct.color;
+        capacityLabel.innerText = selectedProduct.capacity + " мл."
+        priceLabel.innerText = selectedProduct.price[0] + " грн."
+        dateLabel.innerText = "XXX"
+
         isProductChanged = !isProductChanged;
     }
 })
