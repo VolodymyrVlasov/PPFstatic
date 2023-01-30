@@ -146,8 +146,11 @@ export class ImageSlider {
                     ${this.SlideArray(product)}
                 </ul>`;
 
-        document.getElementById("mug_slider_prev_btn").addEventListener("click", this.handlePrevButton);
-        document.getElementById("mug_slider_next_btn").addEventListener("click", this.handleNextButton);
-        document.getElementsByName("picture_array")[0].checked = true;
+        document.getElementById("mug_slider_prev_btn")?.addEventListener("click", this.handlePrevButton);
+        document.getElementById("mug_slider_next_btn")?.addEventListener("click", this.handleNextButton);
+        const firstElement = document.getElementsByName("picture_array")[0];
+        if (firstElement) {
+            firstElement.checked = true;
+        }
     }
 }

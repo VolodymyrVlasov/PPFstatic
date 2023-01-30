@@ -8,12 +8,12 @@ const productColorListContainer = document.getElementById("mug_calculator__color
 const orderLinkBtn = document.getElementById("order_link_btn");
 const slider = new ImageSlider({ containerSelector: "#mug_slider" })
 
-
 const products = {};
-let selectedProduct = {
+
+const defaultProduct = {
     capacity: 330,
     colorValue: "white",
-    color: "Білий", 
+    color: "Білий",
     name: "Чашка білa",
     images: [
         "/static/mugs/330/mug_330_ml_white_1.png",
@@ -26,7 +26,10 @@ let selectedProduct = {
     URL: "mug-white",
     articul: "",
     productType: "MUG"
-}
+};
+
+let selectedProduct = { ...defaultProduct };
+
 
 const loadProductData = async () => {
     fetch("/data/mug_180.json")
@@ -45,45 +48,53 @@ const loadProductData = async () => {
         .catch(error => console.log(error));
 }
 
-const ProductLink = () => {
-    const url = products[`_${selectedProduct.capacity}`]
-        .find(item => item.colorValue === selectedProduct.color).URL;
+const ProductLink = (product) => {
+    const url = products[`_${product.capacity}`]
+        .find(item => item.colorValue === product.colorValue).URL;
     return `https://www.paperfox.com.ua/product/${url}`;
 }
 
 setTimeout(() => {
-    productCapacityListContainer.innerHTML = CapacityPicker(products, selectedProduct);
-    productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+    productCapacityListContainer.innerHTML = CapacityPicker(products, defaultProduct);
+    productColorListContainer.innerHTML = ColorPicker(products, defaultProduct);
 }, 200);
 
-await loadProductData(); 
-slider.updateSlider(selectedProduct);
+await loadProductData();
+slider.updateSlider(defaultProduct);
 
 calculator.addEventListener("click", (e) => {
     const currentType = e.target.name;
     const currentValue = e.target.value
-    const id = e.target.id;
-    let isSliderChange = false;
+    let isProductChanged = false;
 
     switch (currentType) {
         case "color":
-            selectedProduct.color = currentValue;
-            orderLinkBtn.href = ProductLink();
-            isSliderChange = !isSliderChange;
+            selectedProduct.colorValue = currentValue;
+            isProductChanged = !isProductChanged;
             break;
         case "capacity":
+            selectedProduct = {};
             selectedProduct.capacity = Number(currentValue);
             productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
-            orderLinkBtn.href = ProductLink();
-            isSliderChange = !isSliderChange;
+            isProductChanged = !isProductChanged;
             break;
     }
 
-    if (isSliderChange) {
-        const o = products[`_${selectedProduct.capacity}`]
-            .find(item => item.colorValue === selectedProduct.color);
+    if (isProductChanged) {
+        console.log("selectedProduct", selectedProduct)
+        if (!selectedProduct.colorValue) {
+            selectedProduct = {
+                ...selectedProduct,
+                colorValue: defaultProduct.colorValue
+            };
+            productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+        }
 
-        slider.updateSlider(o);
-        isSliderChange = !isSliderChange;
+        selectedProduct = {
+            ...products[`_${selectedProduct.capacity}`].find(item => item.colorValue === selectedProduct.colorValue)
+        };
+        slider.updateSlider(selectedProduct);
+        orderLinkBtn.href = ProductLink(selectedProduct);
+        isProductChanged = !isProductChanged;
     }
 })
