@@ -56,7 +56,6 @@
     display: flex;
     height: 100%;
     width: 300% !important;
-    transition: all ease 1s;
 }
 
 .slider__slide_cnt {

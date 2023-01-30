@@ -1,4 +1,6 @@
 export const ColorPicker = (products, selectedProduct) => {
+    console.log(selectedProduct);
+    
     return (Object.values(products).map(array => {
         if (array[0].capacity === selectedProduct.capacity) {
             return array.map(mug => {

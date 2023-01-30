@@ -20,7 +20,6 @@ export class ImageSlider {
                     </div>`
                 );
             }
-
             return (`
                 <div class="slider__slide_cnt">
                     <img src="${slide}" itemprop="image" id="jpeg"
@@ -44,7 +43,6 @@ export class ImageSlider {
                     </li>`
                 );
             }
-
             return (`
                 <li class="slider__picture_array_cnt">
                     <input type="radio" name="picture_array" id="slider_slide_${index}" ${index === 0 ? "checked" : ""}">
@@ -86,6 +84,7 @@ export class ImageSlider {
 
     handlePrevButton() {
         const arr = document.getElementsByName("picture_array");
+        const slides = document.querySelector(".slider__slides");
 
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].checked == true) {
@@ -94,7 +93,13 @@ export class ImageSlider {
                     break;
                 }
                 if (i === 0) {
-                    arr[arr.length - 1].checked = true;
+                    slides.style.transition = null;
+                    slides.style.transform = "translateX(-100%)";
+                    setTimeout(() => {
+                        slides.style.transform = null;
+                        slides.style.transition = "all ease 1s";
+                        arr[arr.length - 1].checked = true;
+                    }, 1);
                     break;
                 }
             }
@@ -103,15 +108,23 @@ export class ImageSlider {
 
     handleNextButton() {
         const arr = document.getElementsByName("picture_array");
+        const slides = document.querySelector(".slider__slides");
 
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].checked == true) {
                 if (i < arr.length - 1) {
+                    slides.style.transition = "all ease 1s";
                     arr[i + 1].checked = true;
                     break;
                 }
                 if (i == arr.length - 1) {
-                    arr[0].checked = true;
+                    slides.style.transition = null;
+                    slides.style.transform = "translateX(33.3%)";
+                    setTimeout(() => {
+                        slides.style.transform = null;
+                        slides.style.transition = "all ease 1s";
+                        arr[0].checked = true;
+                    }, 1);
                     break;
                 }
             }
