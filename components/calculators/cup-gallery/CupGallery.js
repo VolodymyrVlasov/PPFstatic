@@ -1,3 +1,4 @@
+import { Time } from "../../../src/utils/Time.js";
 import { CapacityPicker } from "./CapacityPicker.js";
 import { ColorPicker } from "./ColorPicker.js";
 import { ImageSlider } from "./ImageSlider.js";
@@ -11,7 +12,9 @@ const colorLabel = document.getElementById("mug_calculator_details_color");
 const priceLabel = document.getElementById("mug_calculator_details_price");
 const dateLabel = document.getElementById("mug_calculator_details_date");
 const orderLinkBtn = document.getElementById("order_link_btn");
+
 const slider = new ImageSlider({ containerSelector: "#mug_slider" })
+const prodTimer = new Time();
 
 const products = {};
 const defaultProduct = {
@@ -34,7 +37,6 @@ const defaultProduct = {
 
 let selectedProduct = { ...defaultProduct };
 
-
 const loadProductData = async () => {
     fetch("/data/mug_180.json")
         .then(data => data.json())
@@ -52,6 +54,8 @@ const loadProductData = async () => {
         .catch(error => console.log(error));
 }
 
+await loadProductData();
+
 const ProductLink = (product) => {
     const url = products[`_${product.capacity}`]
         .find(item => item.colorValue === product.colorValue).URL;
@@ -65,13 +69,11 @@ const FindProduct = (product) => {
     return result.colorValue ? result : undefined;
 }
 
+
 setTimeout(() => {
     productCapacityListContainer.innerHTML = CapacityPicker(products, defaultProduct);
     productColorListContainer.innerHTML = ColorPicker(products, defaultProduct);
 }, 200);
-
-await loadProductData();
-slider.updateSlider(defaultProduct);
 
 calculator.addEventListener("click", (e) => {
     const currentType = e.target.name;
@@ -96,8 +98,8 @@ calculator.addEventListener("click", (e) => {
         if (!selectedProduct) {
             selectedProduct = {
                 ...selectedProduct,
-                colorValue: defaultProduct.colorValue,
-                capacity: defaultProduct.capacity
+                colorValue: defaultProduct?.colorValue,
+                capacity: defaultProduct?.capacity
             };
             selectedProduct = FindProduct(selectedProduct);
         }
@@ -108,8 +110,11 @@ calculator.addEventListener("click", (e) => {
         colorLabel.innerText = selectedProduct.color;
         capacityLabel.innerText = selectedProduct.capacity + " мл."
         priceLabel.innerText = selectedProduct.price[0] + " грн."
-        dateLabel.innerText = "XXX"
-
+        dateLabel.innerText = prodTimer.getTime();
         isProductChanged = !isProductChanged;
     }
 })
+
+dateLabel.innerText = prodTimer.getTime();
+
+
