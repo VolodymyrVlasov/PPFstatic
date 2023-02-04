@@ -69,10 +69,30 @@ const FindProduct = (product) => {
     return result.colorValue ? result : undefined;
 }
 
+const calculate = () => {
+    selectedProduct = FindProduct(selectedProduct);
+    if (!selectedProduct) {
+        selectedProduct = {
+            ...selectedProduct,
+            colorValue: defaultProduct?.colorValue,
+            capacity: defaultProduct?.capacity
+        };
+        selectedProduct = FindProduct(selectedProduct);
+    }
+    productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
+    slider.updateSlider(selectedProduct);
+    orderLinkBtn.href = ProductLink(selectedProduct);
+    nameLabel.innerText = selectedProduct.name;
+    colorLabel.innerText = selectedProduct.color;
+    capacityLabel.innerText = selectedProduct.capacity + " мл."
+    priceLabel.innerText = selectedProduct.price[0] + " грн."
+    dateLabel.innerText = prodTimer.getTime();
+}
 
 setTimeout(() => {
     productCapacityListContainer.innerHTML = CapacityPicker(products, defaultProduct);
     productColorListContainer.innerHTML = ColorPicker(products, defaultProduct);
+    calculate()
 }, 200);
 
 calculator.addEventListener("click", (e) => {
@@ -94,27 +114,7 @@ calculator.addEventListener("click", (e) => {
     }
 
     if (isProductChanged) {
-        selectedProduct = FindProduct(selectedProduct);
-        if (!selectedProduct) {
-            selectedProduct = {
-                ...selectedProduct,
-                colorValue: defaultProduct?.colorValue,
-                capacity: defaultProduct?.capacity
-            };
-            selectedProduct = FindProduct(selectedProduct);
-        }
-        productColorListContainer.innerHTML = ColorPicker(products, selectedProduct);
-        slider.updateSlider(selectedProduct);
-        orderLinkBtn.href = ProductLink(selectedProduct);
-        nameLabel.innerText = selectedProduct.name;
-        colorLabel.innerText = selectedProduct.color;
-        capacityLabel.innerText = selectedProduct.capacity + " мл."
-        priceLabel.innerText = selectedProduct.price[0] + " грн."
-        dateLabel.innerText = prodTimer.getTime();
+        calculate();
         isProductChanged = !isProductChanged;
     }
 })
-
-dateLabel.innerText = prodTimer.getTime();
-
-

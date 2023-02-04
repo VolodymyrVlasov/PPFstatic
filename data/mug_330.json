@@ -5,9 +5,9 @@
         "color": "Білий", 
         "name": "Чашка білa",
         "images": [
-            "/static/mugs/330/mug_330_ml_white_1.png",
-            "/static/mugs/330/mug_330_ml_white_2.png",
-            "/static/mugs/330/mug_330_ml_white_3.png"
+            "/static/mugs/330/mug_330_ml_white_1.webp",
+            "/static/mugs/330/mug_330_ml_white_2.webp",
+            "/static/mugs/330/mug_330_ml_white_3.webp"
         ],
         "price": [
             140
@@ -22,9 +22,9 @@
         "color": "Помаранчевий", 
         "name": "Чашка помаранчева середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_orange_1.png",
-            "/static/mugs/330/mug_330_ml_orange_2.png",
-            "/static/mugs/330/mug_330_ml_orange_3.png"
+            "/static/mugs/330/mug_330_ml_orange_1.webp",
+            "/static/mugs/330/mug_330_ml_orange_2.webp",
+            "/static/mugs/330/mug_330_ml_orange_3.webp"
         ],
         "price": [
             150
@@ -39,9 +39,9 @@
         "color": "Жовтий", 
         "name": "Чашка жовта середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_yellow_1.png",
-            "/static/mugs/330/mug_330_ml_yellow_2.png",
-            "/static/mugs/330/mug_330_ml_yellow_3.png"
+            "/static/mugs/330/mug_330_ml_yellow_1.webp",
+            "/static/mugs/330/mug_330_ml_yellow_2.webp",
+            "/static/mugs/330/mug_330_ml_yellow_3.webp"
         ],
         "price": [
             150
@@ -56,9 +56,9 @@
         "color": "Червоний", 
         "name": "Чашка червона середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_red_1.png",
-            "/static/mugs/330/mug_330_ml_red_2.png",
-            "/static/mugs/330/mug_330_ml_red_3.png"
+            "/static/mugs/330/mug_330_ml_red_1.webp",
+            "/static/mugs/330/mug_330_ml_red_2.webp",
+            "/static/mugs/330/mug_330_ml_red_3.webp"
         ],
         "price": [
             150
@@ -73,9 +73,9 @@
         "color": "Рожевий", 
         "name": "Чашка рожева середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_pink_1.png",
-            "/static/mugs/330/mug_330_ml_pink_2.png",
-            "/static/mugs/330/mug_330_ml_pink_3.png"
+            "/static/mugs/330/mug_330_ml_pink_1.webp",
+            "/static/mugs/330/mug_330_ml_pink_2.webp",
+            "/static/mugs/330/mug_330_ml_pink_3.webp"
         ],
         "price": [
             150
@@ -90,9 +90,9 @@
         "color": "Блактиний", 
         "name": "Чашка блакитна середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_light_blue_1.png",
-            "/static/mugs/330/mug_330_ml_light_blue_2.png",
-            "/static/mugs/330/mug_330_ml_light_blue_3.png"
+            "/static/mugs/330/mug_330_ml_light_blue_1.webp",
+            "/static/mugs/330/mug_330_ml_light_blue_2.webp",
+            "/static/mugs/330/mug_330_ml_light_blue_3.webp"
         ],
         "price": [
             150
@@ -107,9 +107,9 @@
         "color": "Темно-синій",
         "name": "Чашка темно-синя середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_cobalt_blue_1.png",
-            "/static/mugs/330/mug_330_ml_cobalt_blue_2.png",
-            "/static/mugs/330/mug_330_ml_cobalt_blue_3.png"
+            "/static/mugs/330/mug_330_ml_cobalt_blue_1.webp",
+            "/static/mugs/330/mug_330_ml_cobalt_blue_2.webp",
+            "/static/mugs/330/mug_330_ml_cobalt_blue_3.webp"
         ],
         "price": [
             150
@@ -124,9 +124,9 @@
         "color": "Зелений",
         "name": "Чашка зелена середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_green_1.png",
-            "/static/mugs/330/mug_330_ml_green_2.png",
-            "/static/mugs/330/mug_330_ml_green_3.png"
+            "/static/mugs/330/mug_330_ml_green_1.webp",
+            "/static/mugs/330/mug_330_ml_green_2.webp",
+            "/static/mugs/330/mug_330_ml_green_3.webp"
         ],
         "price": [
             150
@@ -141,9 +141,9 @@
         "color": "Салатовий",
         "name": "Чашка салатова середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_light_green_1.png",
-            "/static/mugs/330/mug_330_ml_light_green_2.png",
-            "/static/mugs/330/mug_330_ml_light_green_3.png"
+            "/static/mugs/330/mug_330_ml_light_green_1.webp",
+            "/static/mugs/330/mug_330_ml_light_green_2.webp",
+            "/static/mugs/330/mug_330_ml_light_green_3.webp"
         ],
         "price": [
             150
@@ -158,9 +158,9 @@
         "color": "Чорний",
         "name": "Чашка чорна середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_black_1.png",
-            "/static/mugs/330/mug_330_ml_black_2.png",
-            "/static/mugs/330/mug_330_ml_black_3.png"
+            "/static/mugs/330/mug_330_ml_black_1.webp",
+            "/static/mugs/330/mug_330_ml_black_2.webp",
+            "/static/mugs/330/mug_330_ml_black_3.webp"
         ],
         "price": [
             150
@@ -175,9 +175,9 @@
         "color": "Бордовий",
         "name": "Чашка бордова середина та ручка",
         "images": [
-            "/static/mugs/330/mug_330_ml_maroon_1.png",
-            "/static/mugs/330/mug_330_ml_maroon_2.png",
-            "/static/mugs/330/mug_330_ml_maroon_3.png"
+            "/static/mugs/330/mug_330_ml_maroon_1.webp",
+            "/static/mugs/330/mug_330_ml_maroon_2.webp",
+            "/static/mugs/330/mug_330_ml_maroon_3.webp"
         ],
         "price": [
             150
@@ -192,9 +192,9 @@
         "color": "Хамелеон чорний",
         "name": "Чорний хамелеон",
         "images": [
-            "/static/mugs/330/mug_330_ml_chameleon_black_1.png",
-            "/static/mugs/330/mug_330_ml_chameleon_black_2.png",
-            "/static/mugs/330/mug_330_ml_chameleon_black_3.png"
+            "/static/mugs/330/mug_330_ml_chameleon_black_1.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_black_2.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_black_3.webp"
         ],
         "price": [
             300
@@ -209,9 +209,9 @@
         "color": "Синій хамелеон",
         "name": "Синій хамелеон",
         "images": [
-            "/static/mugs/330/mug_330_ml_chameleon_blue_1.png",
-            "/static/mugs/330/mug_330_ml_chameleon_blue_2.png",
-            "/static/mugs/330/mug_330_ml_chameleon_blue_3.png"
+            "/static/mugs/330/mug_330_ml_chameleon_blue_1.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_blue_2.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_blue_3.webp"
         ],
         "price": [
             300
@@ -226,9 +226,9 @@
         "color": "Червоний хамелеон",
         "name": "Червоний хамелеон",
         "images": [
-            "/static/mugs/330/mug_330_ml_chameleon_red_1.png",
-            "/static/mugs/330/mug_330_ml_chameleon_red_2.png",
-            "/static/mugs/330/mug_330_ml_chameleon_red_3.png"
+            "/static/mugs/330/mug_330_ml_chameleon_red_1.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_red_2.webp",
+            "/static/mugs/330/mug_330_ml_chameleon_red_3.webp"
         ],
         "price": [
             300

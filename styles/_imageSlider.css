@@ -47,12 +47,15 @@
 
 .slider__slides_cnt {
     width: 100%;
+
     overflow: hidden !important;
 }
 
 .slider__slides {
     display: flex;
     height: 100%;
+    transform: translateX(0px);
+
     width: 300% !important;
 }
 

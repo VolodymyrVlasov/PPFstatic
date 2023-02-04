@@ -5,9 +5,9 @@
         "color": "Білий", 
         "name": "Чашка велика XL білa",
         "images": [
-            "/static/mugs/425_white_front.jpeg",
-            "/static/mugs/425_white_side.jpeg",
-            "/static/mugs/425_white.jpeg"
+            "/static/mugs/425/mug_425_ml_white_1.webp",
+            "/static/mugs/425/mug_425_ml_white_2.webp",
+            "/static/mugs/425/mug_425_ml_white_3.webp"
         ],
         "price": [
             140
@@ -22,7 +22,9 @@
         "color": "Помаранчевий", 
         "name": "Чашка велика XL помаранчева середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-orange"
+            "/static/mugs/425/mug_425_ml_orange_1.webp",
+            "/static/mugs/425/mug_425_ml_orange_2.webp",
+            "/static/mugs/425/mug_425_ml_orange_3.webp"
         ],
         "price": [
             150
@@ -37,7 +39,9 @@
         "color": "Жовтий", 
         "name": "Чашка велика XL жовта середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-yellow"
+            "/static/mugs/425/mug_425_ml_yellow_1.webp",
+            "/static/mugs/425/mug_425_ml_yellow_2.webp",
+            "/static/mugs/425/mug_425_ml_yellow_3.webp"
         ],
         "price": [
             150
@@ -52,7 +56,9 @@
         "color": "Червоний", 
         "name": "Чашка велика XL червона середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-red"
+            "/static/mugs/425/mug_425_ml_red_1.webp",
+            "/static/mugs/425/mug_425_ml_red_2.webp",
+            "/static/mugs/425/mug_425_ml_red_3.webp"
         ],
         "price": [
             150
@@ -67,7 +73,9 @@
         "color": "Рожевий", 
         "name": "Чашка велика XL рожева середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-pink"
+            "/static/mugs/425/mug_425_ml_pink_1.webp",
+            "/static/mugs/425/mug_425_ml_pink_2.webp",
+            "/static/mugs/425/mug_425_ml_pink_3.webp"
         ],
         "price": [
             150
@@ -82,7 +90,9 @@
         "color": "Блактиний", 
         "name": "Чашка велика XL блакитна середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-light-blue"
+            "/static/mugs/425/mug_425_ml_light_blue_1.webp",
+            "/static/mugs/425/mug_425_ml_light_blue_2.webp",
+            "/static/mugs/425/mug_425_ml_light_blue_3.webp"
         ],
         "price": [
             150
@@ -97,7 +107,9 @@
         "color": "Темно-синій",
         "name": "Чашка велика XL темно-синя середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-blue"
+            "/static/mugs/425/mug_425_ml_cobalt_blue_1.webp",
+            "/static/mugs/425/mug_425_ml_cobalt_blue_2.webp",
+            "/static/mugs/425/mug_425_ml_cobalt_blue_3.webp"
         ],
         "price": [
             150
@@ -112,7 +124,9 @@
         "color": "Зелений",
         "name": "Чашка велика XL зелена середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-green"
+            "/static/mugs/425/mug_425_ml_green_1.webp",
+            "/static/mugs/425/mug_425_ml_green_2.webp",
+            "/static/mugs/425/mug_425_ml_green_3.webp"
         ],
         "price": [
             150
@@ -127,7 +141,9 @@
         "color": "Салатовий",
         "name": "Чашка велика XL салатова середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-light-green"
+            "/static/mugs/425/mug_425_ml_light_green_1.webp",
+            "/static/mugs/425/mug_425_ml_light_green_2.webp",
+            "/static/mugs/425/mug_425_ml_light_green_3.webp"
         ],
         "price": [
             150
@@ -142,7 +158,9 @@
         "color": "Чорний",
         "name": "Чашка велика XL чорна середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-black"
+            "/static/mugs/425/mug_425_ml_black_1.webp",
+            "/static/mugs/425/mug_425_ml_black_2.webp",
+            "/static/mugs/425/mug_425_ml_black_3.webp"
         ],
         "price": [
             150
@@ -157,7 +175,9 @@
         "color": "Бордовий",
         "name": "Чашка велика XL бордова середина",
         "images": [
-            "/static/mugs/mug-print-425-inner-maroon"
+            "/static/mugs/425/mug_425_ml_maroon_1.webp",
+            "/static/mugs/425/mug_425_ml_maroon_2.webp",
+            "/static/mugs/425/mug_425_ml_maroon_3.webp"
         ],
         "price": [
             150
