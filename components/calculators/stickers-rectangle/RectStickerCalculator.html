@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECT STICKER CALCULATOR | COMPONENT</title>
+    <link rel="stylesheet" href="../../../styles/__index.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container col gap">
+            <h2 class="text_32">Розрахунок вартості друку</h2>
+            <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва</p>
+            <form id="calculator" class="calculator">
+                <div class="inputs col big_gap flex_3">
+                    <div class="row big_gap width_100">
+                        <div class="custom_input" id="input_width" title="Обери ширину у міліметрах">
+                            <span class="label">40</span>
+                            <label for="input_range_width" class="custom_input_label">Ширина (мм)</label>
+                            <input type="range" id="input_range_width" class="custom_input_input__range" min="5"
+                                max="297" value="50" />
+                        </div>
+                        <div class="custom_input" id="input_height" title="Обери довжину у міліметрах">
+                            <span id="input_label_amount" class="text_16__bold">40</span>
+                            <label class="custom_input_label" for="input_range_height">Довжина (мм)</label>
+                            <input type="range" id="input_range_height" class="custom_input_input__range" min="40"
+                                max="420" value="50" step="1" />
+                        </div>
+                    </div>
+                    <div class="row big_gap width_100">
+                        <div class="custom_input" id="input_corner_radius"
+                            title="Обери paдіус заокруглення кутів у міліметрах">
+                            <span class="label">40</span>
+                            <label for="input_range_corner_radius" class="custom_input_label">Заокруглення кутів (R
+                                мм)</label>
+                            <input type="range" id="input_range_corner_radius" class="custom_input_input__range" min="0"
+                                max="300" value="0" />
+                        </div>
+                        <div class="custom_input" id="input_amount"
+                            title="Обери кількість (кратно до друкованого аркуша)">
+                            <span class="label">40</span>
+                            <label for="input_range_amount" class="custom_input_label">Кількість (шт)</label>
+                            <input type="range" id="input_range_amount" class="custom_input_input__range" min="5"
+                                max="300" value="50" />
+                        </div>
+                    </div>
+                    <div class="row big_gap width_100">
+                        <div class="select col flex_1">
+                            <label for="material">Матеріал</label>
+                            <select name="material" id="material" aria-label="Обери матеріал наліпки">
+                                <option value="RAFLATAC" selected>Паперова наліпка</option>
+                                <option value="RAFLATAC_GLOSS">Паперова з глянцевою ламінацією</option>
+                                <option value="RAFLATAC_MATTE">Паперова з матовою ламінацією</option>
+                                <option value="RITRAMA_GLOSS">Вінілова глянцева</option>
+                                <option value="RITRAMA_MATTE">Вінілова матова</option>
+                                <option value="RITRAMA_COATED">Вініл з ламінацією</option>
+                                <option value="TRANSPARENT">Прозора глянцева</option>
+                                <option value="TRANSPARENT_MATTE">Напівпрозова матова</option>
+                                <option value="VINE">Винна етикета</option>
+                                <option value="RAFLATAC_FOIL">З фольгою (паперова)</option>
+                                <option value="TRANSPARENT_FOIL">З фольгою (прозова)</option>
+                                <option value="TRANSPARENT_WHITE">З друком білим кольором (прозора)</option>
+                                <option value="PET">PET наліпка</option>
+                            </select>
+                        </div>
+                        <div class="select col flex_1">
+                            <label for="cut">Порізка</label>
+                            <select name="cut" id="cut" aria-label="Обери якість друку наліпки">
+                                <option value="KISS_CUT_A3" selected>Контурна на А3 (5 - 300 мм)</option>
+                                <option value="KISS_CUT_A4">Контурна на А4 (5 - 200 мм)</option>
+                                <option value="DIE_CUT">Наскрізна (50 - 250 мм)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="summary" class="summary flex_1">
+                    <button type="button" id="detailed_price_btn" class="summary_details_btn"
+                    aria-label="Більше інформації про розрахунок"
+                    title="Більше інформації про розрахунок">i</button>
+                    <div class="col gap">
+                        <label for="prod-time">Готовність:</label>
+                        <strong id="prod-time" class="link">1 жовтня 18:00</strong>
+                    </div>
+                    <div class="col gap">
+                        <label for="price">Варстіть:</label>
+                        <strong id="price" class="price"
+                            title="Орієнтовні дата та час готовності, в залежності від особливостей макету, дати замовлення чи завантаженості виробництва можуть бути змінені">70
+                            грн</strong>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <p>*Мінімальне замовлення - один макет на одному друкованому аркуші (SRA3) обраного матеріалу</p>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>

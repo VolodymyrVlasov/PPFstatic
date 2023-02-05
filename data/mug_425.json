@@ -1,0 +1,290 @@
+[
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "white",
+        "color": "Білий", 
+        "name": "Чашка велика XL білa",
+        "images": [
+            "/static/mugs/425/mug_425_ml_white_1.webp",
+            "/static/mugs/425/mug_425_ml_white_2.webp",
+            "/static/mugs/425/mug_425_ml_white_3.webp"
+        ],
+        "price": [
+            200, 
+            180,
+            170, 
+            160, 
+            160, 
+            155, 
+            150, 
+            150,
+            150,
+            150
+        ],
+        "URL": "mug-white",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "orange",
+        "color": "Помаранчевий", 
+        "name": "Чашка велика XL помаранчева середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_orange_1.webp",
+            "/static/mugs/425/mug_425_ml_orange_2.webp",
+            "/static/mugs/425/mug_425_ml_orange_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-orange-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "yellow",
+        "color": "Жовтий", 
+        "name": "Чашка велика XL жовта середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_yellow_1.webp",
+            "/static/mugs/425/mug_425_ml_yellow_2.webp",
+            "/static/mugs/425/mug_425_ml_yellow_3.webp"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-yellow-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "red",
+        "color": "Червоний", 
+        "name": "Чашка велика XL червона середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_red_1.webp",
+            "/static/mugs/425/mug_425_ml_red_2.webp",
+            "/static/mugs/425/mug_425_ml_red_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-red-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "pink",
+        "color": "Рожевий", 
+        "name": "Чашка велика XL рожева середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_pink_1.webp",
+            "/static/mugs/425/mug_425_ml_pink_2.webp",
+            "/static/mugs/425/mug_425_ml_pink_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-pink-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "light_blue",
+        "color": "Блактиний", 
+        "name": "Чашка велика XL блакитна середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_light_blue_1.webp",
+            "/static/mugs/425/mug_425_ml_light_blue_2.webp",
+            "/static/mugs/425/mug_425_ml_light_blue_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-light-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "cobalt_blue",
+        "color": "Темно-синій",
+        "name": "Чашка велика XL темно-синя середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_cobalt_blue_1.webp",
+            "/static/mugs/425/mug_425_ml_cobalt_blue_2.webp",
+            "/static/mugs/425/mug_425_ml_cobalt_blue_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "green",
+        "color": "Зелений",
+        "name": "Чашка велика XL зелена середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_green_1.webp",
+            "/static/mugs/425/mug_425_ml_green_2.webp",
+            "/static/mugs/425/mug_425_ml_green_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "light_green",
+        "color": "Салатовий",
+        "name": "Чашка велика XL салатова середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_light_green_1.webp",
+            "/static/mugs/425/mug_425_ml_light_green_2.webp",
+            "/static/mugs/425/mug_425_ml_light_green_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-llight-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "black",
+        "color": "Чорний",
+        "name": "Чашка велика XL чорна середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_black_1.webp",
+            "/static/mugs/425/mug_425_ml_black_2.webp",
+            "/static/mugs/425/mug_425_ml_black_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-black-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_425",
+        "capacity": 425,
+        "colorValue": "maroon",
+        "color": "Бордовий",
+        "name": "Чашка велика XL бордова середина",
+        "images": [
+            "/static/mugs/425/mug_425_ml_maroon_1.webp",
+            "/static/mugs/425/mug_425_ml_maroon_2.webp",
+            "/static/mugs/425/mug_425_ml_maroon_3.webp"
+        ],
+        "price": [
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
+        ],
+        "URL": "mug-maroon-",
+        "articul": "",
+        "productType": "MUG"
+    }
+]

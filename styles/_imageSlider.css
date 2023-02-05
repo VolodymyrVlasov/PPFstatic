@@ -1,0 +1,188 @@
+.calculator_slider {
+    display: flex;
+    align-items: center;
+    width: 50% !important;
+}
+
+.calculator_details {
+    width: 50% !important;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.slider__display {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 24px;
+    animation: fade-in 600ms 1;
+}
+
+.slider__arrow {
+    pointer-events: none;
+    fill: var(--color-light-gray);
+}
+
+.slider__button_next {
+    height: 100%;
+    padding: 8px;
+    border-radius: var(--size-border-radius);
+    transition: all 200ms ease;
+}
+
+.slider__button_next:hover {
+    background-color: var(--color-light-light-theme);
+}
+
+.slider__button_next:hover .slider__arrow {
+    fill: var(--color-theme);
+    transition: var(--time-tr-time);
+}
+
+.slider__slides_cnt {
+    width: 100%;
+
+    overflow: hidden !important;
+}
+
+.slider__slides {
+    display: flex;
+    height: 100%;
+    transform: translateX(0px);
+
+    width: 300% !important;
+}
+
+.slider__slide_cnt {
+    display: flex;
+    height: 100%;
+    width: 33.3%;
+}
+
+.slider__slide_image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: contain;
+    border-radius: var(--size-border-radius);
+    transition: all 300ms ease;
+}
+
+.slider__slide_image::after {
+    content: "Упс! Зображення не знайдене.\0a\0aOops! Image not found";
+    padding: 50% 0;
+    white-space: pre;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light-light-theme);
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: var(--size-border-radius);
+
+}
+
+.slider__slide_image:hover {
+    transform: scale(1.05);
+}
+
+.slider__picture_array {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 75px;
+}
+
+.slider__picture_array_cnt {
+    display: flex !important;
+    padding: 4px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+    transition: all 200ms ease;
+}
+
+.slider__picture_array_cnt:hover,
+.slider__picture_array_cnt:has(>input[type="radio"]:checked~label) {
+    border: 1px solid var(--color-theme);
+    transform: scale(1.1);
+}
+
+.slider__picture_array_cnt>label {
+    display: flex;
+    cursor: pointer;
+}
+
+.slider__picture_array_img {
+    border-radius: 3px;
+    max-height: 100%;
+    width: 65px !important;
+    height: 65px;
+    padding: 4px;
+    pointer-events: none;
+}
+
+.slider:has(#slider_slide_0:checked) .slider__slides {
+    transform: translateX(0px);
+}
+
+.slider:has(#slider_slide_1:checked) .slider__slides {
+    transform: translateX(-33.33%);
+}
+
+.slider:has(#slider_slide_2:checked) .slider__slides {
+    transform: translateX(-66.66%);
+}
+
+@media (max-width: 767.98px) {
+    .slider__picture_array {
+        height: 45px;
+    }
+
+    .slider__display {
+        gap: 12px;
+    }
+
+    .slider__slides_cnt {
+        height: 100%;
+        overflow: scroll;
+    }
+
+    .calculator_slider {
+        width: 100% !important;
+    }
+
+    .calculator_details {
+        width: 100% !important;
+    }
+
+    .slider__slide_image {
+        min-width: 245px;
+        min-height: 245px;
+        background-color: var(--color-light-light-theme);
+    }
+
+    .slider__picture_array {
+        display: none;
+    }
+
+    .calculator_details * {
+        justify-content: center;
+    }
+
+    .button__primary {
+        width: 100%;
+    }
+}

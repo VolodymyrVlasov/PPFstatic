@@ -17,11 +17,18 @@
 @import "./_aminations.css";
 @import "./_materialCard.css";
 @import "./_anchorWidget.css";
+@import "./_inputNumber.css";
+@import "./_cupGallery.css";
+@import "./_imageSlider.css";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth
 }
 
 a {
@@ -40,6 +47,7 @@ img {
     font-size: 12px;
     color: var(--color-gray);
     text-align: center;
+    line-height: 100%;
 }
 
 button {
