@@ -27,7 +27,11 @@ body {
 
 .text_32 {
     font-size: var(--font-text-32);
-    font-weight: 600;
+}
+
+.text_32__bold {
+    font-size: var(--font-text-32);
+    font-weight: 800;
 }
 
 .text_24 {

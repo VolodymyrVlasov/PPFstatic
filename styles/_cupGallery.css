@@ -1,0 +1,183 @@
+.mug_calculator {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.calculator_slider,
+.calculator_details {
+    width: 50% !important;
+}
+
+.calculator_details_name {
+    height: 2rem;
+}
+
+.radio_capacity {
+    padding: var(--size-button-padding);
+    width: var(--size-button-min-width);
+    border-radius: var(--size-border-radius);
+    cursor: pointer;
+    background-color: var(--color-light-gray);
+    border: 1px solid transparent;
+    transition: var(--time-tr-time);
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.radio_capacity:hover,
+input[type="radio"]:checked+.radio_capacity {
+    color: var(--color-theme);
+    background-color: var(--color-light-light-theme);
+    border: 1px solid var(--color-theme);
+}
+
+.radio_capacity_wrapper:has(>input[type="radio"]:checked) {
+    animation: push 0.15s;
+    animation-iteration-count: 1;
+}
+
+.color_picker {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 0.2px solid var(--color-light-gray);
+}
+
+.color_picker_wrapper {
+    display: flex;
+    border: 0.2px solid transparent;
+    padding: 1px;
+    background-color: #fff;
+    border-radius: 9px;
+    transition: 100ms;
+}
+
+.color_picker_wrapper:hover {
+    border: 0.2px solid var(--color-theme);
+    transform: scale(1.1);
+}
+
+.color_picker_wrapper:has(>input[type="radio"]:checked+.color_picker) {
+    border: 0.6px solid var(--color-theme);
+}
+
+input[type="radio"]:checked+.color_picker {
+    border: 0.2px solid transparent;
+}
+
+.color_picker_wrapper:has(>input[type="radio"]:checked) {
+    animation: push 0.15s;
+    animation-iteration-count: 1;
+}
+
+.color_picker_cnt {
+    width: 80%;
+}
+
+.summary_card {
+    padding-top: 48px;
+}
+
+.slider_arrow {
+    fill: var(--color-light-gray);
+}
+
+.product_slider__button_next:hover .slider_arrow {
+    fill: var(--color-theme);
+    transition: var(--time-tr-time);
+}
+
+.white {
+    background-color: #fff;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.orange {
+    background-color: rgb(255, 145, 0);
+}
+
+.red {
+    background-color: rgb(222, 3, 3);
+}
+
+.light_green {
+    background-color: rgb(140, 191, 48);
+}
+
+.green {
+    background-color: rgb(6, 82, 46);
+}
+
+.light_blue {
+    background-color: rgb(100, 165, 220);
+}
+
+.cobalt_blue {
+    background-color: rgb(28, 14, 120);
+}
+
+.black {
+    background-color: black;
+}
+
+.pink {
+    background-color: rgb(241, 178, 188);
+}
+
+.maroon {
+    background-color: rgb(91, 34, 57);
+}
+
+.chameleon-black {
+    background: linear-gradient(black, white);
+}
+
+.chameleon_black {
+    background: linear-gradient(black, white);
+}
+
+.chameleon_blue {
+    background: linear-gradient(blue, white);
+}
+
+.chameleon_red {
+    background: linear-gradient(red, white);
+}
+
+.hidden-color {
+    visibility: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .calculator_slider {
+        width: 100%;
+    }
+
+    .calculator_details {
+        align-items: center;
+        width: 100%;
+    }
+
+    .color_picker_cnt {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mug_calculator {
+        flex-direction: column;
+    }
+
+    .color_picker {
+        width: 32px;
+        height: 32px;
+    }
+}

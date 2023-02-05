@@ -1,0 +1,290 @@
+[
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "white",
+        "color": "Білий",
+        "name": "Чашка міні білa",
+        "images": [
+            "/static/mugs/180/mug_180_ml_white_1.webp",
+            "/static/mugs/180/mug_180_ml_white_2.webp",
+            "/static/mugs/180/mug_180_ml_white_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-white",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "orange",
+        "color": "Помаранчевий",
+        "name": "Чашка міні помаранчева середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_orange_1.webp",
+            "/static/mugs/180/mug_180_ml_orange_2.webp",
+            "/static/mugs/180/mug_180_ml_orange_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-orange-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "yellow",
+        "color": "Жовтий",
+        "name": "Чашка міні жовта середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_yellow_1.webp",
+            "/static/mugs/180/mug_180_ml_yellow_2.webp",
+            "/static/mugs/180/mug_180_ml_yellow_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-yellow-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "red",
+        "color": "Червоний",
+        "name": "Чашка міні червона середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_red_1.webp",
+            "/static/mugs/180/mug_180_ml_red_2.webp",
+            "/static/mugs/180/mug_180_ml_red_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-red-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "pink",
+        "color": "Рожевий",
+        "name": "Чашка міні рожева середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_pink_1.webp",
+            "/static/mugs/180/mug_180_ml_pink_2.webp",
+            "/static/mugs/180/mug_180_ml_pink_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-pink-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "light_blue",
+        "color": "Блактиний",
+        "name": "Чашка міні блакитна середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_light_blue_1.webp",
+            "/static/mugs/180/mug_180_ml_light_blue_2.webp",
+            "/static/mugs/180/mug_180_ml_light_blue_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-light-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "cobalt_blue",
+        "color": "Темно-синій",
+        "name": "Чашка міні темно-синя середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_cobalt_blue_1.webp",
+            "/static/mugs/180/mug_180_ml_cobalt_blue_2.webp",
+            "/static/mugs/180/mug_180_ml_cobalt_blue_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-blue-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "green",
+        "color": "Зелений",
+        "name": "Чашка міні зелена середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_green_1.webp",
+            "/static/mugs/180/mug_180_ml_green_2.webp",
+            "/static/mugs/180/mug_180_ml_green_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "light_green",
+        "color": "Салатовий",
+        "name": "Чашка міні салатова середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_light_green_1.webp",
+            "/static/mugs/180/mug_180_ml_light_green_2.webp",
+            "/static/mugs/180/mug_180_ml_light_green_3.webp"
+        ],
+        "price": [
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-llight-green-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "black",
+        "color": "Чорний",
+        "name": "Чашка міні чорна середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_black_1.webp",
+            "/static/mugs/180/mug_180_ml_black_2.webp",
+            "/static/mugs/180/mug_180_ml_black_3.webp"
+        ],
+        "price": [
+            150
+        ],
+        "URL": "mug-black-",
+        "articul": "",
+        "productType": "MUG"
+    },
+    {
+        "id": "id_180",
+        "capacity": 180,
+        "colorValue": "maroon",
+        "color": "Бордовий",
+        "name": "Чашка міні бордова середина",
+        "images": [
+            "/static/mugs/180/mug_180_ml_maroon_1.webp",
+            "/static/mugs/180/mug_180_ml_maroon_2.webp",
+            "/static/mugs/180/mug_180_ml_maroon_3.webp"
+        ],
+        "price": [ 
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
+        ],
+        "URL": "mug-maroon-",
+        "articul": "",
+        "productType": "MUG"
+    }
+]

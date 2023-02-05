@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/icons/icon-default-avatar.webp">
+    <title>CUP CALCULATOR | COMPONENT</title>
+    <link rel="stylesheet" href="/styles/__index.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container col big_gap">
+            <div class="col gap">
+                <h3 itemprop="name" class="text_32" content="Замовити друк на чашках">Замовити друк на чашках</h3>
+                <p>Оберіть параметри потрібної продукції для розрахунку вартості та орієнтовних термінів виробництва
+                </p>
+            </div>
+            <div id="mug_calculator" class="mug_calculator big_gap">
+                <div class="calculator_slider col big_gap">
+                    <div class="slider" id="mug_slider">
+                        <div class="slider__display">
+                            <button type="button" class="slider__button_next" id="mug_slider_prev_btn"
+                                aria-label="Попередній слайд" ;>
+                                <svg class="" width="16" height="40" aria-hidden="true">
+                                    <path class="slider__arrow"
+                                        d="M13.18,39.64a1,1,0,0,0,.57-.17A1.05,1.05,0,0,0,14.07,38L2.52,19.86,14.07,1.63A1.06,1.06,0,0,0,12.28.49L0,19.86,12.28,39.15A1.06,1.06,0,0,0,13.18,39.64Z" />
+                                </svg>
+                            </button>
+                            <div class="slider__slides_cnt">
+                                <div class="slider__slides">
+                                    <div class="slider__slide_cnt">
+                                        <img src="/static/mugs/330/mug_330_ml_white_1.webp" itemprop="image" id="jpeg"
+                                            alt="Чашка біла 330 мл" description="замовити друк на чашках в Києві"
+                                            class="slider__slide_image">
+                                    </div>
+                                    <div class="slider__slide_cnt">
+                                        <img src="/static/mugs/330/mug_330_ml_white_2.webp" itemprop="image" id="jpeg"
+                                            alt="Чашка біла 330 мл" description="замовити друк на чашках в Києві"
+                                            class="slider__slide_image">
+                                    </div>
+                                    <div class="slider__slide_cnt">
+                                        <img src="/static/mugs/330/mug_330_ml_white_3.webp" itemprop="image" id="jpeg"
+                                            alt="Чашка біла 330 мл" description="замовити друк на чашках в Києві"
+                                            class="slider__slide_image">
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="slider__button_next" id="mug_slider_next_btn"
+                                aria-label="Наступний слайд">
+                                <svg width="16" height="40" aria-hidden="true">
+                                    <path class="slider__arrow"
+                                        d="M1.06,39.64a1,1,0,0,1-.57-.17A1.05,1.05,0,0,1,.17,38L11.72,19.86.17,1.63A1.05,1.05,0,0,1,.49.17,1.06,1.06,0,0,1,2,.49L14.24,19.86,2,39.15A1.06,1.06,0,0,1,1.06,39.64Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul class="slider__picture_array">
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_1" checked>
+                                <label for="slider_slide_1">
+                                    <img src="/static/mugs/330/mug_330_ml_white_1.webp" alt=""
+                                        class="slider__picture_array_img">
+                                </label>
+                            </li>
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_2">
+                                <label for="slider_slide_2">
+                                    <img src="/static/mugs/330/mug_330_ml_white_2.webp" alt=""
+                                        class="slider__picture_array_img">
+                                </label>
+                            </li>
+                            <li class="slider__picture_array_cnt">
+                                <input type="radio" name="picture_array" id="slider_slide_3">
+                                <label for="slider_slide_3">
+                                    <img src="/static/mugs/330/mug_330_ml_white_3.webp" alt=""
+                                        class="slider__picture_array_img">
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calculator_details col big_gap">
+                    <h2 class="text_24__bold calculator_details_name" id="mug_calculator_details_name">Чашка білa</h2>
+                    <div class="col gap">
+                        <div class="row gap width_100">
+                            <span class="text_14__gray">Об'єм:</span>
+                            <span id="mug_calculator_details_capacity">330 мл</span>
+                        </div>
+                        <ul class="row small_gap width_100" id="mug_calculator__product_capacity">
+                            <li class="radio_capacity_wrapper" title="чашка міні об'ємом 180 мл">
+                                <input type="radio" name="capacity" value="180" id="capacity_180">
+                                <label for="capacity_180" class="radio_capacity ">180 мл</label>
+                            </li>
+                            <li class="radio_capacity_wrapper" value="330" title="чашка стандартна об'ємом 330 мл">
+                                <input type="radio" name="capacity" value="330" id="capacity_330" checked>
+                                <label for="capacity_330" class="radio_capacity ">330 мл</label>
+                            </li>
+                            <li class="radio_capacity_wrapper" value="425" title="чашка велика XL об'ємом 425 мл">
+                                <input type="radio" name="capacity" value="425" id="capacity_425">
+                                <label for="capacity_425" class="radio_capacity ">425 мл</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col gap">
+                        <div class="row gap width_100">
+                            <span class="text_14__gray">Колір:</span>
+                            <span id="mug_calculator_details_color">Білий</span>
+                        </div>
+                        <ul class="row small_gap color_picker_cnt" id="mug_calculator__color_set">
+                            <li title="Білий" itemprop="color" content="Білий" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="white" id="color_white" checked>
+                                <label for="color_white" class="color_picker white" aria-label="Білий"></label>
+                            </li>
+                            <li title="Червоний" itemprop="color" content="Червоний" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="red" id="color_red">
+                                <label for="color_red" class="color_picker red" aria-label="Білий"></label>
+                            </li>
+
+                            <li title="Помаранчевий" itemprop="color" content="Помаранчевий"
+                                class="color_picker_wrapper">
+                                <input type="radio" name="color" value="orange" id="color_orange">
+                                <label for="color_orange" class="color_picker orange" aria-label="Помаранчевий"></label>
+                            </li>
+
+                            <li title="Салатовий" itemprop="color" content="Салатовий" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="light_green" id="color_light_green">
+                                <label for="color_light_green" class="color_picker light_green"
+                                    aria-label="Салатовий"></label>
+                            </li>
+
+                            <li title="Жовтий" itemprop="color" content="Жовтий" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="yellow" id="color_yellow">
+                                <label for="color_yellow" class="color_picker yellow" aria-label="Жовтий"></label>
+                            </li>
+
+                            <li title="Зелений" itemprop="color" content="Зелений" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="green" id="color_green">
+                                <label for="color_green" class="color_picker green" aria-label="Зелений"></label>
+                            </li>
+
+                            <li title="Блактиний" itemprop="color" content="Блактиний" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="light_blue" id="color_light_blue">
+                                <label for="color_light_blue" class="color_picker light_blue"
+                                    aria-label="Блактиний"></label>
+                            </li>
+
+                            <li title="Темно-синій" itemprop="color" content="Темно-синій" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="cobalt_blue" id="color_cobalt_blue">
+                                <label for="color_cobalt_blue" class="color_picker cobalt_blue"
+                                    aria-label="Темно-синій"></label>
+                            </li>
+
+                            <li title="Рожевий" itemprop="color" content="Рожевий" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="pink" id="color_pink">
+                                <label for="color_pink" class="color_picker pink" aria-label="Рожевий"></label>
+                            </li>
+
+                            <li title="Чорний" itemprop="color" content="Чорний" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="black" id="color_black">
+                                <label for="color_black" class="color_picker black" aria-label="Чорний"></label>
+                            </li>
+
+                            <li title="Бордовий" itemprop="color" content="Бордовий" class="color_picker_wrapper">
+                                <input type="radio" name="color" value="maroon" id="color_maroon">
+                                <label for="color_maroon" class="color_picker maroon" aria-label="Бордовий"></label>
+                            </li>
+
+                            <li title="Хамелеон чорний" itemprop="color" content="Хамелеон чорний"
+                                class="color_picker_wrapper">
+                                <input type="radio" name="color" value="maroon" id="color_chameleon_black">
+                                <label for="color_chameleon_black" class="color_picker chameleon_black"
+                                    aria-label="Хамелеон чорний"></label>
+                            </li>
+
+                            <li title="Хамелеон червоний" itemprop="color" content="Хамелеон червоний"
+                                class="color_picker_wrapper">
+                                <input type="radio" name="color" value="maroon" id="color_chameleon_red">
+                                <label for="color_chameleon_red" class="color_picker chameleon_red"
+                                    aria-label="Хамелеон червоний"></label>
+                            </li>
+
+                            <li title="Хамелеон синій" itemprop="color" content="Хамелеон синій"
+                                class="color_picker_wrapper">
+                                <input type="radio" name="color" value="maroon" id="color_chameleon_blue">
+                                <label for="color_chameleon_blue" class="color_picker chameleon_blue"
+                                    aria-label="Хамелеон синій"></label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col big_gap width_100">
+                        <div class="col small_gap width_100">
+                            <div class="row gap width_100">
+                                <span class="text_14__gray">Ціна:</span>
+                                <span class="text_16__bold" id="mug_calculator_details_price" itemprop="price"
+                                    content="140.00" content="UAH" temprop="priceCurrency">140 грн</span>
+                            </div>
+                            <div class="row gap width_100">
+                                <span class="text_14__gray ">Готовність:</span>
+                                <span class="text_16__bold" id="mug_calculator_details_date">29 лютого 2123 р.</span>
+                            </div>
+                        </div>
+                        <a class="button__primary" id="order_link_btn" target="_blank" href="#"
+                            rel="noreferer nofollow">Замовити</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <!-- <div class="product-description">
+        <ul class="non-list flex col ">
+            <li><img src="/static/icon-dishwasher.png" width="25" alt="Можна мити в посудомийній машині в режимі ЕКО"
+                        title="Можна мити в посудомийній машині в режимі ЕКО">
+                <span class="gray-text"
+                    title="Використовуючи режим ЕКО, Ви значно продовжите термін користування чашкою">
+                    Мийте в посудомийці</span>
+            </li>
+            <li>
+                <img src="/static/icon-microwave.png" width="25" alt="Можна використовувати в мікрохвильовый печі"
+                        title="Можна використовувати в мікрохвильовый печі">
+                <span
+                    title="Розігрівайте вашу улюблену каву без обмежень, бо чашки запікаються при температурі 180 °С ">
+                    Нагрівайте в мікрохвильовці</span>
+            </li>
+            <li>
+                <img src="/static/icon-color-wheel.png" width="25" alt="Без обмежень в кількості кольорів"
+                        title="Без обмежень в кількості кольорів">
+                <span
+                    title="Кількість використинах кольорів ніяк не впливає на вартість замовлення">Повнокольорова
+                    гамма друку</span>
+            </li>
+            <li>
+                <img src="/static/icon-potters-wheel.png" width="25" alt="Керамічна чашка для щоденного корстування"
+                        title="Керамічна чашка для щоденного корстування">
+                <span
+                    title="Керамічна основа із якої зроблені чашки не мають обмежень що до користування">Користуйтесь
+                    щоденно</span>
+            </li>
+            <li><img src="/static/icon-purchase-order.png" width="25"
+                        alt="Приймаємо замовлення на друк на чашках від 1 шт"
+                        title="Приймаємо замовлення на друк на чашках від 1 шт">
+                <span title="Приймаємо замовлення на друк на чашках від 1 шт">Друк від 1 шт.</span>
+            </li>
+            <li><img src="/static/icon-allpurpose.png" width="25" alt="Використовуйте не за призначенням"
+                        title="Чашку із друком не обовʼязково виктористовувати в якості чашки, а можна ще в якості вази, копілки, або для зьереження набоїв (ми жартуємо, а може і не жартуємо)">
+                <span
+                    title="Використовуйте в якості чашки, вази, копілки, або магазину набоїв (жартуємо, а може і не жартуємо)">Багатоцільове
+                    призначення</span>
+            </li>
+        </ul>
+
+    </div> -->
+    <script type="module" src="./CupGallery.js"></script>
+</body>
+
+</html>
