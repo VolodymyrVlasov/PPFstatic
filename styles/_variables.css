@@ -8,7 +8,8 @@
     --size-section-padding: 0;
     --size-button-padding: 12px 24px;
     --size-button-min-width: 120px;
-
+    --size-header-height: 72px;
+    
     /* colors */
     --color-theme: #D83E1B;
     --color-light-theme: #ffc7bb;

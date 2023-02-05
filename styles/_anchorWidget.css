@@ -1,3 +1,11 @@
+
+.anchor_container {
+    padding: 12px 0;
+    width: 100%;
+    position: sticky;
+    top: var(--size-header-height);
+    }
+
 .anchor_section {
     position: sticky !important;
     top: 72px;
@@ -7,10 +15,6 @@
     backdrop-filter: blur(5px);
     margin-top: -24px;
 }
-
-.anchor_container {
-    padding: 8px 0;
-    width: 100%;
 }
 
 .anchor_wrapper li {
@@ -23,6 +27,12 @@
     flex: 1;
     font-size: 12px;
     color: var(--color-gray);
+
+}
+
+.ahchor_link::before {
+    content: '#';
+    margin-right: 2px;
     padding: 8px 24px;
     border: 0.5px solid var(--color-gray);
     border-radius: var(--size-border-radius);
@@ -34,6 +44,7 @@
     transition: var(--time-tr-time);
     border: 0.5px solid var(--color-theme);
 }
+
 
 /* `xxl` applies to xx-large devices (large desktops, less than 1400px) */
 @media (max-width: 1399.98px) {
@@ -58,6 +69,18 @@
 
 /*-------------------------------------------*/
 /* `md` applies to medium devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+}
+
+/* `sm` applies to small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+   
+}
+
+/* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
+@media (max-width: 320px) {
+}
 @media (max-width: 767.98px) {}
 
 /* `sm` applies to small devices (portrait phones, less than 576px) */
@@ -65,3 +88,4 @@
 
 /* `xsm` applies to x-small devices (iPhone 5/5s/SE, equals to 320px) */
 @media (max-width: 320px) {}
+
