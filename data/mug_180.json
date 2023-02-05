@@ -22,7 +22,7 @@
             100,
             100
         ],
-        "URL": "mug-white",
+        "URL": "mug-white-180",
         "articul": "",
         "productType": "MUG"
     },
@@ -238,7 +238,7 @@
             100,
             100
         ],
-        "URL": "mug-llight-green-",
+        "URL": "mug-light-green-mini",
         "articul": "",
         "productType": "MUG"
     },
@@ -254,7 +254,16 @@
             "/static/mugs/180/mug_180_ml_black_3.webp"
         ],
         "price": [
-            150
+            140, 
+            130,
+            120, 
+            110, 
+            110, 
+            100, 
+            100, 
+            100,
+            100,
+            100
         ],
         "URL": "mug-black-",
         "articul": "",
@@ -283,7 +292,7 @@
             100,
             100
         ],
-        "URL": "mug-maroon-",
+        "URL": "mug-red-dark-mini",
         "articul": "",
         "productType": "MUG"
     }
