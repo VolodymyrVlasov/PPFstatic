@@ -1,5 +1,6 @@
 [
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "white",
         "color": "Білий", 
@@ -10,13 +11,23 @@
             "/static/mugs/425/mug_425_ml_white_3.webp"
         ],
         "price": [
-            140
+            200, 
+            180,
+            170, 
+            160, 
+            160, 
+            155, 
+            150, 
+            150,
+            150,
+            150
         ],
         "URL": "mug-white",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "orange",
         "color": "Помаранчевий", 
@@ -27,13 +38,23 @@
             "/static/mugs/425/mug_425_ml_orange_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-orange-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "yellow",
         "color": "Жовтий", 
@@ -51,6 +72,7 @@
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "red",
         "color": "Червоний", 
@@ -61,13 +83,23 @@
             "/static/mugs/425/mug_425_ml_red_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-red-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "pink",
         "color": "Рожевий", 
@@ -78,13 +110,23 @@
             "/static/mugs/425/mug_425_ml_pink_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-pink-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "light_blue",
         "color": "Блактиний", 
@@ -95,13 +137,23 @@
             "/static/mugs/425/mug_425_ml_light_blue_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-light-blue-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "cobalt_blue",
         "color": "Темно-синій",
@@ -112,13 +164,23 @@
             "/static/mugs/425/mug_425_ml_cobalt_blue_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-blue-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "green",
         "color": "Зелений",
@@ -129,13 +191,23 @@
             "/static/mugs/425/mug_425_ml_green_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-green-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "light_green",
         "color": "Салатовий",
@@ -146,13 +218,23 @@
             "/static/mugs/425/mug_425_ml_light_green_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-llight-green-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "black",
         "color": "Чорний",
@@ -163,13 +245,23 @@
             "/static/mugs/425/mug_425_ml_black_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-black-",
         "articul": "",
         "productType": "MUG"
     },
     {
+        "id": "id_425",
         "capacity": 425,
         "colorValue": "maroon",
         "color": "Бордовий",
@@ -180,7 +272,16 @@
             "/static/mugs/425/mug_425_ml_maroon_3.webp"
         ],
         "price": [
-            150
+            200, 
+            186,
+            180, 
+            175, 
+            175, 
+            170, 
+            165, 
+            165,
+            165,
+            165
         ],
         "URL": "mug-maroon-",
         "articul": "",
