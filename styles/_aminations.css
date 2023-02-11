@@ -85,7 +85,7 @@
 }
 
 @keyframes slide-from-left {
-	0% {
+	00% {
 		transform: translateX(100%);
 	}
 
