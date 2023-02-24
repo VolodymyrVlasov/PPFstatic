@@ -6,7 +6,8 @@
 .viber_before:hover::before,
 .telegram_before:hover::before,
 .phone_before:hover::before,
-.mail_before:hover::before {
+.mail_before:hover::before,
+.location_before:hover::before {
     background-position: right;
 }
 
@@ -40,4 +41,12 @@
     width: var(--icon-width);
     height: 100%;
     background: url("/static/icons/icon-mail.svg") center/300% no-repeat;
+}
+
+.location_before::before {
+    content: "";
+    margin-right: var(--icon-gap);
+    width: var(--icon-width);
+    height: 100%;
+    background: url("/static/icons/icon-location.svg") center/300% no-repeat;
 }
