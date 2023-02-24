@@ -8,15 +8,16 @@
     --size-section-padding: 0;
     --size-button-padding: 12px 24px;
     --size-button-min-width: 120px;
-    --size-header-height: 72px;
+    --size-header-height: fit-content;
     
     /* colors */
     --color-theme: #D83E1B;
     --color-light-theme: #ffc7bb;
     --color-light-light-theme: #FFF6F4;
+    --color-dark-gray: #242424;
     --color-gray: #6E6E6E;
     --color-light-gray: #eeeeee;
-    --color-light-light-gray: #fafafa;
+    --color-light-light-gray: #f7f7f6;
     --color-background-overlayout: linear-gradient(transparent, transparent);
 
     /* images */

@@ -20,15 +20,23 @@
 @import "./_inputNumber.css";
 @import "./_cupGallery.css";
 @import "./_imageSlider.css";
+@import url("./_icons.css");
 
 * {
     margin: 0;
     padding: 0;
+    /* overflow-x: hidden !important; */
     box-sizing: border-box;
 }
 
+body {
+    /* width: 100vw !important; */
+}
+
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    /* overflow: hidden !important; */
+    /* width: 100vw !important; */
 }
 
 a {
