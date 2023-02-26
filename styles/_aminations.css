@@ -1,3 +1,27 @@
+@keyframes scroll-down {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	49% {
+		transform: translateY(30%);
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(-30%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+
+}
+
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -91,5 +115,49 @@
 
 	100% {
 		transform: translateX(0);
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: translateY(0);
+	}
+
+	2% {
+		transform: translateY(-6px);
+	}
+
+	3% {
+		transform: translateY(-6px);
+	}
+
+	5% {
+		transform: translateY(0);
+	}
+
+	7% {
+		transform: translateY(-6px);
+	}
+
+	9% {
+		transform: translateY(-6px);
+	}
+
+	11% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes ticker {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
 	}
 }

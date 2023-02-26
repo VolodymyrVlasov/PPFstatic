@@ -50,3 +50,37 @@
     height: 100%;
     background: url("/static/icons/icon-location.svg") center/300% no-repeat;
 }
+
+.clock_icon_before,
+.magic_icon_before,
+.rocket_icon_before {
+    position: relative;
+    margin-left: 48px;
+}
+
+.clock_icon_before::before {
+    content: "";
+    position: absolute;
+    left: -48px;
+    width: 32px;
+    height: 32px;
+    background: url("/static/icons/icon-clocks.png") 100% 100%/100% no-repeat;
+}
+
+.magic_icon_before::before {
+    content: "";
+    position: absolute;
+    left: -48px;
+    width: 32px;
+    height: 32px;
+    background: url("/static/icons/icon-magic.png") 100% 100%/100% no-repeat;
+}
+
+.rocket_icon_before::before {
+    content: "";
+    position: absolute;
+    left: -48px;
+    width: 32px;
+    height: 32px;
+    background: url("/static/icons/icon-rocket.png") 100% 100%/100% no-repeat;
+}

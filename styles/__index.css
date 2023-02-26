@@ -20,7 +20,8 @@
 @import "./_inputNumber.css";
 @import "./_cupGallery.css";
 @import "./_imageSlider.css";
-@import url("./_icons.css");
+@import "./_icons.css";
+@import "./_pages.css";
 
 * {
     margin: 0;
