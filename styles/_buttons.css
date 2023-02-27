@@ -4,6 +4,7 @@
     align-items: flex-start;
     padding: 12px 24px 12px 0;
     transition: var(--time-tr-time);
+    cursor: pointer;
 }
 
 .sub_link :last-child {

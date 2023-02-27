@@ -200,7 +200,8 @@
         padding: 0 12px 12px 12px;
     }
 
-    .main_page_product_card>h3 {
+    .main_page_product_card>h3,
+    .main_page_product_card>button {
         padding-left: 12px;
         font-size: 18px;
     }
